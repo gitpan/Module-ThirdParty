@@ -1,0 +1,15 @@
+Build.PL
+Changes
+MANIFEST
+META.yml
+Makefile.PL
+README
+lib/Module/ThirdParty.pm
+t/00load.t
+t/00prereq.t
+t/01api.t
+t/10run.t
+t/distchk.t
+t/podcover.t
+t/pod.t
+t/portfs.t
