@@ -1,14 +1,16 @@
 ---
 name: Module-ThirdParty
-version: 0.01
+version: 0.02
 author:
   - Sébastien Aperghis-Tramoni <sebastien@aperghis.net>
-abstract: information for 3rd party modules (outside CPAN)
+abstract: Provide information for 3rd party modules (outside CPAN)
 license: perl
-requires:
+recommends:
+  Module::CoreList: 0
+build_requires:
   Test::More: 0
 provides:
   Module::ThirdParty:
     file: lib/Module/ThirdParty.pm
-    version: 0.01
+    version: 0.02
 generated_by: Module::Build version 0.2609

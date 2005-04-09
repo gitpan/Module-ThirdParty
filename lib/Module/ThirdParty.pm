@@ -3,18 +3,18 @@ use strict;
 require Exporter;
 
 { no strict;
-  $VERSION = '0.01';
+  $VERSION = '0.02';
   @ISA = (Exporter);
   @EXPORT = qw(is_3rd_party module_information);
 }
 
 =head1 NAME
 
-Module::ThirdParty - information for 3rd party modules (outside CPAN)
+Module::ThirdParty - Provide information for 3rd party modules (outside CPAN)
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =head1 SYNOPSIS
 
@@ -53,7 +53,7 @@ The list of core modules is provided by C<Module::CoreList> and the
 list of CPAN modules is in the file 
 L<http://www.cpan.org/modules/02packages.details.txt.gz> and provided 
 by modules like C<CPANPLUS>, but there was no module that listed 
-third-party modules. This module tries to answer this need by providing 
+third-party modules. This module tries to address this need by providing 
 such a list. Why bother in the first place? Because some CPAN modules 
 specify such third-party softwares. Therefore installing them may not 
 be as easy as other CPAN modules because one must first find and 
@@ -409,8 +409,6 @@ C<bug-module-thirdparty@rt.cpan.org>, or through the web interface at
 L<https://rt.cpan.org/NoAuth/ReportBug.html?Queue=Module-ThirdParty>.
 I will be notified, and then you'll automatically be notified of progress on
 your bug as I make changes.
-
-=head1 ACKNOWLEDGEMENTS
 
 =head1 COPYRIGHT & LICENSE
 

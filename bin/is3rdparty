@@ -1,0 +1,95 @@
+#!/usr/bin/perl
+use strict;
+use Getopt::Long;
+use Module::ThirdParty;
+
+{ no strict;
+  $VERSION = '0.01';
+}
+
+_usage() unless @ARGV;
+
+my %options = (
+    help => 0, 
+    info => 0,
+);
+GetOptions(\%options, qw(help|h info|i));
+
+_usage() if $options{help};
+
+my $module = shift;
+
+if(is_3rd_party($module)) {
+    print "$module is a known third-party module.\n";
+    
+    if($options{info}) {
+        my $info = module_information($module);
+        print "  in software: $info->{name}\n", 
+              "  available at <$info->{url}>\n", 
+              "  made by $info->{author} <$info->{author_url}>\n"
+    }
+
+} else {
+    print "$module is not a known third-party module";
+    eval { require Module::CoreList};
+    unless($@) {
+        print " but appears to be a CORE module" 
+          if Module::CoreList->first_release($module)
+    }
+    print ".\n";
+}
+
+
+sub _usage { print STDERR "usage: is3rdparty [-i] Module::Name\n" and exit }
+
+
+__END__
+
+=head1 NAME
+
+is3rdparty - provides information for 3rd party modules
+
+=head1 SYNOPSIS
+
+    is3rdparty [-i] Module::Name
+
+=head1 OPTIONS
+
+=over 4
+
+=item B<-i>
+
+Prints detailled information about a module.
+
+=back
+
+
+=head1 DESCRIPTION
+
+This is a command line frontend to C<Module::ThirdParty>, much like 
+what C<corelist(1)> is to C<Module::CoreList>.
+
+See L<Module::ThirdParty> for more information.
+
+
+=head1 AUTHOR
+
+SE<eacute>bastien Aperghis-Tramoni, E<lt>sebastien@aperghis.netE<gt>
+
+=head1 BUGS
+
+Please report any bugs or feature requests to
+C<bug-module-thirdparty@rt.cpan.org>, or through the web interface at
+L<https://rt.cpan.org/NoAuth/ReportBug.html?Queue=Module-ThirdParty>.
+I will be notified, and then you'll automatically be notified of progress on
+your bug as I make changes.
+
+=head1 COPYRIGHT & LICENSE
+
+Copyright 2005 SE<eacute>bastien Aperghis-Tramoni, All Rights Reserved.
+
+This program is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.
+
+=cut
+

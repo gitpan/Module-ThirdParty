@@ -4,6 +4,7 @@ MANIFEST
 META.yml
 Makefile.PL
 README
+bin/is3rdparty
 lib/Module/ThirdParty.pm
 t/00load.t
 t/00prereq.t
