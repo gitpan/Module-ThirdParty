@@ -1,5 +1,8 @@
 Revision history for Module-ThirdParty
 
+0.03    2005.04.10
+        Added information for RT (Request Tracker)
+
 0.02    2005.04.09
         Added is3rdparty command.
 

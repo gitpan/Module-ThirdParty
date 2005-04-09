@@ -3,7 +3,7 @@ use strict;
 require Exporter;
 
 { no strict;
-  $VERSION = '0.02';
+  $VERSION = '0.03';
   @ISA = (Exporter);
   @EXPORT = qw(is_3rd_party module_information);
 }
@@ -14,7 +14,7 @@ Module::ThirdParty - Provide information for 3rd party modules (outside CPAN)
 
 =head1 VERSION
 
-Version 0.02
+Version 0.03
 
 =head1 SYNOPSIS
 
@@ -114,6 +114,104 @@ my %softwares = (
             SVN::Ra
             SVN::Repos
             SVN::Wc
+        )]
+    }, 
+
+    'RT' => {
+        name => 'Request Tracker', 
+        url => 'http://bestpractical.com/rt/', 
+        author => 'Best Practical', 
+        author_url => 'http://bestpractical.com/', 
+        modules => [qw(
+            RT
+            RT::ACE
+            RT::ACL
+            RT::Action::AutoOpen
+            RT::Action::Autoreply
+            RT::Action::CreateTickets
+            RT::Action::EscalatePriority
+            RT::Action::Generic
+            RT::Action::Notify
+            RT::Action::NotifyAsComment
+            RT::Action::RecordComment
+            RT::Action::RecordCorrespondence
+            RT::Action::ResolveMembers
+            RT::Action::SendEmail
+            RT::Action::SetPriority
+            RT::Action::UserDefined
+            RT::Attachment
+            RT::Attachments
+            RT::Attribute
+            RT::Attributes
+            RT::Base
+            RT::CachedGroupMember
+            RT::CachedGroupMembers
+            RT::Condition::AnyTransaction
+            RT::Condition::BeforeDue
+            RT::Condition::Generic
+            RT::Condition::Overdue
+            RT::Condition::OwnerChange
+            RT::Condition::PriorityChange
+            RT::Condition::PriorityExceeds
+            RT::Condition::QueueChange
+            RT::Condition::StatusChange
+            RT::Condition::UserDefined
+            RT::CurrentUser
+            RT::CustomField
+            RT::CustomFields
+            RT::CustomFieldValue
+            RT::CustomFieldValues
+            RT::Date
+            RT::EmailParser
+            RT::Group
+            RT::GroupMember
+            RT::GroupMembers
+            RT::Groups
+            RT::Handle
+            RT::I18N
+            RT::I18N::cs
+            RT::I18N::i_default
+            RT::Interface::CLI
+            RT::Interface::Email
+            RT::Interface::Email::Auth::GnuPG
+            RT::Interface::Email::Auth::MailFrom
+            RT::Interface::Email::Filter::SpamAssassin
+            RT::Interface::REST
+            RT::Interface::Web
+            RT::Interface::Web::Handler
+            RT::Link
+            RT::Links
+            RT::ObjectCustomField
+            RT::ObjectCustomFields
+            RT::ObjectCustomFieldValue
+            RT::ObjectCustomFieldValues
+            RT::Principal
+            RT::Principals
+            RT::Queue
+            RT::Queues
+            RT::Record
+            RT::Scrip
+            RT::ScripAction
+            RT::ScripActions
+            RT::ScripCondition
+            RT::ScripConditions
+            RT::Scrips
+            RT::Search::ActiveTicketsInQueue
+            RT::SearchBuilder
+            RT::Search::FromSQL
+            RT::Search::Generic
+            RT::System
+            RT::Template
+            RT::Templates
+            RT::Ticket
+            RT::Tickets
+            RT::Transaction
+            RT::Transactions
+            RT::URI
+            RT::URI::base
+            RT::URI::fsck_com_rt
+            RT::User
+            RT::Users
         )]
     }, 
 
