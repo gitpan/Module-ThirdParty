@@ -3,7 +3,7 @@ use strict;
 require Exporter;
 
 { no strict;
-  $VERSION = '0.03';
+  $VERSION = '0.04';
   @ISA = (Exporter);
   @EXPORT = qw(is_3rd_party module_information);
 }
@@ -14,7 +14,7 @@ Module::ThirdParty - Provide information for 3rd party modules (outside CPAN)
 
 =head1 VERSION
 
-Version 0.03
+Version 0.04
 
 =head1 SYNOPSIS
 
@@ -216,7 +216,7 @@ my %softwares = (
     }, 
 
     'VCP' => {
-        name => 'VCP', 
+        name => 'Version CoPy', 
         url => 'http://search.cpan.org/dist/VCP-autrijus-snapshot/', 
         author => 'Autrijus Tang', 
         author_url => 'http://www.autrijus.org/', 
@@ -233,6 +233,27 @@ my %softwares = (
         )]
     }, 
 
+    'P4' => {
+        name => 'Perforce', 
+        url => 'http://public.perforce.com/guest/tony_smith/perforce/API/Perl/index.html', 
+        author => 'Perforce', 
+        author_url => 'http://www.perforce.com/', 
+        modules => [qw(
+            P4
+        )]
+    }, 
+
+    'PerlObjCBridge' => {
+        name => 'Perl - Objective-C bridge', 
+        url => 'http://developer.apple.com/', 
+        author => 'Apple', 
+        author_url => 'http://www.apple.com/', 
+        modules => [qw(
+            PerlObjCBridge
+            Foundation
+        )]
+    }, 
+
     'GeoIP' => {
         name => 'GeoIP Perl API', 
         url => 'http://www.maxmind.com/app/perl', 
@@ -241,6 +262,20 @@ my %softwares = (
         modules => [qw(
             Geo::IP
             Geo::IP::PurePerl
+        )]
+    }, 
+
+    'GeoPlot' => {
+        name => 'CAIDA GeoPlot Perl API', 
+        url => 'http://www.caida.org/tools/visualization/geoplot/', 
+        author => 'CAIDA', 
+        author_url => 'http://www.caida.org/', 
+        modules => [qw(
+            GeoPlot
+            GPMod::Node
+            GPMod::Link
+            GPMod::Key
+            GPMod::Path
         )]
     }, 
 
@@ -286,6 +321,96 @@ my %softwares = (
         )]
     }, 
 
+    'MT' => {
+        name => 'Movable Type', 
+        url => 'http://www.sixapart.com/movabletype/', 
+        author => 'Six Apart', 
+        author_url => 'http://www.sixapart.com/', 
+        modules => [qw(
+            MT
+            MT::App
+            MT::App::CMS
+            MT::App::Comments
+            MT::App::NotifyList
+            MT::App::Search
+            MT::App::Search::Context
+            MT::App::Trackback
+            MT::App::Viewer
+            MT::Atom
+            MT::Atom::Entry
+            MT::AtomServer
+            MT::AtomServer::Weblog
+            MT::Author
+            MT::Blog
+            MT::Builder
+            MT::Callback
+            MT::Category
+            MT::ConfigMgr
+            MT::DateTime
+            MT::Entry
+            MT::ErrorHandler
+            MT::FileInfo
+            MT::FileMgr
+            MT::FileMgr::Local
+            MT::Image
+            MT::Image::ImageMagick
+            MT::Image::NetPBM
+            MT::ImportExport
+            MT::IPBanList
+            MT::L10N
+            MT::L10N::en_us
+            MT::Log
+            MT::Mail
+            MT::Notification
+            MT::Object
+            MT::ObjectDriver
+            MT::ObjectDriver::DBI
+            MT::ObjectDriver::DBI::mysql
+            MT::ObjectDriver::DBI::postgres
+            MT::ObjectDriver::DBI::sqlite
+            MT::ObjectDriver::DBM
+            MT::Permission
+            MT::Placement
+            MT::Plugin
+            MT::PluginData
+            MT::Plugin::Nofollow
+            MT::Promise
+            MT::Request
+            MT::Sanitize
+            MT::Serialize
+            MT::Session
+            MT::TBPing
+            MT::Template
+            MT::Template::Context
+            MT::TemplateMap
+            MT::Trackback
+            MT::Util
+            MT::XMLRPC
+            MT::XMLRPCServer
+            MT::XMLRPCServer::Util
+        )]
+    }, 
+
+    'ClearSilver' => {
+        name => 'ClearSilver', 
+        url => 'http://www.clearsilver.net/', 
+        author => 'Brandon Long', 
+        author_url => 'http://www.fiction.net/blong/', 
+        modules => [qw(
+            ClearSilver
+        )]
+    }, 
+
+    'TLPDriver' => {
+        name => 'TLP Driver', 
+        url => 'http://www.gemplus.com/techno/tlp_drivers/index.html', 
+        author => 'Gemplus', 
+        author_url => 'http://www.gemplus.com/', 
+        modules => [qw(
+            cardreader
+        )]
+    }, 
+
     'VOTable' => {
         name => 'VOTable', 
         url => 'http://www.us-vo.org/VOTable/', 
@@ -293,6 +418,108 @@ my %softwares = (
         author_url => 'http://www.us-vo.org/', 
         modules => [qw(
             VOTable::DOM
+        )]
+    }, 
+
+    'NetVigil' => {
+        name => 'NetVigil', 
+        url => 'http://www.fidelia.com/products/', 
+        author => 'Fidelia', 
+        author_url => 'http://www.fidelia.com/', 
+        # other useful link: 
+        #   http://www.navya.com/
+        #   http://www.navya.com/netvigil/   --  NetVigil documentation
+        modules => [qw(
+            NetVigil
+            NetVigil::Clients
+            NetVigil::Clients::SimpleServer
+            NetVigil::Clients::WmiQueryDaemon
+            NetVigil::Config
+            NetVigil::Debug
+            NetVigil::Discover::Static
+            NetVigil::Discover::SNMP
+            NetVigil::Discover::WMI
+            NetVigil::ExternalData
+            NetVigil::Message
+            NetVigil::MonitorStatus
+            NetVigil::NameSpace
+            NetVigil::Provisioning
+            NetVigil::SimpleServerClient
+            NetVigil::SocketIO
+        )]
+    }, 
+
+    'perl4patrol' => {
+        name => 'perl4patrol', 
+        url => 'http://www.manageit.ca/p_and_s/tools/perl4patrol/perl4patrol.html', 
+        author => 'ManageIt', 
+        author_url => 'http://www.manageit.ca/', 
+        modules => [qw(
+            perl4patrol
+        )]
+    }, 
+
+    'Directi' => {
+        name => 'Directi Perl API', 
+        url => 'http://manage.directi.com/kb/servlet/KBServlet/faq685.html', 
+        author => 'Brandon Long', 
+        author_url => 'http://www.directi.com/', 
+        modules => [qw(
+            Customers
+            DirectICustomerService
+            DirectIDomainContact
+            DirectIDomainFwdService
+            DirectIDomainService
+            DirectIFund
+            DirectIMailFwdService
+            DirectISerialiser
+            DirectISerialiser12
+            DirectIXMLIO
+            DirectIXMLIO12
+            DomainContact
+            DomainFwd
+            DomOrder
+            DomUSContact
+            ErrorTraping
+            Fund
+            MailFwd
+            SOAPProperty
+            Website
+            Zone
+        )]
+    }, 
+
+    'Fathom' => {
+        name => 'Fathom Management Perl API', 
+        url => 'http://psdn.progress.com/library/fathom/', 
+        author => 'Progress Software', 
+        author_url => 'http://www.progress.com/', 
+        modules => [qw(
+            Fathom
+            Fathom::Alerts
+            Fathom::ConfigAdvisor
+            Fathom::Constants
+            Fathom::Defaults
+            Fathom::Jobs
+            Fathom::Library
+            Fathom::OpenEdge
+            Fathom::Reports
+            Fathom::Resources
+            Fathom::Users
+            Fathom::Utils
+            Fathom::Views
+            HTMLInput
+            HTMLStripper
+        )]
+    }, 
+
+    'MIM' => {
+        name => 'Market Information Machine', 
+        url => 'http://www.lim.com/download/download_perl_api.html', 
+        author => 'Logical Information Machines', 
+        author_url => 'http://www.lim.com/', 
+        modules => [qw(
+            xmim4
         )]
     }, 
 
@@ -340,6 +567,33 @@ my %softwares = (
             Vend::Payment::TestPayment
             Vend::Payment::TCLink
             Vend::Payment::WellsFargo
+        )]
+    }, 
+
+    'OpenConnect' => {
+        name => 'OpenConnect', 
+        url => 'http://www.paradata.com/tech/', 
+        author => 'Paradata Systems', 
+        author_url => 'http://www.paradata.com/', 
+        modules => [qw(
+            ACHRequest
+            ACHResponse
+            AdditionalField
+            BatchRequest
+            BatchResponse
+            constants
+            CountryCodes
+            CreditCardRequest
+            CreditCardResponse
+            PayerAuthenticationRequest
+            PayerAuthenticationResponse
+            RecurringRequest
+            RecurringResponse
+            SecureHttp
+            TransactionClient
+            TransactionRequest
+            TransactionResponse
+            URLEncoder
         )]
     }, 
 
@@ -393,7 +647,7 @@ my %softwares = (
         )]
     }, 
 
-    'CyverCash' => {
+    'CyberCash' => {
         name => 'CyberCash', 
         url => 'http://www.cybersource.com/support_center/implementation/downloads/', 
         author => 'CyberSource', 
