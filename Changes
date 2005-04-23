@@ -1,5 +1,10 @@
 Revision history for Module-ThirdParty
 
+0.05    2004.04.23
+        [FEATURE] Added the provides() functions, and the corresponding 
+        option -l to the is3rdparty command.
+        [DOC] Added references to BackPAN.
+
 0.04    2004.04.20
         Added information for Apple PerlObjCBridge, Movable Type, Perforce, 
         ClearSilver, Fidelia NetVigil, Directi Perl API, MIM, CAIDA GeoPlot 
@@ -10,7 +15,7 @@ Revision history for Module-ThirdParty
         Added information for RT (Request Tracker).
 
 0.02    2005.04.09
-        Added is3rdparty command.
+        [FEATURE] Added is3rdparty command.
 
 0.01    2005.04.03
         First version, released on an unsuspecting world.

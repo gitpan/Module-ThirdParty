@@ -3,7 +3,7 @@ use strict;
 require Exporter;
 
 { no strict;
-  $VERSION = '0.04';
+  $VERSION = '0.05';
   @ISA = (Exporter);
   @EXPORT = qw(is_3rd_party module_information);
 }
@@ -14,7 +14,7 @@ Module::ThirdParty - Provide information for 3rd party modules (outside CPAN)
 
 =head1 VERSION
 
-Version 0.04
+Version 0.05
 
 =head1 SYNOPSIS
 
@@ -54,12 +54,20 @@ list of CPAN modules is in the file
 L<http://www.cpan.org/modules/02packages.details.txt.gz> and provided 
 by modules like C<CPANPLUS>, but there was no module that listed 
 third-party modules. This module tries to address this need by providing 
-such a list. Why bother in the first place? Because some CPAN modules 
+such a list. 
+
+Why bother in the first place? Because some CPAN modules 
 specify such third-party softwares. Therefore installing them may not 
 be as easy as other CPAN modules because one must first find and 
 manually install the prerequisites. The aim of C<Module::ThirdParty> 
 is to provide basic information to installer shells like C<CPANPLUS> 
 and to give hints to the user. 
+
+Note that there is also another category of modules regarding 
+dependencies problems: the ghost modules. Those are modules no longer 
+present on the CPAN, but which still haunt it from old PREREQS. They 
+can be found in the BackPAN graveyard, for which the only map is 
+C<Parse::BACKPAN::Packages>. 
 
 =cut 
 
@@ -244,7 +252,7 @@ my %softwares = (
     }, 
 
     'PerlObjCBridge' => {
-        name => 'Perl - Objective-C bridge', 
+        name => 'Perl/Objective-C bridge', 
         url => 'http://developer.apple.com/', 
         author => 'Apple', 
         author_url => 'http://www.apple.com/', 
@@ -679,7 +687,6 @@ for my $soft (keys %softwares) {
 }
 
 
-
 =head1 EXPORT
 
 This module exports the functions C<is_3rd_party()> and C<module_information()>.
@@ -688,7 +695,7 @@ This module exports the functions C<is_3rd_party()> and C<module_information()>.
 
 =over 4
 
-=item is_3rd_party()
+=item B<is_3rd_party()>
 
 Returns true if the given module name is a known third-party Perl module. 
 
@@ -702,9 +709,9 @@ sub is_3rd_party {
     return exists $modules{$_[0]}
 }
 
-=item module_information()
+=item B<module_information()>
 
-Returns the information about a known third-party Perl Module or undef 
+Returns the information about a known third-party Perl Module or C<undef> 
 if the module is not known. The information is returnd as a hashref with 
 the following keys: 
 
@@ -744,11 +751,36 @@ sub module_information {
     return exists $modules{$_[0]} ? $modules{$_[0]} : undef
 }
 
+=item B<provides()>
+
+Returns a list of hashref with the name and author of each 
+software for which this module provides information. 
+
+B<Example>
+
+Prints the list of known third-party modules sorted by software name.
+
+    print "Known third-party software:\n";
+    my @softs = Module::ThirdParty::provides;
+    for my $soft (sort {$a->{name} cmp $b->{name}} @softs) {
+        print " - $$soft{name} by $$soft{author} \n"
+    }
+
+=cut
+
+sub provides {
+    my @softs = ();
+    for my $soft (keys %softwares) {
+        push @softs, { author => $softwares{$soft}{author}, name => $softwares{$soft}{name} }
+    }
+    return @softs
+}
+
 =back
 
 =head1 SEE ALSO
 
-L<Module::CoreList>, L<CPANPLUS>
+L<Module::CoreList>, L<CPANPLUS>, L<Parse::BACKPAN::Packages>
 
 =head1 AUTHOR
 
