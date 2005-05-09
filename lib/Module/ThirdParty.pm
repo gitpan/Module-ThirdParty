@@ -3,7 +3,7 @@ use strict;
 require Exporter;
 
 { no strict;
-  $VERSION = '0.05';
+  $VERSION = '0.06';
   @ISA = (Exporter);
   @EXPORT = qw(is_3rd_party module_information);
 }
@@ -14,7 +14,7 @@ Module::ThirdParty - Provide information for 3rd party modules (outside CPAN)
 
 =head1 VERSION
 
-Version 0.05
+Version 0.06
 
 =head1 SYNOPSIS
 
@@ -251,6 +251,16 @@ my %softwares = (
         )]
     }, 
 
+    'Perl::API' => {
+        name => 'Perl::API', 
+        url => 'http://search.cpan.org/dist/Perl-API/', 
+        author => 'Gisle Aas', 
+        author_url => 'http://gisle.aas.no/', 
+        modules => [qw(
+            Perl::API
+        )]
+    }, 
+
     'PerlObjCBridge' => {
         name => 'Perl/Objective-C bridge', 
         url => 'http://developer.apple.com/', 
@@ -259,6 +269,26 @@ my %softwares = (
         modules => [qw(
             PerlObjCBridge
             Foundation
+        )]
+    }, 
+
+    'LibWhisker' => {
+        name => 'LibWhisker', 
+        url => 'http://www.wiretrip.net/rfp/lw.asp', 
+        author => 'rfp.labs', 
+        author_url => 'http://www.wiretrip.net/rfp/', 
+        modules => [qw(
+            LW
+        )]
+    }, 
+
+    'LibWhisker2' => {
+        name => 'LibWhisker2', 
+        url => 'http://www.wiretrip.net/rfp/lw1.asp', 
+        author => 'rfp.labs', 
+        author_url => 'http://www.wiretrip.net/rfp/', 
+        modules => [qw(
+            LW2
         )]
     }, 
 

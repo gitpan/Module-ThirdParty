@@ -1,18 +1,21 @@
 Revision history for Module-ThirdParty
 
+0.06    2004.05.10
+        [DATA] Added information for Perl::API, LibWhisker.
+
 0.05    2004.04.23
         [FEATURE] Added the provides() functions, and the corresponding 
         option -l to the is3rdparty command.
         [DOC] Added references to BackPAN.
 
 0.04    2004.04.20
-        Added information for Apple PerlObjCBridge, Movable Type, Perforce, 
-        ClearSilver, Fidelia NetVigil, Directi Perl API, MIM, CAIDA GeoPlot 
-        Perl API, ManageIT perl4patrol, Paradata OpenConnect, Fathom 
-        Management Perl API, Gemplus cardreader.
+        [DATA] Added information for Apple PerlObjCBridge, Movable Type, 
+        Perforce, ClearSilver, Fidelia NetVigil, Directi Perl API, MIM, 
+        CAIDA GeoPlot Perl API, ManageIT perl4patrol, Paradata OpenConnect, 
+        Fathom Management Perl API, Gemplus cardreader.
 
 0.03    2005.04.10
-        Added information for RT (Request Tracker).
+        [DATA] Added information for RT (Request Tracker).
 
 0.02    2005.04.09
         [FEATURE] Added is3rdparty command.
