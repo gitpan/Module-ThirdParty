@@ -3,7 +3,7 @@ use strict;
 require Exporter;
 
 { no strict;
-  $VERSION = '0.06';
+  $VERSION = '0.07';
   @ISA = (Exporter);
   @EXPORT = qw(is_3rd_party module_information);
 }
@@ -14,7 +14,7 @@ Module::ThirdParty - Provide information for 3rd party modules (outside CPAN)
 
 =head1 VERSION
 
-Version 0.06
+Version 0.07
 
 =head1 SYNOPSIS
 
@@ -105,6 +105,188 @@ my %softwares = (
             Apache::test
             Apache::URI
             Apache::Util
+        )]
+    }, 
+
+    'Zeus-ModPerl' => {
+        name => ' Zeus Web Server Perl Extensions', 
+        url => 'http://support.zeus.com/doc/api/perl/', 
+        author => 'Zeus Technology', 
+        author_url => 'http://www.zeus.com/', 
+        modules => [qw(
+            ui::admin::Admin::Admin_Security
+            ui::web::Access::Bandwidth_Throttling
+            ui::web::Access::htaccess_Support
+            ui::web::Access::Referrer_Checking
+            ui::web::Access::Restricting_Access
+            ui::web::Access::Users_and_Groups
+            ui::web::Access::Users_and_Groups::Edit_group
+            ui::web::Access::Users_and_Groups::Edit_user
+            ui::web::Add_Ons::Imagemaps
+            ui::web::Add_Ons::Search_Engine
+            ui::web::Admin::Preferences
+            ui::web::Admin::SSL_Certificates
+            ui::web::Admin::Technical_Support
+            ui::web::Admin::Technical_Support::Review
+            ui::web::API_Support::CGI::General
+            ui::web::API_Support::CGI::Sandboxing
+            ui::web::API_Support::FastCGI
+            ui::web::API_Support::ISAPI
+            ui::web::API_Support::Java_Servlets
+            ui::web::API_Support::NSAPI
+            ui::web::API_Support::Perl
+            ui::web::API_Support::SSI
+            ui::web::API_Support::ZDAC
+            ui::web::Change::Config_Difference
+            ui::web::Change::Review_Modification
+            ui::web::Create::Group
+            ui::web::Create::Virtual_Server
+            ui::web::Delete
+            ui::web::File_Handling::Content_Compression
+            ui::web::File_Handling::Content_Negotiation
+            ui::web::File_Handling::File_Upload
+            ui::web::File_Handling::MIME_Types
+            ui::web::General::Advanced_Settings
+            ui::web::General::Config_Summary
+            ui::web::General::Fundamentals
+            ui::web::General::Processing_Summary
+            ui::web::General::SSL_Security::Client_Certificates
+            ui::web::General::SSL_Security::General
+            ui::web::Information
+            ui::web::Machines::Configuration
+            ui::web::Machines::Current_Connections
+            ui::web::Machines::Grouped_Reports
+            ui::web::Machines::Licensing
+            ui::web::Machines::Licensing::Update
+            ui::web::Machines::Monitoring::ChooseCounters
+            ui::web::Machines::Real_Time_Monitoring
+            ui::web::Machines::Traffic_History
+            ui::web::MainIndex
+            ui::web::Monitoring::Error_Handling
+            ui::web::Monitoring::Forensic_Logging
+            ui::web::Monitoring::Request_Logging
+            ui::web::Monitoring::Statistics_Gathering
+            ui::web::Monitoring::User_Tracking
+            ui::web::Protection::Connection_Limiting
+            ui::web::Protection::Edit_Rule
+            ui::web::Protection::General
+            ui::web::Protection::Request_Filtering
+            ui::web::Protection::Request_Filtering::Rule
+            ui::web::Protection::Request_Filtering::Upload
+            ui::web::Protection::Review_Modification
+            ui::web::SSL::VICE
+            ui::web::Subservers::Subservers
+            ui::web::Third_Party::FrontPage
+            ui::web::Third_Party::PHP
+            ui::web::Traffic_History::Cluster_Traffic_Analysis
+            ui::web::Traffic_History::Traffic_Overview
+            ui::web::Traffic_History::Website_Comparison
+            ui::web::URL_Handling::Directory_Requests
+            ui::web::URL_Handling::Gateway
+            ui::web::URL_Handling::Handlers
+            ui::web::URL_Handling::Home_Directories
+            ui::web::URL_Handling::Request_Rewriting
+            ui::web::URL_Handling::Request_Rewriting::ModRewriteConvert
+            ui::web::URL_Handling::Response_Headers
+            ui::web::URL_Handling::Spelling_Correction
+            ui::web::URL_Handling::URL_Mappings
+            Zeus::Admin::AdminVSConfig
+            Zeus::Admin::AdminVSStorage
+            Zeus::Admin::UIComponents
+            Zeus::CGI
+            Zeus::ConfigErrors
+            Zeus::ConfigStorageControl
+            Zeus::Diverter
+            Zeus::Dumper
+            Zeus::Execute
+            Zeus::Exporter
+            Zeus::FastCGI
+            Zeus::Form
+            Zeus::GroupConfig
+            Zeus::HTMLTemplater
+            Zeus::HTMLUtils
+            Zeus::I18N
+            Zeus::KeyValueConfig
+            Zeus::KeyValueConfigFile
+            Zeus::MD5
+            Zeus::Menu
+            Zeus::ModPerl
+            Zeus::ModPerl::Connection
+            Zeus::ModPerl::Constants
+            Zeus::ModPerl::Cookie
+            Zeus::ModPerl::FakeRequest
+            Zeus::ModPerl::File
+            Zeus::ModPerl::HeaderTable
+            Zeus::ModPerl::Include
+            Zeus::ModPerl::Log
+            Zeus::ModPerl::NotesTable
+            Zeus::ModPerl::PerlRun
+            Zeus::ModPerl::Registry
+            Zeus::ModPerl::RegistryLoader
+            Zeus::ModPerl::Reload
+            Zeus::ModPerl::Request
+            Zeus::ModPerl::Server
+            Zeus::ModPerl::SSI
+            Zeus::ModPerl::Symbol
+            Zeus::ModPerl::Table
+            Zeus::ModPerl::URI
+            Zeus::ModPerl::Util
+            Zeus::MultiConfigs
+            Zeus::PDF
+            Zeus::PEM
+            Zeus::PreferencesConfig
+            Zeus::PreferencesStorage
+            Zeus::Section
+            Zeus::SSLSet
+            Zeus::SSLSets
+            Zeus::SSLStorage
+            Zeus::TempFile
+            Zeus::TimeLocal
+            Zeus::UIComponents
+            Zeus::Util
+            Zeus::VICE
+            Zeus::Web::AccessRule
+            Zeus::Web::AMP
+            Zeus::Web::Cipher
+            Zeus::Web::Deployer
+            Zeus::Web::DynamicConfig
+            Zeus::Web::DynamicConfigs
+            Zeus::Web::DynamicConfigSanity
+            Zeus::Web::FrontPage
+            Zeus::Web::GUI
+            Zeus::Web::GzipHash
+            Zeus::Web::HookData
+            Zeus::Web::KeyToPage
+            Zeus::Web::License
+            Zeus::Web::MappingUI
+            Zeus::Web::PerlStartup
+            Zeus::Web::RequestRewriteSupport
+            Zeus::Web::Storage_FS
+            Zeus::Web::SubserverHash
+            Zeus::Web::SupportInfo
+            Zeus::Web::UIComponents
+            Zeus::Web::VSCommand
+            Zeus::Web::VSConfig
+            Zeus::Web::VSConfigs
+            Zeus::Web::VSConfigSanity
+            Zeus::Web::VSDeploymentConfig
+            Zeus::Web::VSDeploymentStorage
+            Zeus::Web::VSGroupConfig
+            Zeus::Web::VSGroupStorage
+            Zeus::Web::VSStatus
+            Zeus::Web::VSStorage
+            Zeus::Web::ZWSStat
+            Zeus::Web::ZWSStat::Descriptions
+            Zeus::Widget
+            Zeus::ZInstall::Cluster
+            Zeus::ZInstall::Common
+            Zeus::ZInstall::Products
+            Zeus::ZInstall::Questions
+            Zeus::ZInstall::TkInstall
+            Zeus::ZInstall::ZInstall
+            Zeus::ZSSL
+            ZeusOS
+            ZWS4Conf
         )]
     }, 
 
@@ -224,7 +406,7 @@ my %softwares = (
     }, 
 
     'VCP' => {
-        name => 'Version CoPy', 
+        name => 'Version CoPy (VCP)', 
         url => 'http://search.cpan.org/dist/VCP-autrijus-snapshot/', 
         author => 'Autrijus Tang', 
         author_url => 'http://www.autrijus.org/', 

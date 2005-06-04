@@ -1,14 +1,17 @@
 Revision history for Module-ThirdParty
 
-0.06    2004.05.10
+0.07    2005.06.04
+        [DATA] Added information for Zeus Web Server Perl Extensions
+
+0.06    2005.05.10
         [DATA] Added information for Perl::API, LibWhisker.
 
-0.05    2004.04.23
+0.05    2005.04.23
         [FEATURE] Added the provides() functions, and the corresponding 
         option -l to the is3rdparty command.
         [DOC] Added references to BackPAN.
 
-0.04    2004.04.20
+0.04    2005.04.20
         [DATA] Added information for Apple PerlObjCBridge, Movable Type, 
         Perforce, ClearSilver, Fidelia NetVigil, Directi Perl API, MIM, 
         CAIDA GeoPlot Perl API, ManageIT perl4patrol, Paradata OpenConnect, 
