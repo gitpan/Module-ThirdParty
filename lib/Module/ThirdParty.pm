@@ -3,7 +3,7 @@ use strict;
 require Exporter;
 
 { no strict;
-  $VERSION = '0.07';
+  $VERSION = '0.08';
   @ISA = (Exporter);
   @EXPORT = qw(is_3rd_party module_information);
 }
@@ -14,7 +14,7 @@ Module::ThirdParty - Provide information for 3rd party modules (outside CPAN)
 
 =head1 VERSION
 
-Version 0.07
+Version 0.08
 
 =head1 SYNOPSIS
 
@@ -451,6 +451,16 @@ my %softwares = (
         modules => [qw(
             PerlObjCBridge
             Foundation
+        )]
+    }, 
+
+    'ARSperl' => {
+        name => 'ARSperl', 
+        url => 'http://www.arsperl.org/', 
+        author => 'ARSperl', 
+        author_url => 'http://www.arsperl.org/', 
+        modules => [qw(
+            ARS
         )]
     }, 
 
