@@ -1,5 +1,11 @@
 Revision history for Module-ThirdParty
 
+0.09    2005.06.28
+        [DATA] Added information for Sprog.
+        [DATA] Removed information for ARSperl as it is in fact on the CPAN.
+        [FEATURE] is3rdparty now lists software case insentively.
+        [DOC] Now includes the lsit of covered software.
+
 0.08    2005.06.06
         [DATA] Added information for ARSperl.
 

@@ -3,7 +3,7 @@ use strict;
 require Exporter;
 
 { no strict;
-  $VERSION = '0.08';
+  $VERSION = '0.09';
   @ISA = (Exporter);
   @EXPORT = qw(is_3rd_party module_information);
 }
@@ -14,7 +14,7 @@ Module::ThirdParty - Provide information for 3rd party modules (outside CPAN)
 
 =head1 VERSION
 
-Version 0.08
+Version 0.09
 
 =head1 SYNOPSIS
 
@@ -454,16 +454,6 @@ my %softwares = (
         )]
     }, 
 
-    'ARSperl' => {
-        name => 'ARSperl', 
-        url => 'http://www.arsperl.org/', 
-        author => 'ARSperl', 
-        author_url => 'http://www.arsperl.org/', 
-        modules => [qw(
-            ARS
-        )]
-    }, 
-
     'LibWhisker' => {
         name => 'LibWhisker', 
         url => 'http://www.wiretrip.net/rfp/lw.asp', 
@@ -496,7 +486,7 @@ my %softwares = (
     }, 
 
     'GeoPlot' => {
-        name => 'CAIDA GeoPlot Perl API', 
+        name => 'GeoPlot Perl API', 
         url => 'http://www.caida.org/tools/visualization/geoplot/', 
         author => 'CAIDA', 
         author_url => 'http://www.caida.org/', 
@@ -510,7 +500,7 @@ my %softwares = (
     }, 
 
     'NetGeoAPI' => {
-        name => 'CAIDA NetGeo API', 
+        name => 'NetGeo API', 
         url => 'http://www.caida.org/tools/utilities/netgeo/', 
         author => 'CAIDA', 
         author_url => 'http://www.caida.org/', 
@@ -618,6 +608,90 @@ my %softwares = (
             MT::XMLRPC
             MT::XMLRPCServer
             MT::XMLRPCServer::Util
+        )]
+    }, 
+
+    'Sprog' => {
+        name => 'Sprog', 
+        url => 'http://sprog.sourceforge.net/', 
+        author => 'Grant McLean', 
+        author_url => 'http://homepages.paradise.net.nz/gmclean1/', 
+        modules => [qw(
+            Sprog
+            Sprog::Accessor
+            Sprog::ClassFactory
+            Sprog::Debug
+            Sprog::Gear
+            Sprog::Gear::ApacheLogParse
+            Sprog::Gear::ApacheLogParse::Parser
+            Sprog::Gear::CommandFilter
+            Sprog::Gear::CommandIn
+            Sprog::Gear::CSVSplit
+            Sprog::Gear::FindReplace
+            Sprog::Gear::Grep
+            Sprog::Gear::ImageBorder
+            Sprog::Gear::InputByLine
+            Sprog::Gear::InputFromFH
+            Sprog::Gear::ListToCSV
+            Sprog::Gear::ListToRecord
+            Sprog::Gear::LowerCase
+            Sprog::GearMetadata
+            Sprog::Gear::NameFields
+            Sprog::Gear::OutputToFH
+            Sprog::Gear::ParseHTMLTable
+            Sprog::Gear::PerlBase
+            Sprog::Gear::PerlCode
+            Sprog::Gear::PerlCodeAP
+            Sprog::Gear::PerlCodeHP
+            Sprog::Gear::PerlCodePA
+            Sprog::Gear::PerlCodePH
+            Sprog::Gear::ReadFile
+            Sprog::Gear::ReplaceFile
+            Sprog::Gear::RetrieveURL
+            Sprog::Gear::SelectColumns
+            Sprog::Gear::SelectFields
+            Sprog::Gear::SlurpFile
+            Sprog::Gear::StripWhitespace
+            Sprog::Gear::TemplateTT2
+            Sprog::Gear::TextInput
+            Sprog::Gear::TextWindow
+            Sprog::Gear::UpperCase
+            Sprog::Gear::WriteFile
+            Sprog::GlibEventLoop
+            Sprog::GtkAutoDialog
+            Sprog::GtkAutoDialog::CheckButton
+            Sprog::GtkAutoDialog::ColorButton
+            Sprog::GtkAutoDialog::Entry
+            Sprog::GtkAutoDialog::RadioButton
+            Sprog::GtkAutoDialog::RadioButtonGroup
+            Sprog::GtkAutoDialog::SpinButton
+            Sprog::GtkAutoDialog::TextView
+            Sprog::GtkEventLoop
+            Sprog::GtkGearView
+            Sprog::GtkGearView::Paths
+            Sprog::GtkGearView::TextWindow
+            Sprog::GtkView
+            Sprog::GtkView::AboutDialog
+            Sprog::GtkView::AlertDialog
+            Sprog::GtkView::Chrome
+            Sprog::GtkView::DnD
+            Sprog::GtkView::HelpViewer
+            Sprog::GtkView::Menubar
+            Sprog::GtkView::Palette
+            Sprog::GtkView::PrefsDialog
+            Sprog::GtkView::Toolbar
+            Sprog::GtkView::WorkBench
+            Sprog::HelpParser
+            Sprog::Machine
+            Sprog::Machine::Scheduler
+            Sprog::Preferences
+            Sprog::Preferences::Unix
+            Sprog::PrintProxy
+            Sprog::PrintProxyTie
+            Sprog::TestHelper
+            Sprog::TextGearView
+            Sprog::TextGearView::TextWindow
+            Sprog::TextView
         )]
     }, 
 
@@ -993,10 +1067,166 @@ Prints the list of known third-party modules sorted by software name.
 sub provides {
     my @softs = ();
     for my $soft (keys %softwares) {
-        push @softs, { author => $softwares{$soft}{author}, name => $softwares{$soft}{name} }
+        push @softs, {
+            author => $softwares{$soft}{author}, name => $softwares{$soft}{name}, 
+            url => $softwares{$soft}{url}, author_url => $softwares{$soft}{author_url}, 
+        }
     }
     return @softs
 }
+
+=back
+
+=head1 KNOWN THIRD-PARTY SOFTWARE
+
+Here is the list of the third-party software know by this version of 
+C<Module::ThirdParty>. 
+
+=over 4
+
+=item *
+
+Apache Foundation I<mod_perl 1.0> - L<http://perl.apache.org/>
+
+=item *
+
+Apple I<Perl/Objective-C bridge> - L<http://developer.apple.com/>
+
+=item *
+
+Autrijus Tang I<Version CoPy (VCP)> - L<http://search.cpan.org/dist/VCP-autrijus-snapshot/>
+
+=item *
+
+Best Practical I<Request Tracker> - L<http://bestpractical.com/rt/>
+
+=item *
+
+Brandon Long I<ClearSilver> - L<http://www.clearsilver.net/>
+
+=item *
+
+Brandon Long I<Directi Perl API> - L<http://manage.directi.com/kb/servlet/KBServlet/faq685.html>
+
+=item *
+
+CAIDA I<GeoPlot Perl API> - L<http://www.caida.org/tools/visualization/geoplot/>
+
+=item *
+
+CAIDA I<NetGeo API> - L<http://www.caida.org/tools/utilities/netgeo/>
+
+=item *
+
+CyberSource I<CyberCash> - L<http://www.cybersource.com/support_center/implementation/downloads/>
+
+=item *
+
+I<CyberSource ICS> - L<http://www.cybersource.com/support_center/implementation/downloads/>
+
+=item *
+
+Fidelia I<NetVigil> - L<http://www.fidelia.com/products/>
+
+=item *
+
+Gemplus I<TLP Driver> - L<http://www.gemplus.com/techno/tlp_drivers/index.html>
+
+=item *
+
+Gisle Aas I<Perl::API> - L<http://search.cpan.org/dist/Perl-API/>
+
+=item *
+
+Grant McLean I<Sprog> - L<http://sprog.sourceforge.net/>
+
+=item *
+
+I<Interchange Payment Modules> - L<http://www.interchange.rtfm.info/downloads/payments/>
+
+=item *
+
+I<LinkPoint API> - L<https://www.linkpoint.com/viewcart/>
+
+=item *
+
+Logical Information Machines I<Market Information Machine> - L<http://www.lim.com/download/download_perl_api.html>
+
+=item *
+
+Main Street Softworks I<Main Street Credit Verification Engine (MCVE)> - L<http://www.mcve.com/>
+
+=item *
+
+ManageIt I<perl4patrol> - L<http://www.manageit.ca/p_and_s/tools/perl4patrol/perl4patrol.html>
+
+=item *
+
+MaxMind I<GeoIP Perl API> - L<http://www.maxmind.com/app/perl>
+
+=item *
+
+Nara Institute of Science and Technology I<ChaSen> - L<http://chasen.naist.jp/hiki/ChaSen/>
+
+=item *
+
+I<OpenECHO> - L<http://www.openecho.com/index.php?ba=downloads>
+
+=item *
+
+Paradata Systems I<OpenConnect> - L<http://www.paradata.com/tech/>
+
+=item *
+
+I<Perforce> - L<http://public.perforce.com/guest/tony_smith/perforce/API/Perl/index.html>
+
+=item *
+
+Progress Software I<Fathom Management Perl API> - L<http://psdn.progress.com/library/fathom/>
+
+=item *
+
+rfp.labs I<LibWhisker> - L<http://www.wiretrip.net/rfp/lw.asp>
+
+=item *
+
+rfp.labs I<LibWhisker2> - L<http://www.wiretrip.net/rfp/lw1.asp>
+
+=item *
+
+I<Roth Consulting's Perl Contributions> - L<http://www.roth.net/perl/>
+
+=item *
+
+Six Apart I<Movable Type> - L<http://www.sixapart.com/movabletype/>
+
+=item *
+
+I<Subversion> - L<http://subversion.tigris.org/>
+
+=item *
+
+I<Swish-e> - L<http://www.swish-e.org/>
+
+=item *
+
+TrustCommerce I<TCLink> - L<http://www.trustcommerce.com/>
+
+=item *
+
+US National Virtual Observatory I<VOTable> - L<http://www.us-vo.org/VOTable/>
+
+=item *
+
+VeriSign I<PayFlow Pro> - L<http://www.verisign.com/products-services/payment-processing/online-payment/payflow-pro/index.html>
+
+=item *
+
+I<VMware Perl API> - L<http://www.vmware.com/support/developer/perl-API/doc/>
+
+=item *
+
+Zeus Technology I< Zeus Web Server Perl Extensions> - L<http://support.zeus.com/doc/api/perl/>
 
 =back
 

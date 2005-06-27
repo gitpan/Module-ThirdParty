@@ -4,7 +4,7 @@ use Getopt::Long;
 use Module::ThirdParty;
 
 { no strict;
-  $VERSION = '0.02';
+  $VERSION = '0.03';
 }
 
 _usage() unless @ARGV;
@@ -51,7 +51,7 @@ sub _usage {
 sub _list {
     print "Known third-party software:\n";
     my @softs = Module::ThirdParty::provides;
-    for my $soft (sort {$a->{author} cmp $b->{author} or $a->{name} cmp $b->{name}} @softs) {
+    for my $soft (sort {lc($a->{author}) cmp lc($b->{author}) or lc($a->{name}) cmp lc($b->{name})} @softs) {
         my($author,$name) = ($$soft{author},$$soft{name});
         $name =~ s/$author ?//;
         print " - $author $name\n"

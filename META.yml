@@ -1,6 +1,6 @@
 ---
 name: Module-ThirdParty
-version: 0.08
+version: 0.09
 author:
   - Sébastien Aperghis-Tramoni <sebastien@aperghis.net>
 abstract: Provide information for 3rd party modules (outside CPAN)
@@ -12,5 +12,5 @@ build_requires:
 provides:
   Module::ThirdParty:
     file: lib/Module/ThirdParty.pm
-    version: 0.08
-generated_by: Module::Build version 0.261
+    version: 0.09
+generated_by: Module::Build version 0.2611
