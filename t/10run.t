@@ -1,10 +1,10 @@
 use strict;
 use Test::More;
-BEGIN { plan tests => 26 }
+BEGIN { plan tests => 25 }
 use Module::ThirdParty;
 
 # checking with a few known 3rd party module
-for my $module (qw(SVN::Core Geo::IP CAIDA::NetGeoClient Text::ChaSen SWISH::API)) {
+for my $module (qw(SVN::Core CAIDA::NetGeoClient Text::ChaSen SWISH::API)) {
     ok( is_3rd_party($module) , "$module is a known third-party module" );
 }
 

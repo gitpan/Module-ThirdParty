@@ -4,7 +4,7 @@ use Getopt::Long;
 use Module::ThirdParty;
 
 { no strict;
-  $VERSION = '0.03';
+  $VERSION = '0.04';
 }
 
 _usage() unless @ARGV;
@@ -99,6 +99,18 @@ what C<corelist(1)> is to C<Module::CoreList>.
 See L<Module::ThirdParty> for more information.
 
 
+=head1 EXAMPLES
+
+    $ is3rdparty Text::ChaSen
+    Text::ChaSen is a known third-party module.
+
+    $ is3rdparty -i Text::ChaSen
+    Text::ChaSen is a known third-party module.
+      in software: ChaSen
+      available at <http://chasen.naist.jp/hiki/ChaSen/>
+      made by Nara Institute of Science and Technology <http://www.naist.jp/>
+
+
 =head1 AUTHOR
 
 SE<eacute>bastien Aperghis-Tramoni, E<lt>sebastien@aperghis.netE<gt>
@@ -107,7 +119,7 @@ SE<eacute>bastien Aperghis-Tramoni, E<lt>sebastien@aperghis.netE<gt>
 
 Please report any bugs or feature requests to
 C<bug-module-thirdparty@rt.cpan.org>, or through the web interface at
-L<https://rt.cpan.org/NoAuth/ReportBug.html?Queue=Module-ThirdParty>.
+L<https://rt.cpan.org/NoAuth/Bugs.html?Dist=Module-ThirdParty>.
 I will be notified, and then you'll automatically be notified of progress on
 your bug as I make changes.
 

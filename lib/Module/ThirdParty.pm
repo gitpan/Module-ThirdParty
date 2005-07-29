@@ -3,7 +3,7 @@ use strict;
 require Exporter;
 
 { no strict;
-  $VERSION = '0.09';
+  $VERSION = '0.10';
   @ISA = (Exporter);
   @EXPORT = qw(is_3rd_party module_information);
 }
@@ -14,7 +14,7 @@ Module::ThirdParty - Provide information for 3rd party modules (outside CPAN)
 
 =head1 VERSION
 
-Version 0.09
+Version 0.10
 
 =head1 SYNOPSIS
 
@@ -474,17 +474,6 @@ my %softwares = (
         )]
     }, 
 
-    'GeoIP' => {
-        name => 'GeoIP Perl API', 
-        url => 'http://www.maxmind.com/app/perl', 
-        author => 'MaxMind', 
-        author_url => 'http://www.maxmind.com/', 
-        modules => [qw(
-            Geo::IP
-            Geo::IP::PurePerl
-        )]
-    }, 
-
     'GeoPlot' => {
         name => 'GeoPlot Perl API', 
         url => 'http://www.caida.org/tools/visualization/geoplot/', 
@@ -766,7 +755,7 @@ my %softwares = (
     'Directi' => {
         name => 'Directi Perl API', 
         url => 'http://manage.directi.com/kb/servlet/KBServlet/faq685.html', 
-        author => 'Brandon Long', 
+        author => 'Directi', 
         author_url => 'http://www.directi.com/', 
         modules => [qw(
             Customers
@@ -923,9 +912,9 @@ my %softwares = (
 
     'MVCE' => {
         name => 'Main Street Credit Verification Engine (MCVE)', 
-        url => 'http://www.mcve.com/', 
+        url => 'http://www.mainstreetsoftworks.com/', 
         author => 'Main Street Softworks', 
-        author_url => 'http://www.mcve.com/', 
+        author_url => 'http://www.mainstreetsoftworks.com/', 
         modules => [qw(
             MVCE
         )]
@@ -1162,10 +1151,6 @@ ManageIt I<perl4patrol> - L<http://www.manageit.ca/p_and_s/tools/perl4patrol/per
 
 =item *
 
-MaxMind I<GeoIP Perl API> - L<http://www.maxmind.com/app/perl>
-
-=item *
-
 Nara Institute of Science and Technology I<ChaSen> - L<http://chasen.naist.jp/hiki/ChaSen/>
 
 =item *
@@ -1242,7 +1227,7 @@ SE<eacute>bastien Aperghis-Tramoni, E<lt>sebastien@aperghis.netE<gt>
 
 Please report any bugs or feature requests to
 C<bug-module-thirdparty@rt.cpan.org>, or through the web interface at
-L<https://rt.cpan.org/NoAuth/ReportBug.html?Queue=Module-ThirdParty>.
+L<https://rt.cpan.org/NoAuth/Bugs.html?Dist=Module-ThirdParty>.
 I will be notified, and then you'll automatically be notified of progress on
 your bug as I make changes.
 

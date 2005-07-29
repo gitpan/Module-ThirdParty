@@ -1,5 +1,10 @@
 Revision history for Module-ThirdParty
 
+0.10    2005.07.29
+        [DATA] Removed information for Geo::IP as it is published on the CPAN.
+        [DATA] Corrected a mistake.
+        [DOC] Small documentation update.
+
 0.09    2005.06.28
         [DATA] Added information for Sprog.
         [DATA] Removed information for ARSperl as it is in fact on the CPAN.
