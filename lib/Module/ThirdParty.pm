@@ -3,7 +3,7 @@ use strict;
 require Exporter;
 
 { no strict;
-  $VERSION = '0.10';
+  $VERSION = '0.11';
   @ISA = (Exporter);
   @EXPORT = qw(is_3rd_party module_information);
 }
@@ -14,7 +14,7 @@ Module::ThirdParty - Provide information for 3rd party modules (outside CPAN)
 
 =head1 VERSION
 
-Version 0.10
+Version 0.11
 
 =head1 SYNOPSIS
 
@@ -684,6 +684,18 @@ my %softwares = (
         )]
     }, 
 
+    'PerlHP' => {
+        name => 'PerlHP', 
+        url => 'http://wakaba.c3.cx/perlhp/', 
+        author => '!WAHa.06x36', 
+        author_url => 'http://wakaba.c3.cx/', 
+        modules => [qw(
+            PerlHP
+            PerlHP::Comments
+            PerlHP::Utils
+        )]
+    }, 
+
     'ClearSilver' => {
         name => 'ClearSilver', 
         url => 'http://www.clearsilver.net/', 
@@ -1075,6 +1087,10 @@ C<Module::ThirdParty>.
 
 =item *
 
+!WAHa.06x36 I<PerlHP> - L<http://wakaba.c3.cx/perlhp/>
+
+=item *
+
 Apache Foundation I<mod_perl 1.0> - L<http://perl.apache.org/>
 
 =item *
@@ -1095,10 +1111,6 @@ Brandon Long I<ClearSilver> - L<http://www.clearsilver.net/>
 
 =item *
 
-Brandon Long I<Directi Perl API> - L<http://manage.directi.com/kb/servlet/KBServlet/faq685.html>
-
-=item *
-
 CAIDA I<GeoPlot Perl API> - L<http://www.caida.org/tools/visualization/geoplot/>
 
 =item *
@@ -1112,6 +1124,10 @@ CyberSource I<CyberCash> - L<http://www.cybersource.com/support_center/implement
 =item *
 
 I<CyberSource ICS> - L<http://www.cybersource.com/support_center/implementation/downloads/>
+
+=item *
+
+I<Directi Perl API> - L<http://manage.directi.com/kb/servlet/KBServlet/faq685.html>
 
 =item *
 
@@ -1143,7 +1159,7 @@ Logical Information Machines I<Market Information Machine> - L<http://www.lim.co
 
 =item *
 
-Main Street Softworks I<Main Street Credit Verification Engine (MCVE)> - L<http://www.mcve.com/>
+Main Street Softworks I<Main Street Credit Verification Engine (MCVE)> - L<http://www.mainstreetsoftworks.com/>
 
 =item *
 
