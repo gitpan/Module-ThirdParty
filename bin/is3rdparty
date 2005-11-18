@@ -81,7 +81,7 @@ Prints terse usage help.
 
 =item B<-i>
 
-Prints detailled information about a module.
+Prints detailed information about a module.
 
 =item B<-l>
 

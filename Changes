@@ -1,5 +1,9 @@
 Revision history for Module-ThirdParty
 
+0.13    2005.11.18
+        [DATA] Corrected a few typos thanks to Test::Spelling.
+        [DATA] Added information for Fotango Vx.
+
 0.12    2005.08.14
         [DOC] Updated Changes.
         [TESTS] Modified 01api.t so that it passes under Perl 5.004

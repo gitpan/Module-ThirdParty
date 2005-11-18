@@ -3,7 +3,7 @@ use strict;
 require Exporter;
 
 { no strict;
-  $VERSION = '0.12';
+  $VERSION = '0.13';
   @ISA = (Exporter);
   @EXPORT = qw(is_3rd_party module_information);
 }
@@ -14,7 +14,7 @@ Module::ThirdParty - Provide information for 3rd party modules (outside CPAN)
 
 =head1 VERSION
 
-Version 0.12
+Version 0.13
 
 =head1 SYNOPSIS
 
@@ -44,7 +44,7 @@ CPAN modules, available from any CPAN mirror;
 =item *
 
 third-party modules, including modules publicly available on the 
-internet (outside CPAN) and "closed" modules available only through 
+Internet (outside CPAN) and "closed" modules available only through 
 commercial licenses. 
 
 =back
@@ -684,6 +684,124 @@ my %softwares = (
         )]
     }, 
 
+    'Vx' => {
+        name => 'Vx', 
+        url => 'http://opensource.fotango.com/software/vx/', 
+        author => 'Fotango', 
+        author_url => 'http://www.fotango.com/', 
+        modules => [qw(
+            SQL
+            Vx
+            Vx::Abstract
+            Vx::Address
+            Vx::Address::Container
+            Vx::Address::Email
+            Vx::Address::Postal
+            Vx::Address::Telephone
+            Vx::Base
+            Vx::Binary
+            Vx::Class::Chameleon
+            Vx::Collection
+            Vx::Collection::Container
+            Vx::Collection::ContainerHash
+            Vx::Collection::ContainerPublisheable
+            Vx::Collection::Element
+            Vx::Config
+            Vx::Constants
+            Vx::Context
+            Vx::Counter
+            Vx::Data
+            Vx::Data::Container
+            Vx::Data::Image
+            Vx::Data::Null
+            Vx::Data::Sound
+            Vx::Datastore
+            Vx::Datastore::Builder
+            Vx::Datastore::Cache
+            Vx::Data::Text
+            Vx::Event
+            Vx::Facade
+            Vx::Fulfillment
+            Vx::Fulfillment::Type
+            Vx::Function
+            Vx::Globals
+            Vx::Image
+            Vx::Image::Manipulation
+            Vx::Image::Manipulation::Container
+            Vx::Image::Manipulation::Crop
+            Vx::Image::Manipulation::Handler
+            Vx::Image::Manipulation::Rotate
+            Vx::Image::PrintArea::Container
+            Vx::Image::PrintArea::Crop
+            Vx::Image::PrintArea::Element
+            Vx::Image::Rendering
+            Vx::Image::Util
+            Vx::Init::Fotango
+            Vx::Init::Fotango::Canon
+            Vx::Init::Fotango::Canon::UK
+            Vx::Interface::Cloneable
+            Vx::Interface::Container
+            Vx::Interface::Filter
+            Vx::Interface::Publish
+            Vx::Interface::Singleton
+            Vx::Manipulation
+            Vx::Manipulation::Container
+            Vx::Metadata
+            Vx::ObjectTree
+            Vx::PathWalker
+            Vx::Person
+            Vx::Person::Contact
+            Vx::Person::User
+            Vx::Product
+            Vx::Product::Container
+            Vx::Product::Element
+            Vx::Product::Type
+            Vx::Profile
+            Vx::Profile::Function
+            Vx::Profile::Object
+            Vx::Profile::Right
+            Vx::Publication
+            Vx::Purchase
+            Vx::Purchase::Container
+            Vx::Purchase::Element
+            Vx::Purchase::Event
+            Vx::Service::Account
+            Vx::Service::Admin
+            Vx::Service::DVD
+            Vx::Service::Fulfillment
+            Vx::Service::Purchase
+            Vx::Service::Share
+            Vx::Service::Storage
+            Vx::Share
+            Vx::Share::Event
+            Vx::Share::Received
+            Vx::Share::Sent
+            Vx::SOAP
+            Vx::SOAP::Daemon
+            Vx::SOAP::DataFilter
+            Vx::SOAP::DataStore
+            Vx::SOAP::Dispatcher
+            Vx::SOAP::Session
+            Vx::Sound
+            Vx::Sound::Manipulation
+            Vx::Sound::Manipulation::Container
+            Vx::Transaction::Container
+            Vx::Transaction::Element
+            Vx::Transaction::Processor
+            Vx::Transaction::Processor::CC
+            Vx::Transaction::Processor::CC::Datacash
+            Vx::Transaction::Processor::Configurator
+            Vx::Transaction::Processor::Configurator::Datacash
+            Vx::Transaction::Processor::Null
+            Vx::Upload::Event
+            Vx::View
+            Vx::View::Container
+            Vx::View::Image
+            Vx::View::Manager
+            Vx::View::Sound
+        )]
+    }, 
+
     'PerlHP' => {
         name => 'PerlHP', 
         url => 'http://wakaba.c3.cx/perlhp/', 
@@ -1009,7 +1127,7 @@ sub is_3rd_party {
 =item B<module_information()>
 
 Returns the information about a known third-party Perl Module or C<undef> 
-if the module is not known. The information is returnd as a hashref with 
+if the module is not known. The information is returned as a hashref with 
 the following keys: 
 
 =over 4
@@ -1132,6 +1250,10 @@ I<Directi Perl API> - L<http://manage.directi.com/kb/servlet/KBServlet/faq685.ht
 =item *
 
 Fidelia I<NetVigil> - L<http://www.fidelia.com/products/>
+
+=item *
+
+Fotango I<Vxw> - L<http://opensource.fotango.com/software/vx/>
 
 =item *
 
