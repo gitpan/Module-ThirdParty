@@ -3,7 +3,7 @@ use strict;
 require Exporter;
 
 { no strict;
-  $VERSION = '0.13';
+  $VERSION = '0.14';
   @ISA = (Exporter);
   @EXPORT = qw(is_3rd_party module_information);
 }
@@ -14,7 +14,7 @@ Module::ThirdParty - Provide information for 3rd party modules (outside CPAN)
 
 =head1 VERSION
 
-Version 0.13
+Version 0.14
 
 =head1 SYNOPSIS
 
@@ -57,7 +57,7 @@ third-party modules. This module tries to address this need by providing
 such a list. 
 
 Why bother in the first place? Because some CPAN modules 
-specify such third-party softwares. Therefore installing them may not 
+specify such third-party software. Therefore installing them may not 
 be as easy as other CPAN modules because one must first find and 
 manually install the prerequisites. The aim of C<Module::ThirdParty> 
 is to provide basic information to installer shells like C<CPANPLUS> 
@@ -307,6 +307,34 @@ my %softwares = (
         )]
     }, 
 
+    'VCP' => {
+        name => 'Version CoPy (VCP)', 
+        url => 'http://search.cpan.org/dist/VCP-autrijus-snapshot/', 
+        author => 'Perforce', 
+        author_url => 'http://www.perforce.com/', 
+        modules => [qw(
+            RevML::Doctype
+            RevML::Writer
+            VCP
+            VCP::DB
+            VCP::Logger
+            VCP::Plugin
+            VCP::Source
+            VCP::UI
+            VCP::Utils
+        )]
+    }, 
+
+    'P4' => {
+        name => 'Perforce', 
+        url => 'http://public.perforce.com/guest/tony_smith/perforce/API/Perl/index.html', 
+        author => 'Perforce', 
+        author_url => 'http://www.perforce.com/', 
+        modules => [qw(
+            P4
+        )]
+    }, 
+
     'RT' => {
         name => 'Request Tracker', 
         url => 'http://bestpractical.com/rt/', 
@@ -405,31 +433,256 @@ my %softwares = (
         )]
     }, 
 
-    'VCP' => {
-        name => 'Version CoPy (VCP)', 
-        url => 'http://search.cpan.org/dist/VCP-autrijus-snapshot/', 
-        author => 'Autrijus Tang', 
-        author_url => 'http://www.autrijus.org/', 
+    'OTRS' => {
+        name => 'Open Ticket Request System', 
+        url => 'http://otrs.org/', 
+        author => 'OTRS Team', 
+        author_url => 'http://otrs.org/', 
         modules => [qw(
-            RevML::Doctype
-            RevML::Writer
-            VCP
-            VCP::DB
-            VCP::Logger
-            VCP::Plugin
-            VCP::Source
-            VCP::UI
-            VCP::Utils
-        )]
-    }, 
-
-    'P4' => {
-        name => 'Perforce', 
-        url => 'http://public.perforce.com/guest/tony_smith/perforce/API/Perl/index.html', 
-        author => 'Perforce', 
-        author_url => 'http://www.perforce.com/', 
-        modules => [qw(
-            P4
+            Kernel::Config
+            Kernel::Config::Defaults
+            Kernel::Language
+            Kernel::Language::bb
+            Kernel::Language::bg
+            Kernel::Language::cz
+            Kernel::Language::de
+            Kernel::Language::en
+            Kernel::Language::es
+            Kernel::Language::fi
+            Kernel::Language::fr
+            Kernel::Language::hu
+            Kernel::Language::it
+            Kernel::Language::nb_NO
+            Kernel::Language::nl
+            Kernel::Language::pl
+            Kernel::Language::pt
+            Kernel::Language::pt_BR
+            Kernel::Language::ru
+            Kernel::Language::sv
+            Kernel::Language::xx_AgentZoom
+            Kernel::Language::xx_Custom
+            Kernel::Language::zh_CN
+            Kernel::Modules::Admin
+            Kernel::Modules::AdminAttachment
+            Kernel::Modules::AdminAutoResponse
+            Kernel::Modules::AdminCustomerUser
+            Kernel::Modules::AdminCustomerUserGroup
+            Kernel::Modules::AdminEmail
+            Kernel::Modules::AdminGenericAgent
+            Kernel::Modules::AdminGroup
+            Kernel::Modules::AdminLog
+            Kernel::Modules::AdminNotification
+            Kernel::Modules::AdminPackageManager
+            Kernel::Modules::AdminPGP
+            Kernel::Modules::AdminPOP3
+            Kernel::Modules::AdminPostMasterFilter
+            Kernel::Modules::AdminQueue
+            Kernel::Modules::AdminQueueAutoResponse
+            Kernel::Modules::AdminQueueResponses
+            Kernel::Modules::AdminResponse
+            Kernel::Modules::AdminResponseAttachment
+            Kernel::Modules::AdminRole
+            Kernel::Modules::AdminRoleGroup
+            Kernel::Modules::AdminRoleUser
+            Kernel::Modules::AdminSalutation
+            Kernel::Modules::AdminSelectBox
+            Kernel::Modules::AdminSession
+            Kernel::Modules::AdminSignature
+            Kernel::Modules::AdminSMIME
+            Kernel::Modules::AdminState
+            Kernel::Modules::AdminSysConfig
+            Kernel::Modules::AdminSystemAddress
+            Kernel::Modules::AdminUser
+            Kernel::Modules::AdminUserGroup
+            Kernel::Modules::AgentBook
+            Kernel::Modules::AgentCalendarSmall
+            Kernel::Modules::AgentInfo
+            Kernel::Modules::AgentLinkObject
+            Kernel::Modules::AgentLookup
+            Kernel::Modules::AgentPreferences
+            Kernel::Modules::AgentSpelling
+            Kernel::Modules::AgentTicketAttachment
+            Kernel::Modules::AgentTicketBounce
+            Kernel::Modules::AgentTicketBulk
+            Kernel::Modules::AgentTicketClose
+            Kernel::Modules::AgentTicketCompose
+            Kernel::Modules::AgentTicketCustomer
+            Kernel::Modules::AgentTicketCustomerFollowUp
+            Kernel::Modules::AgentTicketEmail
+            Kernel::Modules::AgentTicketForward
+            Kernel::Modules::AgentTicketFreeText
+            Kernel::Modules::AgentTicketHistory
+            Kernel::Modules::AgentTicketLock
+            Kernel::Modules::AgentTicketMailbox
+            Kernel::Modules::AgentTicketMerge
+            Kernel::Modules::AgentTicketMove
+            Kernel::Modules::AgentTicketNote
+            Kernel::Modules::AgentTicketOwner
+            Kernel::Modules::AgentTicketPending
+            Kernel::Modules::AgentTicketPhone
+            Kernel::Modules::AgentTicketPlain
+            Kernel::Modules::AgentTicketPrint
+            Kernel::Modules::AgentTicketPriority
+            Kernel::Modules::AgentTicketQueue
+            Kernel::Modules::AgentTicketSearch
+            Kernel::Modules::AgentTicketStatusView
+            Kernel::Modules::AgentTicketZoom
+            Kernel::Modules::AgentZoom
+            Kernel::Modules::CustomerAccept
+            Kernel::Modules::CustomerCalendarSmall
+            Kernel::Modules::CustomerFAQ
+            Kernel::Modules::CustomerPreferences
+            Kernel::Modules::CustomerTicketAttachment
+            Kernel::Modules::CustomerTicketMessage
+            Kernel::Modules::CustomerTicketOverView
+            Kernel::Modules::CustomerTicketSearch
+            Kernel::Modules::CustomerTicketZoom
+            Kernel::Modules::CustomerZoom
+            Kernel::Modules::FAQ
+            Kernel::Modules::FAQCategory
+            Kernel::Modules::FAQLanguage
+            Kernel::Modules::Installer
+            Kernel::Modules::PublicFAQ
+            Kernel::Modules::SystemStats
+            Kernel::Modules::SystemStatsGeneric
+            Kernel::Modules::Test
+            Kernel::Output::HTML::Agent
+            Kernel::Output::HTML::ArticleAttachmentDownload
+            Kernel::Output::HTML::ArticleAttachmentHTMLViewer
+            Kernel::Output::HTML::ArticleCheckPGP
+            Kernel::Output::HTML::ArticleCheckSMIME
+            Kernel::Output::HTML::ArticleComposeCrypt
+            Kernel::Output::HTML::ArticleComposeSign
+            Kernel::Output::HTML::Customer
+            Kernel::Output::HTML::CustomerNewTicketQueueSelectionGeneric
+            Kernel::Output::HTML::Generic
+            Kernel::Output::HTML::NavBarLockedTickets
+            Kernel::Output::HTML::NavBarModuleAdmin
+            Kernel::Output::HTML::NavBarTicketBulkAction
+            Kernel::Output::HTML::NotificationAgentOnline
+            Kernel::Output::HTML::NotificationAgentTicket
+            Kernel::Output::HTML::NotificationAgentTicketSeen
+            Kernel::Output::HTML::NotificationCharsetCheck
+            Kernel::Output::HTML::NotificationCustomerOnline
+            Kernel::Output::HTML::NotificationUIDCheck
+            Kernel::Output::HTML::OutputFilterActiveElement
+            Kernel::Output::HTML::PreferencesCustomQueue
+            Kernel::Output::HTML::PreferencesGeneric
+            Kernel::Output::HTML::PreferencesLanguage
+            Kernel::Output::HTML::PreferencesPassword
+            Kernel::Output::HTML::PreferencesPGP
+            Kernel::Output::HTML::PreferencesSMIME
+            Kernel::Output::HTML::PreferencesTheme
+            Kernel::Output::HTML::TicketMenuGeneric
+            Kernel::Output::HTML::TicketMenuLock
+            Kernel::System::Auth
+            Kernel::System::Auth::DB
+            Kernel::System::Auth::HTTPBasicAuth
+            Kernel::System::Auth::LDAP
+            Kernel::System::Auth::Radius
+            Kernel::System::AuthSession
+            Kernel::System::AuthSession::DB
+            Kernel::System::AuthSession::FS
+            Kernel::System::AuthSession::IPC
+            Kernel::System::AutoResponse
+            Kernel::System::CheckItem
+            Kernel::System::Config
+            Kernel::System::Crypt
+            Kernel::System::Crypt::PGP
+            Kernel::System::Crypt::SMIME
+            Kernel::System::CustomerAuth
+            Kernel::System::CustomerAuth::DB
+            Kernel::System::CustomerAuth::HTTPBasicAuth
+            Kernel::System::CustomerAuth::LDAP
+            Kernel::System::CustomerAuth::Radius
+            Kernel::System::CustomerGroup
+            Kernel::System::CustomerUser
+            Kernel::System::CustomerUser::DB
+            Kernel::System::CustomerUser::LDAP
+            Kernel::System::CustomerUser::Preferences::DB
+            Kernel::System::DB
+            Kernel::System::DB::db2
+            Kernel::System::DB::maxdb
+            Kernel::System::DB::mysql
+            Kernel::System::DB::oracle
+            Kernel::System::DB::postgresql
+            Kernel::System::Email
+            Kernel::System::EmailParser
+            Kernel::System::Email::Sendmail
+            Kernel::System::Email::SMTP
+            Kernel::System::Encode
+            Kernel::System::FAQ
+            Kernel::System::FileTemp
+            Kernel::System::GenericAgent
+            Kernel::System::GenericAgent::AutoPriorityIncrease
+            Kernel::System::GenericAgent::NotifyAgentGroupOfCustomQueue
+            Kernel::System::Group
+            Kernel::System::LinkObject
+            Kernel::System::LinkObject::FAQ
+            Kernel::System::LinkObject::Ticket
+            Kernel::System::Lock
+            Kernel::System::Log
+            Kernel::System::Log::File
+            Kernel::System::Log::SysLog
+            Kernel::System::Main
+            Kernel::System::Notification
+            Kernel::System::Package
+            Kernel::System::Permission
+            Kernel::System::PID
+            Kernel::System::POP3Account
+            Kernel::System::PostMaster
+            Kernel::System::PostMaster::DestQueue
+            Kernel::System::PostMaster::Filter
+            Kernel::System::PostMaster::Filter::AgentInterface
+            Kernel::System::PostMaster::Filter::CMD
+            Kernel::System::PostMaster::Filter::Match
+            Kernel::System::PostMaster::Filter::MatchDBSource
+            Kernel::System::PostMaster::FollowUp
+            Kernel::System::PostMaster::LoopProtection
+            Kernel::System::PostMaster::LoopProtection::DB
+            Kernel::System::PostMaster::LoopProtection::FS
+            Kernel::System::PostMaster::NewTicket
+            Kernel::System::PostMaster::Reject
+            Kernel::System::Priority
+            Kernel::System::Queue
+            Kernel::System::SearchProfile
+            Kernel::System::Spelling
+            Kernel::System::State
+            Kernel::System::Stats::AccountedTime
+            Kernel::System::Stats::NewTickets
+            Kernel::System::Stats::StateAction
+            Kernel::System::Stats::TicketOverview
+            Kernel::System::StdAttachment
+            Kernel::System::StdResponse
+            Kernel::System::SystemAddress
+            Kernel::System::Ticket
+            Kernel::System::Ticket::Article
+            Kernel::System::Ticket::ArticleStorageDB
+            Kernel::System::Ticket::ArticleStorageFS
+            Kernel::System::Ticket::CustomerPermission::CustomerIDCheck
+            Kernel::System::Ticket::CustomerPermission::CustomerUserIDCheck
+            Kernel::System::Ticket::CustomerPermission::GroupCheck
+            Kernel::System::Ticket::Event::Test
+            Kernel::System::Ticket::IndexAccelerator::RuntimeDB
+            Kernel::System::Ticket::IndexAccelerator::StaticDB
+            Kernel::System::Ticket::Number::AutoIncrement
+            Kernel::System::Ticket::Number::Date
+            Kernel::System::Ticket::Number::DateChecksum
+            Kernel::System::Ticket::Number::Random
+            Kernel::System::Ticket::Permission::GroupCheck
+            Kernel::System::Ticket::Permission::OwnerCheck
+            Kernel::System::Time
+            Kernel::System::User
+            Kernel::System::User::Preferences::DB
+            Kernel::System::Web::InterfaceAgent
+            Kernel::System::Web::InterfaceCustomer
+            Kernel::System::Web::InterfacePublic
+            Kernel::System::Web::Request
+            Kernel::System::Web::UploadCache
+            Kernel::System::Web::UploadCache::DB
+            Kernel::System::Web::UploadCache::FS
+            Kernel::System::XML
+            Kernel::System::XMLMaster
         )]
     }, 
 
@@ -451,6 +704,35 @@ my %softwares = (
         modules => [qw(
             PerlObjCBridge
             Foundation
+        )]
+    }, 
+
+    'NoCat' => {
+        name => 'NoCat', 
+        url => 'http://nocat.net/', 
+        author => 'Schuyler Erle & Robert Flickenger', 
+        author_url => 'http://nocat.net/', 
+        modules => [qw(
+            NoCat
+            NoCat::AuthService
+            NoCat::Firewall
+            NoCat::Gateway
+            NoCat::Gateway::Captive
+            NoCat::Gateway::Open
+            NoCat::Gateway::Passive
+            NoCat::Group
+            NoCat::Message
+            NoCat::Peer
+            NoCat::Source
+            NoCat::Source::DBI
+            NoCat::Source::IMAP
+            NoCat::Source::LDAP
+            NoCat::Source::NIS
+            NoCat::Source::PAM
+            NoCat::Source::Passwd
+            NoCat::Source::RADIUS
+            NoCat::Source::Samba
+            NoCat::User
         )]
     }, 
 
@@ -946,6 +1228,166 @@ my %softwares = (
         )]
     }, 
 
+    'Gedafe' => {
+        name => 'Gedafe', 
+        url => 'http://isg.ee.ethz.ch/tools/gedafe/', 
+        author => 'Tobi Oetiker', 
+        author_url => 'http://people.ee.ethz.ch/~oetiker/', 
+        modules => [qw(
+            Gedafe::Auth
+            Gedafe::DB
+            Gedafe::Global
+            Gedafe::GUI
+            Gedafe::Pearl
+            Gedafe::Start
+            Gedafe::Util
+        )]
+    }, 
+
+    'Gossips' => {
+        name => 'Gossips', 
+        url => 'http://isg.ee.ethz.ch/tools/gossips/', 
+        author => "ETH/DEE IT & Support Group", 
+        author_url => 'http://www.ee.ethz.ch/', 
+        modules => [qw(
+            Authen::Challenge
+            Base_Prototype
+            Error_File
+            Gossips_Config
+            GossipsError
+            Gossips_HTML
+            History
+            ISG::ParseConfig
+            Logger
+            Message
+            Message_Handler
+            Message_Mail
+            Message_Server
+            Parser
+            Probe_CPUTemp
+            Probe_DiskS
+            Probe_FileSize
+            Probe_Ftp
+            Probe_Load
+            Probe_Logfile
+            Probe_Message_Pool
+            Probe_MultiPing
+            Probe_Ping
+            Probe_Prototype
+            Probe_Server
+            Scheduler
+            Test_CPUTemp
+            Test_DiskGraph
+            Test_DiskS
+            Test_Ftp
+            Test_Ftp_Ping
+            Test_LinkUp
+            Test_Load
+            Test_Logfile
+            Test_MailGraph
+            Test_MailWatcher
+            Test_Ping
+            Test_Prototype
+            Test_Server
+
+        )]
+    }, 
+
+    'TeTre2' => {
+        name => 'Template Tree II', 
+        url => 'http://isg.ee.ethz.ch/tools/tetre2/', 
+        author => 'Tobi Oetiker', 
+        author_url => 'http://people.ee.ethz.ch/~oetiker/', 
+        modules => [qw(
+            ISG::HostList
+            ISG::TeTre2
+        )]
+    }, 
+
+    'RRDTool' => {
+        name => 'RRDTool', 
+        url => 'http://people.ee.ethz.ch/~oetiker/webtools/rrdtool/', 
+        author => 'Tobi Oetiker', 
+        author_url => 'http://people.ee.ethz.ch/~oetiker/', 
+        modules => [qw(
+            RRDp
+            RRDs
+        )]
+    }, 
+
+    'MRTG' => {
+        name => 'MRTG', 
+        url => 'http://people.ee.ethz.ch/~oetiker/webtools/mrtg/', 
+        author => 'Tobi Oetiker', 
+        author_url => 'http://people.ee.ethz.ch/~oetiker/', 
+        modules => [qw(
+            locales_mrtg
+            MRTG_lib
+        )]
+    }, 
+
+    'SmokePing' => {
+        name => 'SmokePing', 
+        url => 'http://people.ee.ethz.ch/~oetiker/webtools/smokeping/', 
+        author => 'Tobi Oetiker', 
+        author_url => 'http://people.ee.ethz.ch/~oetiker/', 
+        modules => [qw(
+            BER
+            Config::Grammar
+            Smokeping
+            Smokeping::ciscoRttMonMIB
+            Smokeping::Examples
+            Smokeping::matchers::Avgratio
+            Smokeping::matchers::base
+            Smokeping::matchers::Median
+            Smokeping::probes::AnotherDNS
+            Smokeping::probes::AnotherSSH
+            Smokeping::probes::base
+            Smokeping::probes::basefork
+            Smokeping::probes::basevars
+            Smokeping::probes::CiscoRTTMonDNS
+            Smokeping::probes::CiscoRTTMonEchoICMP
+            Smokeping::probes::CiscoRTTMonTcpConnect
+            Smokeping::probes::Curl
+            Smokeping::probes::DNS
+            Smokeping::probes::EchoPing
+            Smokeping::probes::EchoPingChargen
+            Smokeping::probes::EchoPingDiscard
+            Smokeping::probes::EchoPingHttp
+            Smokeping::probes::EchoPingHttps
+            Smokeping::probes::EchoPingIcp
+            Smokeping::probes::EchoPingSmtp
+            Smokeping::probes::FPing
+            Smokeping::probes::FPing6
+            Smokeping::probes::IOSPing
+            Smokeping::probes::LDAP
+            Smokeping::probes::passwordchecker
+            Smokeping::probes::Radius
+            Smokeping::probes::RemoteFPing
+            Smokeping::probes::skel
+            Smokeping::probes::SSH
+            Smokeping::probes::TelnetIOSPing
+            Smokeping::RRDtools
+            SNMP_Session
+            SNMP_util
+        )]
+    }, 
+
+    'RealMen' => {
+        name => "Real Men Don't Click", 
+        url => 'http://isg.ee.ethz.ch/tools/realmen/', 
+        author => "ETH/DEE IT & Support Group", 
+        author_url => 'http://www.ee.ethz.ch/', 
+        modules => [qw(
+            ISG::ParseConfig
+            ISG::Util
+            ISG::Win32::ActiveDirectory
+            ISG::Win32::BootConfig
+            ISG::Win32::Config
+            ISG::Win32::Util
+        )]
+    }, 
+
     'RothWin32' => {
         name => "Roth Consulting's Perl Contributions", 
         url => 'http://www.roth.net/perl/', 
@@ -1217,10 +1659,6 @@ Apple I<Perl/Objective-C bridge> - L<http://developer.apple.com/>
 
 =item *
 
-Autrijus Tang I<Version CoPy (VCP)> - L<http://search.cpan.org/dist/VCP-autrijus-snapshot/>
-
-=item *
-
 Best Practical I<Request Tracker> - L<http://bestpractical.com/rt/>
 
 =item *
@@ -1249,11 +1687,19 @@ I<Directi Perl API> - L<http://manage.directi.com/kb/servlet/KBServlet/faq685.ht
 
 =item *
 
+ETH/DEE IT & Support Group I<Gossips> - L<http://isg.ee.ethz.ch/tools/gossips/>
+
+=item *
+
+ETH/DEE IT & Support Group I<Real Men Don't Click> - L<http://isg.ee.ethz.ch/tools/realmen/>
+
+=item *
+
 Fidelia I<NetVigil> - L<http://www.fidelia.com/products/>
 
 =item *
 
-Fotango I<Vxw> - L<http://opensource.fotango.com/software/vx/>
+Fotango I<Vx> - L<http://opensource.fotango.com/software/vx/>
 
 =item *
 
@@ -1297,11 +1743,19 @@ I<OpenECHO> - L<http://www.openecho.com/index.php?ba=downloads>
 
 =item *
 
+OTRS Team I<Open Ticket Request System> - L<http://otrs.org/>
+
+=item *
+
 Paradata Systems I<OpenConnect> - L<http://www.paradata.com/tech/>
 
 =item *
 
 I<Perforce> - L<http://public.perforce.com/guest/tony_smith/perforce/API/Perl/index.html>
+
+=item *
+
+Perforce I<Version CoPy (VCP)> - L<http://search.cpan.org/dist/VCP-autrijus-snapshot/>
 
 =item *
 
@@ -1321,6 +1775,10 @@ I<Roth Consulting's Perl Contributions> - L<http://www.roth.net/perl/>
 
 =item *
 
+Schuyler Erle & Robert Flickenger I<NoCat> - L<http://nocat.net/>
+
+=item *
+
 Six Apart I<Movable Type> - L<http://www.sixapart.com/movabletype/>
 
 =item *
@@ -1330,6 +1788,26 @@ I<Subversion> - L<http://subversion.tigris.org/>
 =item *
 
 I<Swish-e> - L<http://www.swish-e.org/>
+
+=item *
+
+Tobi Oetiker I<Gedafe> - L<http://isg.ee.ethz.ch/tools/gedafe/>
+
+=item *
+
+Tobi Oetiker I<MRTG> - L<http://people.ee.ethz.ch/~oetiker/webtools/mrtg/>
+
+=item *
+
+Tobi Oetiker I<RRDTool> - L<http://people.ee.ethz.ch/~oetiker/webtools/rrdtool/>
+
+=item *
+
+Tobi Oetiker I<SmokePing> - L<http://people.ee.ethz.ch/~oetiker/webtools/smokeping/>
+
+=item *
+
+Tobi Oetiker I<Template Tree II> - L<http://isg.ee.ethz.ch/tools/tetre2/>
 
 =item *
 
