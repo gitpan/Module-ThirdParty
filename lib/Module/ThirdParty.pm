@@ -3,7 +3,7 @@ use strict;
 require Exporter;
 
 { no strict;
-  $VERSION = '0.14';
+  $VERSION = '0.15';
   @ISA = (Exporter);
   @EXPORT = qw(is_3rd_party module_information);
 }
@@ -14,7 +14,7 @@ Module::ThirdParty - Provide information for 3rd party modules (outside CPAN)
 
 =head1 VERSION
 
-Version 0.14
+Version 0.15
 
 =head1 SYNOPSIS
 
@@ -1084,6 +1084,57 @@ my %softwares = (
         )]
     }, 
 
+    'Webmin' => {
+        name => 'Webmin', 
+        url => 'http://webmin.com/', 
+        author => 'Jamie Cameron', 
+        author_url => 'http://webmin.com/', 
+        modules => [qw(
+            Authen::SolarisRBAC
+            Webmin::Button
+            Webmin::Checkbox
+            Webmin::Checkboxes
+            Webmin::Columns
+            Webmin::ConfirmPage
+            Webmin::Date
+            Webmin::DynamicBar
+            Webmin::DynamicHTML
+            Webmin::DynamicText
+            Webmin::DynamicWait
+            Webmin::ErrorPage
+            Webmin::File
+            Webmin::Form
+            Webmin::Group
+            Webmin::Icon
+            Webmin::Input
+            Webmin::InputTable
+            Webmin::JavascriptButton
+            Webmin::LinkTable
+            Webmin::Menu
+            Webmin::Multiline
+            Webmin::OptTextarea
+            Webmin::OptTextbox
+            Webmin::Page
+            Webmin::Password
+            Webmin::PlainText
+            Webmin::Properties
+            Webmin::Radios
+            Webmin::ResultPage
+            Webmin::Section
+            Webmin::Select
+            Webmin::Submit
+            Webmin::Table
+            Webmin::TableAction
+            Webmin::Tabs
+            Webmin::Textarea
+            Webmin::Textbox
+            Webmin::Time
+            Webmin::TitleList
+            Webmin::Upload
+            Webmin::User
+        )]
+    }, 
+
     'PerlHP' => {
         name => 'PerlHP', 
         url => 'http://wakaba.c3.cx/perlhp/', 
@@ -1154,6 +1205,413 @@ my %softwares = (
         )]
     }, 
 
+    'AsteriskPerl' => {
+        name => 'Asterisk-Perl', 
+        url => 'http://asterisk.gnuinter.net/', 
+        author => 'James Golovich', 
+        author_url => 'http://asterisk.gnuinter.net/', 
+        modules => [qw(
+            Asterisk
+            Asterisk::AGI
+            Asterisk::Manager
+            Asterisk::Outgoing
+            Asterisk::QCall
+            Asterisk::Voicemail
+        )]
+    }, 
+
+    'Metasploit' => {
+        name => 'Metasploit Framework', 
+        url => 'http://metasploit.com/projects/Framework/', 
+        author => 'Metasploit', 
+        author_url => 'http://metasploit.com/', 
+        modules => [qw(
+            Msf::Base
+            Msf::ColPrint
+            Msf::Config
+            Msf::EncodedPayload
+            Msf::Encoder
+            Msf::Encoder::Alpha2
+            Msf::Encoder::Countdown
+            Msf::Encoder::JmpCallAdditive
+            Msf::Encoder::None
+            Msf::Encoder::OSXPPCLongXOR
+            Msf::Encoder::OSXPPCLongXORTag
+            Msf::Encoder::Pex
+            Msf::Encoder::PexAlphaNum
+            Msf::Encoder::PexFnstenvMov
+            Msf::Encoder::PexFnstenvSub
+            Msf::Encoder::QuackQuack
+            Msf::Encoder::ShikataGaNai
+            Msf::Encoder::SkyAlphaNum
+            Msf::Encoder::Sparc
+            Msf::Encoder::_Sparc
+            Msf::Encoder::Sparc::CheckEncoder
+            Msf::Encoder::XorDword
+            Msf::Exploit
+            Msf::Exploit::3com_3cdaemon_ftp_overflow
+            Msf::Exploit::afp_loginext
+            Msf::Exploit::aim_goaway
+            Msf::Exploit::altn_webadmin
+            Msf::Exploit::apache_chunked_win32
+            Msf::Exploit::arkeia_agent_access
+            Msf::Exploit::arkeia_type77_macos
+            Msf::Exploit::arkeia_type77_win32
+            Msf::Exploit::awstats_configdir_exec
+            Msf::Exploit::backupexec_agent
+            Msf::Exploit::backupexec_dump
+            Msf::Exploit::backupexec_ns
+            Msf::Exploit::backupexec_registry
+            Msf::Exploit::badblue_ext_overflow
+            Msf::Exploit::bakbone_netvault_heap
+            Msf::Exploit::barracuda_img_exec
+            Msf::Exploit::blackice_pam_icq
+            Msf::Exploit::cabrightstor_disco
+            Msf::Exploit::cabrightstor_disco_servicepc
+            Msf::Exploit::cabrightstor_sqlagent
+            Msf::Exploit::cabrightstor_uniagent
+            Msf::Exploit::cacam_logsecurity_win32
+            Msf::Exploit::cacti_graphimage_exec
+            Msf::Exploit::calicclnt_getconfig
+            Msf::Exploit::calicserv_getconfig
+            Msf::Exploit::Credits
+            Msf::Exploit::distcc_exec
+            Msf::Exploit::edirectory_imonitor
+            Msf::Exploit::exchange2000_xexch50
+            Msf::Exploit::freeftpd_user
+            Msf::Exploit::futuresoft_tftpd
+            Msf::Exploit::globalscapeftp_user_input
+            Msf::Exploit::gnu_mailutils_imap4d
+            Msf::Exploit::google_proxystylesheet_exec
+            Msf::Exploit::hpux_ftpd_preauth_list
+            Msf::Exploit::hpux_lpd_exec
+            Msf::Exploit::ia_webmail
+            Msf::Exploit::icecast_header
+            Msf::Exploit::ie_objecttype
+            Msf::Exploit::ie_xp_pfv_metafile
+            Msf::Exploit::iis40_htr
+            Msf::Exploit::iis50_printer_overflow
+            Msf::Exploit::iis50_webdav_ntdll
+            Msf::Exploit::iis_fp30reg_chunked
+            Msf::Exploit::iis_nsiislog_post
+            Msf::Exploit::iis_source_dumper
+            Msf::Exploit::iis_w3who_overflow
+            Msf::Exploit::imail_imap_delete
+            Msf::Exploit::imail_ldap
+            Msf::Exploit::irix_lpsched_exec
+            Msf::Exploit::lsass_ms04_011
+            Msf::Exploit::lyris_attachment_mssql
+            Msf::Exploit::mailenable_auth_header
+            Msf::Exploit::mailenable_imap
+            Msf::Exploit::mailenable_imap_w3c
+            Msf::Exploit::maxdb_webdbm_get_overflow
+            Msf::Exploit::mdaemon_imap_cram_md5
+            Msf::Exploit::mercantec_softcart
+            Msf::Exploit::mercury_imap
+            Msf::Exploit::minishare_get_overflow
+            Msf::Exploit::mozilla_compareto
+            Msf::Exploit::ms05_039_pnp
+            Msf::Exploit::msasn1_ms04_007_killbill
+            Msf::Exploit::msmq_deleteobject_ms05_017
+            Msf::Exploit::msrpc_dcom_ms03_026
+            Msf::Exploit::mssql2000_preauthentication
+            Msf::Exploit::mssql2000_resolution
+            Msf::Exploit::netterm_netftpd_user_overflow
+            Msf::Exploit::openview_connectednodes_exec
+            Msf::Exploit::openview_omniback
+            Msf::Exploit::oracle9i_xdb_ftp
+            Msf::Exploit::oracle9i_xdb_ftp_pass
+            Msf::Exploit::oracle9i_xdb_http
+            Msf::Exploit::payload_handler
+            Msf::Exploit::phpbb_highlight
+            Msf::Exploit::php_vbulletin_template
+            Msf::Exploit::php_wordpress_lastpost
+            Msf::Exploit::php_xmlrpc_eval
+            Msf::Exploit::poptop_negative_read
+            Msf::Exploit::realserver_describe_linux
+            Msf::Exploit::rsa_iiswebagent_redirect
+            Msf::Exploit::samba_nttrans
+            Msf::Exploit::sambar6_search_results
+            Msf::Exploit::samba_trans2open
+            Msf::Exploit::samba_trans2open_osx
+            Msf::Exploit::samba_trans2open_solsparc
+            Msf::Exploit::seattlelab_mail_55
+            Msf::Exploit::sentinel_lm7_overflow
+            Msf::Exploit::servu_mdtm_overflow
+            Msf::Exploit::shoutcast_format_win32
+            Msf::Exploit::slimftpd_list_concat
+            Msf::Exploit::smb_sniffer
+            Msf::Exploit::solaris_dtspcd_noir
+            Msf::Exploit::solaris_kcms_readfile
+            Msf::Exploit::solaris_lpd_exec
+            Msf::Exploit::solaris_lpd_unlink
+            Msf::Exploit::solaris_sadmind_exec
+            Msf::Exploit::solaris_snmpxdmid
+            Msf::Exploit::solaris_ttyprompt
+            Msf::Exploit::squid_ntlm_authenticate
+            Msf::Exploit::svnserve_date
+            Msf::Exploit::Tester
+            Msf::Exploit::trackercam_phparg_overflow
+            Msf::Exploit::uow_imap4_copy
+            Msf::Exploit::uow_imap4_lsub
+            Msf::Exploit::ut2004_secure_linux
+            Msf::Exploit::ut2004_secure_win32
+            Msf::Exploit::vuln1_1
+            Msf::Exploit::vuln1_2
+            Msf::Exploit::vuln1_3
+            Msf::Exploit::vuln1_osx
+            Msf::Exploit::warftpd_165_pass
+            Msf::Exploit::warftpd_165_user
+            Msf::Exploit::webstar_ftp_user
+            Msf::Exploit::windows_ssl_pct
+            Msf::Exploit::wins_ms04_045
+            Msf::Exploit::wsftp_server_503_mkd
+            Msf::Exploit::zenworks_desktop_agent
+            Msf::Logging
+            Msf::Logo
+            Msf::Module
+            Msf::Nop
+            Msf::Nop::Alpha
+            Msf::Nop::MIPS
+            Msf::Nop::Opty2
+            Msf::Nop::OptyNop2
+            Msf::Nop::OptyNop2Tables
+            Msf::Nop::Pex
+            Msf::Nop::PPC
+            Msf::Nop::SPARC
+            Msf::Payload
+            Msf::Payload::bsd_ia32_bind
+            Msf::Payload::bsd_ia32_bind_ie
+            Msf::Payload::bsd_ia32_bind_stg
+            Msf::Payload::bsd_ia32_exec
+            Msf::Payload::bsd_ia32_findrecv
+            Msf::Payload::bsd_ia32_findrecv_stg
+            Msf::Payload::bsd_ia32_findsock
+            Msf::Payload::bsd_ia32_reverse
+            Msf::Payload::bsd_ia32_reverse_ie
+            Msf::Payload::bsd_ia32_reverse_stg
+            Msf::Payload::bsdi_ia32_bind
+            Msf::Payload::bsdi_ia32_bind_stg
+            Msf::Payload::bsdi_ia32_findsock
+            Msf::Payload::bsdi_ia32_reverse
+            Msf::Payload::bsdi_ia32_reverse_stg
+            Msf::Payload::bsd_sparc_bind
+            Msf::Payload::bsd_sparc_reverse
+            Msf::Payload::cmd_generic
+            Msf::Payload::cmd_interact
+            Msf::Payload::cmd_irix_bind
+            Msf::Payload::cmd_localshell
+            Msf::Payload::cmd_sol_bind
+            Msf::Payload::cmd_unix_reverse
+            Msf::Payload::cmd_unix_reverse_bash
+            Msf::Payload::cmd_unix_reverse_nss
+            Msf::PayloadComponent::BindConnection
+            Msf::PayloadComponent::BSD::BindStager
+            Msf::PayloadComponent::BSD::FindRecvStager
+            Msf::PayloadComponent::BSD::ia32::BindStager
+            Msf::PayloadComponent::BSD::ia32::FindRecvStager
+            Msf::PayloadComponent::BSD::ia32::ReverseStager
+            Msf::PayloadComponent::BSD::ia32::ShellStage
+            Msf::PayloadComponent::BSDi::BindStager
+            Msf::PayloadComponent::BSDi::FindRecvStager
+            Msf::PayloadComponent::BSDi::ia32::BindStager
+            Msf::PayloadComponent::BSDi::ia32::ReverseStager
+            Msf::PayloadComponent::BSDi::ia32::ShellStage
+            Msf::PayloadComponent::BSDi::Payload
+            Msf::PayloadComponent::BSDi::ReverseStager
+            Msf::PayloadComponent::BSDi::StagePayload
+            Msf::PayloadComponent::BSD::Payload
+            Msf::PayloadComponent::BSD::ReverseStager
+            Msf::PayloadComponent::BSD::StagePayload
+            Msf::PayloadComponent::CommandPayload
+            Msf::PayloadComponent::ConnectionHandler
+            Msf::PayloadComponent::Console
+            Msf::PayloadComponent::DoubleReverseConnection
+            Msf::PayloadComponent::ExternalPayload
+            Msf::PayloadComponent::FindConnection
+            Msf::PayloadComponent::FindLocalShell
+            Msf::PayloadComponent::FindRecvConnection
+            Msf::PayloadComponent::InlineEggPayload
+            Msf::PayloadComponent::Linux::BindStager
+            Msf::PayloadComponent::Linux::FindRecvStager
+            Msf::PayloadComponent::Linux::ia32::BindStager
+            Msf::PayloadComponent::Linux::ia32::FindRecvStager
+            Msf::PayloadComponent::Linux::ia32::ReverseStager
+            Msf::PayloadComponent::Linux::ia32::ShellStage
+            Msf::PayloadComponent::Linux::Payload
+            Msf::PayloadComponent::Linux::ReverseStager
+            Msf::PayloadComponent::Linux::StagePayload
+            Msf::PayloadComponent::NoConnection
+            Msf::PayloadComponent::OSX::BindStager
+            Msf::PayloadComponent::OSX::FindRecvStager
+            Msf::PayloadComponent::OSX::Payload
+            Msf::PayloadComponent::OSX::ppc::BindStager
+            Msf::PayloadComponent::OSX::ppc::FindRecvPeekStager
+            Msf::PayloadComponent::OSX::ppc::FindRecvStager
+            Msf::PayloadComponent::OSX::ppc::ReverseNFStager
+            Msf::PayloadComponent::OSX::ppc::ReverseStager
+            Msf::PayloadComponent::OSX::ppc::ShellStage
+            Msf::PayloadComponent::OSX::ReverseStager
+            Msf::PayloadComponent::OSX::StagePayload
+            Msf::PayloadComponent::PassiveXConnection
+            Msf::PayloadComponent::ReverseConnection
+            Msf::PayloadComponent::SolarisBindStager
+            Msf::PayloadComponent::SolarisFindStager
+            Msf::PayloadComponent::SolarisPayload
+            Msf::PayloadComponent::SolarisReverseStager
+            Msf::PayloadComponent::SolarisShellStage
+            Msf::PayloadComponent::SolarisStagePayload
+            Msf::PayloadComponent::TextConsole
+            Msf::PayloadComponent::WebConsole
+            Msf::PayloadComponent::Windows::BindStager
+            Msf::PayloadComponent::Windows::FindRecvStager
+            Msf::PayloadComponent::Windows::ia32::BindStager
+            Msf::PayloadComponent::Windows::ia32::BindStagerIE
+            Msf::PayloadComponent::Windows::ia32::ExecuteCommand
+            Msf::PayloadComponent::Windows::ia32::FindRecvOrdinalStager
+            Msf::PayloadComponent::Windows::ia32::InjectLibStage
+            Msf::PayloadComponent::Windows::ia32::InjectMeterpreterStage
+            Msf::PayloadComponent::Windows::ia32::InjectVncStage
+            Msf::PayloadComponent::Windows::ia32::PassiveXStager
+            Msf::PayloadComponent::Windows::ia32::PipedShellStage
+            Msf::PayloadComponent::Windows::ia32::ReverseOrdinalStager
+            Msf::PayloadComponent::Windows::ia32::ReverseStager
+            Msf::PayloadComponent::Windows::ia32::ReverseStagerIE
+            Msf::PayloadComponent::Windows::ia32::ShellStage
+            Msf::PayloadComponent::Windows::ia32::UploadExecStage
+            Msf::PayloadComponent::Windows::PassiveXStager
+            Msf::PayloadComponent::Windows::Payload
+            Msf::PayloadComponent::Windows::ReverseStager
+            Msf::PayloadComponent::Windows::StagePayload
+            Msf::PayloadComponent::Windows::StagePayloadIE
+            Msf::Payload::Empty
+            Msf::Payload::generic_sparc_execve
+            Msf::Payload::irix_mips_execve
+            Msf::Payload::linux_ia32_adduser
+            Msf::Payload::linux_ia32_bind
+            Msf::Payload::linux_ia32_bind_ie
+            Msf::Payload::linux_ia32_bind_stg
+            Msf::Payload::linux_ia32_exec
+            Msf::Payload::linux_ia32_findrecv
+            Msf::Payload::linux_ia32_findrecv_stg
+            Msf::Payload::linux_ia32_findsock
+            Msf::Payload::linux_ia32_reverse
+            Msf::Payload::linux_ia32_reverse_ie
+            Msf::Payload::linux_ia32_reverse_impurity
+            Msf::Payload::linux_ia32_reverse_stg
+            Msf::Payload::linux_ia32_reverse_udp
+            Msf::Payload::linux_ia32_reverse_xor
+            Msf::Payload::linux_sparc_bind
+            Msf::Payload::linux_sparc_findsock
+            Msf::Payload::linux_sparc_reverse
+            Msf::Payload::osx_ppc_bind
+            Msf::Payload::osx_ppc_bind_stg
+            Msf::Payload::osx_ppc_findrecv_peek_stg
+            Msf::Payload::osx_ppc_findrecv_stg
+            Msf::Payload::osx_ppc_reverse
+            Msf::Payload::osx_ppc_reverse_nf_stg
+            Msf::Payload::osx_ppc_reverse_stg
+            Msf::Payload::solaris_ia32_bind
+            Msf::Payload::solaris_ia32_findsock
+            Msf::Payload::solaris_ia32_reverse
+            Msf::Payload::solaris_sparc_bind
+            Msf::Payload::solaris_sparc_findsock
+            Msf::Payload::solaris_sparc_reverse
+            Msf::Payload::win32_adduser
+            Msf::Payload::win32_bind
+            Msf::Payload::win32_bind_dllinject
+            Msf::Payload::win32_bind_meterpreter
+            Msf::Payload::win32_bind_stg
+            Msf::Payload::win32_bind_stg_upexec
+            Msf::Payload::win32_bind_vncinject
+            Msf::Payload::win32_downloadexec
+            Msf::Payload::win32_exec
+            Msf::Payload::win32_findrecv_ord_meterpreter
+            Msf::Payload::win32_findrecv_ord_stg
+            Msf::Payload::win32_findrecv_ord_vncinject
+            Msf::Payload::win32_passivex
+            Msf::Payload::win32_passivex_meterpreter
+            Msf::Payload::win32_passivex_stg
+            Msf::Payload::win32_passivex_vncinject
+            Msf::Payload::win32_reverse
+            Msf::Payload::win32_reverse_dllinject
+            Msf::Payload::win32_reverse_meterpreter
+            Msf::Payload::win32_reverse_ord
+            Msf::Payload::win32_reverse_ord_vncinject
+            Msf::Payload::win32_reverse_stg
+            Msf::Payload::win32_reverse_stg_ie
+            Msf::Payload::win32_reverse_stg_upexec
+            Msf::Payload::win32_reverse_vncinject
+            Msf::Socket::RawUdp
+            Msf::Socket::RawUdpBase
+            Msf::Socket::Socket
+            Msf::Socket::SocketBase
+            Msf::Socket::SSLTcp
+            Msf::Socket::SSLTcpBase
+            Msf::Socket::Tcp
+            Msf::Socket::TcpBase
+            Msf::Socket::Udp
+            Msf::Socket::UdpBase
+            Msf::TextUI
+            Msf::UI
+            Msf::WebUI
+            Pex
+            Pex::Alpha
+            Pex::Arkeia
+            Pex::BEServerRPC
+            Pex::DCERPC
+            Pex::ELFInfo
+            Pex::Encoder
+            Pex::Encoding::XorDword
+            Pex::Encoding::XorDwordFeedback
+            Pex::Encoding::XorDwordFeedbackN
+            Pex::Encoding::XorWord
+            Pex::jBASE
+            Pex::Meterpreter::Arguments
+            Pex::Meterpreter::Base
+            Pex::Meterpreter::Buffer
+            Pex::Meterpreter::Channel
+            Pex::Meterpreter::Client
+            Pex::Meterpreter::Crypto::Xor
+            Pex::Meterpreter::Extension::Client::Boiler
+            Pex::Meterpreter::Extension::Client::Fs
+            Pex::Meterpreter::Extension::Client::Net
+            Pex::Meterpreter::Extension::Client::Process
+            Pex::Meterpreter::Extension::Client::Sam
+            Pex::Meterpreter::Extension::Client::Sys
+            Pex::Meterpreter::LocalDispatch
+            Pex::Meterpreter::Packet
+            Pex::Meterpreter::RemoteDispatch
+            Pex::MSSQL
+            Pex::Nasm::Instruction
+            Pex::Nasm::Nasm
+            Pex::Nasm::Ndisasm
+            Pex::NDR
+            Pex::PEInfo
+            Pex::Poly::BlockMaster
+            Pex::Poly::BlockMaster::Block
+            Pex::Poly::DeltaKing
+            Pex::Poly::RegAssassin
+            Pex::PsuedoShell
+            Pex::RawPackets
+            Pex::RawSocket
+            Pex::Searcher
+            Pex::SMB
+            Pex::Socket::RawUdp
+            Pex::Socket::Socket
+            Pex::Socket::SSLTcp
+            Pex::Socket::Tcp
+            Pex::Socket::Udp
+            Pex::SPARC
+            Pex::Struct
+            Pex::SunRPC
+            Pex::Text
+            Pex::Utils
+            Pex::x86
+            Pex::XDR
+        )]
+    }, 
+
     'perl4patrol' => {
         name => 'perl4patrol', 
         url => 'http://www.manageit.ca/p_and_s/tools/perl4patrol/perl4patrol.html', 
@@ -1215,16 +1673,6 @@ my %softwares = (
             Fathom::Views
             HTMLInput
             HTMLStripper
-        )]
-    }, 
-
-    'MIM' => {
-        name => 'Market Information Machine', 
-        url => 'http://www.lim.com/download/download_perl_api.html', 
-        author => 'Logical Information Machines', 
-        author_url => 'http://www.lim.com/', 
-        modules => [qw(
-            xmim4
         )]
     }, 
 
@@ -1315,6 +1763,18 @@ my %softwares = (
         )]
     }, 
 
+    'SNMP_Session' => {
+        name => 'SNMP_Session', 
+        url => 'http://www.switch.ch/misc/leinen/snmp/perl/', 
+        author => 'Simon Leinen', 
+        author_url => 'http://www.switch.ch/misc/leinen/', 
+        modules => [qw(
+            BER
+            SNMP_Session
+            SNMP_util
+        )]
+    }, 
+
     'MRTG' => {
         name => 'MRTG', 
         url => 'http://people.ee.ethz.ch/~oetiker/webtools/mrtg/', 
@@ -1332,7 +1792,6 @@ my %softwares = (
         author => 'Tobi Oetiker', 
         author_url => 'http://people.ee.ethz.ch/~oetiker/', 
         modules => [qw(
-            BER
             Config::Grammar
             Smokeping
             Smokeping::ciscoRttMonMIB
@@ -1368,8 +1827,6 @@ my %softwares = (
             Smokeping::probes::SSH
             Smokeping::probes::TelnetIOSPing
             Smokeping::RRDtools
-            SNMP_Session
-            SNMP_util
         )]
     }, 
 
@@ -1432,6 +1889,16 @@ my %softwares = (
             Vend::Payment::TestPayment
             Vend::Payment::TCLink
             Vend::Payment::WellsFargo
+        )]
+    }, 
+
+    'MIM' => {
+        name => 'Market Information Machine', 
+        url => 'http://www.lim.com/download/download_perl_api.html', 
+        author => 'Logical Information Machines', 
+        author_url => 'http://www.lim.com/', 
+        modules => [qw(
+            xmim4
         )]
     }, 
 
@@ -1719,6 +2186,14 @@ I<Interchange Payment Modules> - L<http://www.interchange.rtfm.info/downloads/pa
 
 =item *
 
+James Golovich I<Asterisk-Perl> - L<http://asterisk.gnuinter.net/>
+
+=item *
+
+Jamie Cameron I<Webmin> - L<http://webmin.com/>
+
+=item *
+
 I<LinkPoint API> - L<https://www.linkpoint.com/viewcart/>
 
 =item *
@@ -1732,6 +2207,10 @@ Main Street Softworks I<Main Street Credit Verification Engine (MCVE)> - L<http:
 =item *
 
 ManageIt I<perl4patrol> - L<http://www.manageit.ca/p_and_s/tools/perl4patrol/perl4patrol.html>
+
+=item *
+
+I<Metasploit Framework> - L<http://metasploit.com/projects/Framework/>
 
 =item *
 
@@ -1776,6 +2255,10 @@ I<Roth Consulting's Perl Contributions> - L<http://www.roth.net/perl/>
 =item *
 
 Schuyler Erle & Robert Flickenger I<NoCat> - L<http://nocat.net/>
+
+=item *
+
+Simon Leinen I<SNMP_Session> - L<http://www.switch.ch/misc/leinen/snmp/perl/>
 
 =item *
 

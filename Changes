@@ -1,5 +1,10 @@
 Revision history for Module-ThirdParty
 
+0.15    2006.04.20
+        [DATA] Added information for Asterisk-Perl, Metasploit, Webmin, 
+        SNMP_Session and updated SmokePing.
+        [TESTS] Removed useless BEGIN from test scripts.
+
 0.14    2005.12.30
         [DATA] Corrected information for VCP.
         [DATA] Added information for Gedafe, Gossips, NoCatAuth, OTRS, 

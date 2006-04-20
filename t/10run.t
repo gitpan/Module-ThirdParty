@@ -1,7 +1,8 @@
 use strict;
 use Test::More;
-BEGIN { plan tests => 25 }
 use Module::ThirdParty;
+
+plan tests => 25;
 
 # checking with a few known 3rd party module
 for my $module (qw(SVN::Core CAIDA::NetGeoClient Text::ChaSen SWISH::API)) {

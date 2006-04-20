@@ -4,6 +4,7 @@ eval 'use ExtUtils::MakeMaker::Coverage';
 
 WriteMakefile(
     NAME                => 'Module::ThirdParty',
+    LICENSE             => 'perl',
     AUTHOR              => 'Sébastien Aperghis-Tramoni <sebastien@aperghis.net>',
     VERSION_FROM        => 'lib/Module/ThirdParty.pm',
     ABSTRACT_FROM       => 'lib/Module/ThirdParty.pm',

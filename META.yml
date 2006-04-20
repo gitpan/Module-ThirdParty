@@ -1,16 +1,11 @@
----
-name: Module-ThirdParty
-version: 0.14
-author:
-  - Sébastien Aperghis-Tramoni <sebastien@aperghis.net>
-abstract: Provide information for 3rd party modules (outside CPAN)
-license: perl
-recommends:
-  Module::CoreList: 0
-build_requires:
-  Test::More: 0
-provides:
-  Module::ThirdParty:
-    file: lib/Module/ThirdParty.pm
-    version: 0.14
-generated_by: Module::Build version 0.2611
+# http://module-build.sourceforge.net/META-spec.html
+#XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
+name:         Module-ThirdParty
+version:      0.15
+version_from: lib/Module/ThirdParty.pm
+installdirs:  site
+requires:
+    Test::More:                    0
+
+distribution_type: module
+generated_by: ExtUtils::MakeMaker version 6.30
