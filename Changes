@@ -1,5 +1,9 @@
 Revision history for Module-ThirdParty
 
+0.16    2006.05.11
+        [DATA] RT#19200: Added information for Mail::SpamAssassin::AuthCourier.
+        Thanks to David Landgren for the patch.
+
 0.15    2006.04.20
         [DATA] Added information for Asterisk-Perl, Metasploit, Webmin, 
         SNMP_Session and updated SmokePing.

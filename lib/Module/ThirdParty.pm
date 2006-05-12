@@ -3,7 +3,7 @@ use strict;
 require Exporter;
 
 { no strict;
-  $VERSION = '0.15';
+  $VERSION = '0.16';
   @ISA = (Exporter);
   @EXPORT = qw(is_3rd_party module_information);
 }
@@ -14,7 +14,7 @@ Module::ThirdParty - Provide information for 3rd party modules (outside CPAN)
 
 =head1 VERSION
 
-Version 0.15
+Version 0.16
 
 =head1 SYNOPSIS
 
@@ -1622,6 +1622,16 @@ my %softwares = (
         )]
     }, 
 
+    'AuthCourier' => {
+        name => 'SpamAssassin and Courier virtual domain management',
+        url => 'http://da.andaka.org/Doku/courier-spamassassin.html',
+        author => 'Dave Kliczbor',
+        author_url => 'http://da.andaka.org/',
+        modules => [qw(
+            Mail::SpamAssassin::AuthCourier
+        )]
+    },
+
     'Directi' => {
         name => 'Directi Perl API', 
         url => 'http://manage.directi.com/kb/servlet/KBServlet/faq685.html', 
@@ -1754,7 +1764,7 @@ my %softwares = (
 
     'RRDTool' => {
         name => 'RRDTool', 
-        url => 'http://people.ee.ethz.ch/~oetiker/webtools/rrdtool/', 
+        url => 'http://oss.oetiker.ch/rrdtool/', 
         author => 'Tobi Oetiker', 
         author_url => 'http://people.ee.ethz.ch/~oetiker/', 
         modules => [qw(
@@ -1777,7 +1787,7 @@ my %softwares = (
 
     'MRTG' => {
         name => 'MRTG', 
-        url => 'http://people.ee.ethz.ch/~oetiker/webtools/mrtg/', 
+        url => 'http://oss.oetiker.ch/mrtg/', 
         author => 'Tobi Oetiker', 
         author_url => 'http://people.ee.ethz.ch/~oetiker/', 
         modules => [qw(
@@ -1788,7 +1798,7 @@ my %softwares = (
 
     'SmokePing' => {
         name => 'SmokePing', 
-        url => 'http://people.ee.ethz.ch/~oetiker/webtools/smokeping/', 
+        url => 'http://oss.oetiker.ch/smokeping/', 
         author => 'Tobi Oetiker', 
         author_url => 'http://people.ee.ethz.ch/~oetiker/', 
         modules => [qw(
@@ -2150,6 +2160,10 @@ I<CyberSource ICS> - L<http://www.cybersource.com/support_center/implementation/
 
 =item *
 
+Dave Kliczbor I<SpamAssassin and Courier virtual domain management> - L<http://da.andaka.org/Doku/courier-spamassassin.html>
+
+=item *
+
 I<Directi Perl API> - L<http://manage.directi.com/kb/servlet/KBServlet/faq685.html>
 
 =item *
@@ -2278,15 +2292,15 @@ Tobi Oetiker I<Gedafe> - L<http://isg.ee.ethz.ch/tools/gedafe/>
 
 =item *
 
-Tobi Oetiker I<MRTG> - L<http://people.ee.ethz.ch/~oetiker/webtools/mrtg/>
+Tobi Oetiker I<MRTG> - L<http://oss.oetiker.ch/mrtg/>
 
 =item *
 
-Tobi Oetiker I<RRDTool> - L<http://people.ee.ethz.ch/~oetiker/webtools/rrdtool/>
+Tobi Oetiker I<RRDTool> - L<http://oss.oetiker.ch/rrdtool/>
 
 =item *
 
-Tobi Oetiker I<SmokePing> - L<http://people.ee.ethz.ch/~oetiker/webtools/smokeping/>
+Tobi Oetiker I<SmokePing> - L<http://oss.oetiker.ch/smokeping/>
 
 =item *
 
@@ -2332,7 +2346,7 @@ your bug as I make changes.
 
 =head1 COPYRIGHT & LICENSE
 
-Copyright 2005 SE<eacute>bastien Aperghis-Tramoni, All Rights Reserved.
+Copyright 2005, 2006 SE<eacute>bastien Aperghis-Tramoni, All Rights Reserved.
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
