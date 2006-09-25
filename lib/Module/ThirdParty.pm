@@ -3,7 +3,7 @@ use strict;
 require Exporter;
 
 { no strict;
-  $VERSION = '0.16';
+  $VERSION = '0.17';
   @ISA = (Exporter);
   @EXPORT = qw(is_3rd_party module_information);
 }
@@ -14,18 +14,21 @@ Module::ThirdParty - Provide information for 3rd party modules (outside CPAN)
 
 =head1 VERSION
 
-Version 0.16
+Version 0.17
 
 =head1 SYNOPSIS
 
     use Module::ThirdParty;
 
-    if(is_3rd_party($module)) {
+    if (is_3rd_party($module)) {
         my $info = module_information($module);
         print "$module is a known third-party Perl module\n", 
-              " -> included in $info->{name} ($info->{url})\n"
+              " -> included in $info->{name} ($info->{url})\n",
               " -> made by $info->{author} ($info->{author_url})\n"
+    } else {
+        print "$module is not a known third-party Perl module\n"
     }
+        
 
 =head1 DESCRIPTION
 
@@ -73,6 +76,16 @@ C<Parse::BACKPAN::Packages>.
 
 # third party modules information
 my %softwares = (
+    V => {
+        name => 'V', 
+        url => 'http://www.test-smoke.org/download/', 
+        author => 'Abe Timmerman', 
+        author_url => 'http://www.test-smoke.org/', 
+        modules => [qw(
+            V
+        )]
+    }, 
+
     'mod_perl1' => {
         name => 'mod_perl 1.0', 
         url => 'http://perl.apache.org/', 
@@ -109,7 +122,7 @@ my %softwares = (
     }, 
 
     'Zeus-ModPerl' => {
-        name => ' Zeus Web Server Perl Extensions', 
+        name => 'Zeus Web Server Perl Extensions', 
         url => 'http://support.zeus.com/doc/api/perl/', 
         author => 'Zeus Technology', 
         author_url => 'http://www.zeus.com/', 
@@ -683,6 +696,16 @@ my %softwares = (
             Kernel::System::Web::UploadCache::FS
             Kernel::System::XML
             Kernel::System::XMLMaster
+        )]
+    }, 
+
+    'XXX' => {
+        name => 'XXX', 
+        url => 'http://search.cpan.org/dist/XXX/', 
+        author => 'Brian Ingerson', 
+        author_url => 'http://ingy.net/', 
+        modules => [qw(
+            XXX
         )]
     }, 
 
@@ -1855,6 +1878,42 @@ my %softwares = (
         )]
     }, 
 
+    'BB' => {
+        name => 'BB', 
+        url => 'http://www.teaser.fr/~nchuche/bb/bb_pm/', 
+        author => 'Nicolas Chuche', 
+        author_url => 'http://www.teaser.fr/~nchuche/', 
+        modules => [qw(
+            BB
+        )]
+    }, 
+
+    'Orabb' => {
+        name => 'Orabb', 
+        url => 'http://www.teaser.fr/~nchuche/bb/orabb.html', 
+        author => 'Nicolas Chuche', 
+        author_url => 'http://www.teaser.fr/~nchuche/', 
+        modules => [qw(
+            Orabb::Databases
+            Orabb::Databases::Element
+            Orabb::Conf
+            Orabb::Files
+            Orabb::Fork
+            Orabb::Limits
+            Orabb::Limits::Test
+            Orabb::Modules
+            Orabb::SGBD
+            Orabb::Test
+            Orabb::Utils
+            Output::DaveNull
+            Output::BB
+            Output::Debug
+            Output::Dumper
+            Output::HTML
+            Output::MkHosts
+        )]
+    }, 
+
     'RothWin32' => {
         name => "Roth Consulting's Perl Contributions", 
         url => 'http://www.roth.net/perl/', 
@@ -2120,11 +2179,15 @@ sub provides {
 Here is the list of the third-party software know by this version of 
 C<Module::ThirdParty>. 
 
-=over 4
+=over
 
 =item *
 
 !WAHa.06x36 I<PerlHP> - L<http://wakaba.c3.cx/perlhp/>
+
+=item *
+
+Abe Timmerman I<V> - L<http://www.test-smoke.org/download/>
 
 =item *
 
@@ -2141,6 +2204,10 @@ Best Practical I<Request Tracker> - L<http://bestpractical.com/rt/>
 =item *
 
 Brandon Long I<ClearSilver> - L<http://www.clearsilver.net/>
+
+=item *
+
+Brian Ingerson I<XXX> - L<http://search.cpan.org/dist/XXX/>
 
 =item *
 
@@ -2229,6 +2296,14 @@ I<Metasploit Framework> - L<http://metasploit.com/projects/Framework/>
 =item *
 
 Nara Institute of Science and Technology I<ChaSen> - L<http://chasen.naist.jp/hiki/ChaSen/>
+
+=item *
+
+Nicolas Chuche I<BB> - L<http://www.teaser.fr/~nchuche/bb/bb_pm/>
+
+=item *
+
+Nicolas Chuche I<Orabb> - L<http://www.teaser.fr/~nchuche/bb/orabb.html>
 
 =item *
 
@@ -2324,7 +2399,7 @@ I<VMware Perl API> - L<http://www.vmware.com/support/developer/perl-API/doc/>
 
 =item *
 
-Zeus Technology I< Zeus Web Server Perl Extensions> - L<http://support.zeus.com/doc/api/perl/>
+Zeus Technology I<Zeus Web Server Perl Extensions> - L<http://support.zeus.com/doc/api/perl/>
 
 =back
 
