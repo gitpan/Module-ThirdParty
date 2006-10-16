@@ -1,9 +1,12 @@
 Revision history for Module-ThirdParty
 
+0.18    2006.10.16
+        [DATA] Added information for BackupPC.
+        [DIST] Added examples in eg/.
+
 0.17    2006.09.25
         [DATA] Added information for Abe Timmerman's V, Brian Ingerson's XXX, 
         Nicolas Chuche's BB and Orabb. Fixed a typo in Zeus Web Server name. 
-        [DIST] Added examples in eg/.
 
 0.16    2006.05.12
         [DATA] RT#19200: Added information for Mail::SpamAssassin::AuthCourier.

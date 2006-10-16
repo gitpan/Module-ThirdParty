@@ -3,7 +3,7 @@ use strict;
 require Exporter;
 
 { no strict;
-  $VERSION = '0.17';
+  $VERSION = '0.18';
   @ISA = (Exporter);
   @EXPORT = qw(is_3rd_party module_information);
 }
@@ -14,7 +14,7 @@ Module::ThirdParty - Provide information for 3rd party modules (outside CPAN)
 
 =head1 VERSION
 
-Version 0.17
+Version 0.18
 
 =head1 SYNOPSIS
 
@@ -820,6 +820,61 @@ my %softwares = (
         author_url => 'http://www.swish-e.org/', 
         modules => [qw(
             SWISH::API
+        )]
+    }, 
+
+    'BackupPC' => {
+        name => 'BackupPC', 
+        url => 'http://backuppc.sourceforge.net/', 
+        author => 'Craig Barratt', 
+        author_url => 'http://backuppc.sourceforge.net/', 
+        modules => [qw(
+            BackupPC::Attrib
+            BackupPC::CGI::AdminOptions
+            BackupPC::CGI::Archive
+            BackupPC::CGI::ArchiveInfo
+            BackupPC::CGI::Browse
+            BackupPC::CGI::DirHistory
+            BackupPC::CGI::EditConfig
+            BackupPC::CGI::EmailSummary
+            BackupPC::CGI::GeneralInfo
+            BackupPC::CGI::HostInfo
+            BackupPC::CGI::Lib
+            BackupPC::CGI::LOGlist
+            BackupPC::CGI::Queue
+            BackupPC::CGI::ReloadServer
+            BackupPC::CGI::Restore
+            BackupPC::CGI::RestoreFile
+            BackupPC::CGI::RestoreInfo
+            BackupPC::CGI::RSS
+            BackupPC::CGI::StartServer
+            BackupPC::CGI::StartStopBackup
+            BackupPC::CGI::StopServer
+            BackupPC::CGI::Summary
+            BackupPC::CGI::View
+            BackupPC::Config
+            BackupPC::Config::Meta
+            BackupPC::FileZIO
+            BackupPC::Lang::de
+            BackupPC::Lang::en
+            BackupPC::Lang::es
+            BackupPC::Lang::fr
+            BackupPC::Lang::it
+            BackupPC::Lang::nl
+            BackupPC::Lang::pt_br
+            BackupPC::Lib
+            BackupPC::PoolWrite
+            BackupPC::Storage
+            BackupPC::Storage::Text
+            BackupPC::View
+            BackupPC::Xfer::Archive
+            BackupPC::Xfer::BackupPCd
+            BackupPC::Xfer::Rsync
+            BackupPC::Xfer::RsyncDigest
+            BackupPC::Xfer::RsyncFileIO
+            BackupPC::Xfer::Smb
+            BackupPC::Xfer::Tar
+            BackupPC::Zip::FileMember
         )]
     }, 
 
@@ -2216,6 +2271,10 @@ CAIDA I<GeoPlot Perl API> - L<http://www.caida.org/tools/visualization/geoplot/>
 =item *
 
 CAIDA I<NetGeo API> - L<http://www.caida.org/tools/utilities/netgeo/>
+
+=item *
+
+Craig Barratt I<BackupPC> - L<http://backuppc.sourceforge.net/>
 
 =item *
 

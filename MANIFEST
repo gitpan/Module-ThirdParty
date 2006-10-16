@@ -5,6 +5,8 @@ META.yml
 Makefile.PL
 README
 bin/is3rdparty
+eg/allmodules.pl
+eg/showinfo.pl
 lib/Module/ThirdParty.pm
 t/00load.t
 t/00prereq.t
