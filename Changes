@@ -1,5 +1,9 @@
 Revision history for Module-ThirdParty
 
+0.19    2007.01.25
+        [DATA] Removed Text::ChaSen as it is now available on the CPAN.
+        Added information for OwPerlProvider.
+
 0.18    2006.10.16
         [DATA] Added information for BackupPC.
         [DIST] Added examples in eg/.

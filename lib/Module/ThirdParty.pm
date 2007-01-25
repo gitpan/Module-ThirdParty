@@ -3,7 +3,7 @@ use strict;
 require Exporter;
 
 { no strict;
-  $VERSION = '0.18';
+  $VERSION = '0.19';
   @ISA = (Exporter);
   @EXPORT = qw(is_3rd_party module_information);
 }
@@ -14,7 +14,7 @@ Module::ThirdParty - Provide information for 3rd party modules (outside CPAN)
 
 =head1 VERSION
 
-Version 0.18
+Version 0.19
 
 =head1 SYNOPSIS
 
@@ -730,6 +730,18 @@ my %softwares = (
         )]
     }, 
 
+    'OwPerlProvider' => {
+        name => 'OwPerlProvider', 
+        url => 'http://jason.long.name/owperl/', 
+        author => 'Jason Alonzo Long', 
+        author_url => 'http://jason.long.name/', 
+        modules => [qw(
+            Net::OpenWBEM
+            Net::OpenWBEM::Client
+            Net::OpenWBEM::Provider
+        )]
+    }, 
+
     'NoCat' => {
         name => 'NoCat', 
         url => 'http://nocat.net/', 
@@ -800,16 +812,6 @@ my %softwares = (
         author_url => 'http://www.caida.org/', 
         modules => [qw(
             CAIDA::NetGeoClient
-        )]
-    }, 
-
-    'ChaSen' => {
-        name => 'ChaSen', 
-        url => 'http://chasen.naist.jp/hiki/ChaSen/', 
-        author => 'Nara Institute of Science and Technology', 
-        author_url => 'http://www.naist.jp/', 
-        modules => [qw(
-            Text::ChaSen
         )]
     }, 
 
@@ -2334,6 +2336,10 @@ Jamie Cameron I<Webmin> - L<http://webmin.com/>
 
 =item *
 
+Jason Alonzo Long I<OwPerlProvider> - L<http://jason.long.name/owperl/>
+
+=item *
+
 I<LinkPoint API> - L<https://www.linkpoint.com/viewcart/>
 
 =item *
@@ -2351,10 +2357,6 @@ ManageIt I<perl4patrol> - L<http://www.manageit.ca/p_and_s/tools/perl4patrol/per
 =item *
 
 I<Metasploit Framework> - L<http://metasploit.com/projects/Framework/>
-
-=item *
-
-Nara Institute of Science and Technology I<ChaSen> - L<http://chasen.naist.jp/hiki/ChaSen/>
 
 =item *
 

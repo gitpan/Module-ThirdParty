@@ -5,7 +5,7 @@ use Module::ThirdParty;
 plan tests => 25;
 
 # checking with a few known 3rd party module
-for my $module (qw(SVN::Core CAIDA::NetGeoClient Text::ChaSen SWISH::API)) {
+for my $module (qw(SVN::Core CAIDA::NetGeoClient Perl::API SWISH::API)) {
     ok( is_3rd_party($module) , "$module is a known third-party module" );
 }
 
@@ -26,15 +26,15 @@ for my $module (qw(No::Such::Module Realistic::Name::ButNo::Luck)) {
 
 # getting module information for a known 3rd party module
 my $info = undef;
-is( $info, undef                                                , "getting module info for Text::ChaSen");
-$info = module_information('Text::ChaSen');
+is( $info, undef                                                , "getting module info for Perl::API");
+$info = module_information('Perl::API');
 ok( defined $info                                               , " - \$info is defined" );
 is( ref $info, 'HASH'                                           , " - \$info is a HASH ref" );
-is( $info->{name}, 'ChaSen'                                     , " - checking name" );
-is( $info->{url}, 'http://chasen.naist.jp/hiki/ChaSen/'         , " - checking url" );
-is( $info->{author}, 'Nara Institute of Science and Technology' , " - checking author" );
-is( $info->{author_url}, 'http://www.naist.jp/'                 , " - checking author_url" );
-is_deeply( $info->{modules}, [qw(Text::ChaSen)]                 , " - checking modules" );
+is( $info->{name}, 'Perl::API'                                  , " - checking name" );
+is( $info->{url}, 'http://search.cpan.org/dist/Perl-API/'       , " - checking url" );
+is( $info->{author}, 'Gisle Aas'                                , " - checking author" );
+is( $info->{author_url}, 'http://gisle.aas.no/'                 , " - checking author_url" );
+is_deeply( $info->{modules}, [qw(Perl::API)]                    , " - checking modules" );
 
 # getting module information for a core module
 $info = undef;
