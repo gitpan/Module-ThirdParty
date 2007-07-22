@@ -1,5 +1,8 @@
 Revision history for Module-ThirdParty
 
+0.21    2007.07.22
+        [DOC] Had forgotten to include the list of known third-party software.
+
 0.20    2007.07.22
         [DATA] Fixed URLs for LibWhisker 1 and 2, MIM, Paradata OpenConnect, 
         VMware Perl API, Zeus Web Server Perl Extensions.

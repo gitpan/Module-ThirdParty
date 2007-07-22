@@ -3,7 +3,7 @@ use strict;
 require Exporter;
 
 { no strict;
-  $VERSION = '0.20';
+  $VERSION = '0.21';
   @ISA = (Exporter);
   @EXPORT = qw(is_3rd_party module_information);
 }
@@ -14,7 +14,7 @@ Module::ThirdParty - Provide information for 3rd party modules (outside CPAN)
 
 =head1 VERSION
 
-Version 0.20
+Version 0.21
 
 =head1 SYNOPSIS
 
@@ -2514,6 +2514,249 @@ C<Module::ThirdParty>.
 
 =over
 
+=item *
+
+!WAHa.06x36 I<PerlHP> - L<http://wakaba.c3.cx/perlhp/>
+
+=item *
+
+Abe Timmerman I<V> - L<http://www.test-smoke.org/download/>
+
+=item *
+
+Apache Foundation I<mod_perl 1.0> - L<http://perl.apache.org/>
+
+=item *
+
+Apple I<Perl/Objective-C bridge> - L<http://developer.apple.com/>
+
+=item *
+
+Best Practical I<Request Tracker> - L<http://bestpractical.com/rt/>
+
+=item *
+
+Brandon Long I<ClearSilver> - L<http://www.clearsilver.net/>
+
+=item *
+
+Brian Ingerson I<XXX> - L<http://search.cpan.org/dist/XXX/>
+
+=item *
+
+CAIDA I<GeoPlot Perl API> - L<http://www.caida.org/tools/visualization/geoplot/>
+
+=item *
+
+CAIDA I<NetGeo API> - L<http://www.caida.org/tools/utilities/netgeo/>
+
+=item *
+
+Craig Barratt I<BackupPC> - L<http://backuppc.sourceforge.net/>
+
+=item *
+
+CyberSource I<CyberCash> - L<http://www.cybersource.com/support_center/implementation/downloads/>
+
+=item *
+
+I<CyberSource ICS> - L<http://www.cybersource.com/support_center/implementation/downloads/>
+
+=item *
+
+Dave Kliczbor I<SpamAssassin and Courier virtual domain management> - L<http://da.andaka.org/Doku/courier-spamassassin.html>
+
+=item *
+
+I<Directi Perl API> - L<http://manage.directi.com/kb/servlet/KBServlet/faq685.html>
+
+=item *
+
+ETH/DEE IT & Support Group I<Gossips> - L<http://isg.ee.ethz.ch/tools/gossips/>
+
+=item *
+
+ETH/DEE IT & Support Group I<Real Men Don't Click> - L<http://isg.ee.ethz.ch/tools/realmen/>
+
+=item *
+
+Fidelia I<NetVigil> - L<http://www.fidelia.com/products/>
+
+=item *
+
+Fotango I<Vx> - L<http://opensource.fotango.com/software/vx/>
+
+=item *
+
+Gemplus I<TLP Driver> - L<http://www.gemplus.com/techno/tlp_drivers/index.html>
+
+=item *
+
+Gisle Aas I<Perl::API> - L<http://search.cpan.org/dist/Perl-API/>
+
+=item *
+
+Grant McLean I<Sprog> - L<http://sprog.sourceforge.net/>
+
+=item *
+
+I<Interchange Payment Modules> - L<http://www.interchange.rtfm.info/downloads/payments/>
+
+=item *
+
+James Golovich I<Asterisk-Perl> - L<http://asterisk.gnuinter.net/>
+
+=item *
+
+Jamie Cameron I<Webmin> - L<http://webmin.com/>
+
+=item *
+
+Jason Alonzo Long I<OwPerlProvider> - L<http://jason.long.name/owperl/>
+
+=item *
+
+KDE I<DCOP-Perl> - L<http://websvn.kde.org/branches/KDE/3.5/kdebindings/dcopperl/>
+
+=item *
+
+I<LinkPoint API> - L<https://www.linkpoint.com/viewcart/>
+
+=item *
+
+Logical Information Machines I<Market Information Machine> - L<http://www.lim.com/download/>
+
+=item *
+
+Main Street Softworks I<Main Street Credit Verification Engine (MCVE)> - L<http://www.mainstreetsoftworks.com/>
+
+=item *
+
+ManageIt I<perl4patrol> - L<http://www.manageit.ca/p_and_s/tools/perl4patrol/perl4patrol.html>
+
+=item *
+
+I<Metasploit Framework> - L<http://metasploit.com/projects/Framework/>
+
+=item *
+
+Nicolas Chuche I<BB> - L<http://www.teaser.fr/~nchuche/bb/bb_pm/>
+
+=item *
+
+Nicolas Chuche I<Orabb> - L<http://www.teaser.fr/~nchuche/bb/orabb.html>
+
+=item *
+
+I<OpenECHO> - L<http://www.openecho.com/index.php?ba=downloads>
+
+=item *
+
+OTRS Team I<Open Ticket Request System> - L<http://otrs.org/>
+
+=item *
+
+Paradata Systems I<OpenConnect> - L<http://www.paradata.com/content/developers/>
+
+=item *
+
+I<Perforce> - L<http://public.perforce.com/guest/tony_smith/perforce/API/Perl/index.html>
+
+=item *
+
+Perforce I<Version CoPy (VCP)> - L<http://search.cpan.org/dist/VCP-autrijus-snapshot/>
+
+=item *
+
+Progress Software I<Fathom Management Perl API> - L<http://psdn.progress.com/library/fathom/>
+
+=item *
+
+rfp.labs I<LibWhisker> - L<http://www.wiretrip.net/rfp/lw1.asp>
+
+=item *
+
+rfp.labs I<LibWhisker2> - L<http://www.wiretrip.net/rfp/lw.asp>
+
+=item *
+
+I<Roth Consulting's Perl Contributions> - L<http://www.roth.net/perl/>
+
+=item *
+
+Schuyler Erle & Robert Flickenger I<NoCat> - L<http://nocat.net/>
+
+=item *
+
+Simon Leinen I<SNMP_Session> - L<http://www.switch.ch/misc/leinen/snmp/perl/>
+
+=item *
+
+Six Apart I<CSS::Cleaner> - L<http://code.sixapart.com/trac/CSS-Cleaner>
+
+=item *
+
+Six Apart I<Devel::Gladiator> - L<http://code.sixapart.com/svn/Devel-Gladiator/>
+
+=item *
+
+Six Apart I<HTML::Sanitizer> - L<http://code.sixapart.com/trac/HTML-Sanitizer>
+
+=item *
+
+Six Apart I<Movable Type> - L<http://www.sixapart.com/movabletype/>
+
+=item *
+
+Slim Devices I<SlimServer> - L<http://www.slimdevices.com/dev_resources.html>
+
+=item *
+
+I<Subversion> - L<http://subversion.tigris.org/>
+
+=item *
+
+I<Swish-e> - L<http://www.swish-e.org/>
+
+=item *
+
+Tobi Oetiker I<Gedafe> - L<http://isg.ee.ethz.ch/tools/gedafe/>
+
+=item *
+
+Tobi Oetiker I<MRTG> - L<http://oss.oetiker.ch/mrtg/>
+
+=item *
+
+Tobi Oetiker I<RRDTool> - L<http://oss.oetiker.ch/rrdtool/>
+
+=item *
+
+Tobi Oetiker I<SmokePing> - L<http://oss.oetiker.ch/smokeping/>
+
+=item *
+
+Tobi Oetiker I<Template Tree II> - L<http://isg.ee.ethz.ch/tools/tetre2/>
+
+=item *
+
+TrustCommerce I<TCLink> - L<http://www.trustcommerce.com/>
+
+=item *
+
+US National Virtual Observatory I<VOTable> - L<http://www.us-vo.org/VOTable/>
+
+=item *
+
+VeriSign I<PayFlow Pro> - L<http://www.verisign.com/products-services/payment-processing/online-payment/payflow-pro/index.html>
+
+=item *
+
+I<VMware Perl API> - L<http://www.vmware.com/support/developer/scripting-API/>
+
+=item *
+
+Zeus Technology I<Zeus Web Server Perl Extensions> - L<http://support.zeus.com/>
 
 =back
 
