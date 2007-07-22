@@ -3,7 +3,7 @@ use strict;
 require Exporter;
 
 { no strict;
-  $VERSION = '0.19';
+  $VERSION = '0.20';
   @ISA = (Exporter);
   @EXPORT = qw(is_3rd_party module_information);
 }
@@ -14,7 +14,7 @@ Module::ThirdParty - Provide information for 3rd party modules (outside CPAN)
 
 =head1 VERSION
 
-Version 0.19
+Version 0.20
 
 =head1 SYNOPSIS
 
@@ -123,7 +123,7 @@ my %softwares = (
 
     'Zeus-ModPerl' => {
         name => 'Zeus Web Server Perl Extensions', 
-        url => 'http://support.zeus.com/doc/api/perl/', 
+        url => 'http://support.zeus.com/', 
         author => 'Zeus Technology', 
         author_url => 'http://www.zeus.com/', 
         modules => [qw(
@@ -699,6 +699,240 @@ my %softwares = (
         )]
     }, 
 
+    'SlimServer' => {
+        name => 'SlimServer', 
+        url => 'http://www.slimdevices.com/dev_resources.html', 
+        author => 'Slim Devices', 
+        author_url => 'http://www.slimdevices.com/', 
+        modules => [qw(
+            Slim::bootstrap
+            Slim::Buttons::AlarmClock
+            Slim::Buttons::Block
+            Slim::Buttons::BrowseDB
+            Slim::Buttons::BrowseTree
+            Slim::Buttons::BrowseUPnPMediaServer
+            Slim::Buttons::Common
+            Slim::Buttons::Favorites
+            Slim::Buttons::Home
+            Slim::Buttons::Information
+            Slim::Buttons::Input::Bar
+            Slim::Buttons::Input::Choice
+            Slim::Buttons::Input::List
+            Slim::Buttons::Input::Text
+            Slim::Buttons::Input::Time
+            Slim::Buttons::Playlist
+            Slim::Buttons::Power
+            Slim::Buttons::RemoteTrackInfo
+            Slim::Buttons::ScreenSaver
+            Slim::Buttons::Search
+            Slim::Buttons::Settings
+            Slim::Buttons::SqueezeNetwork
+            Slim::Buttons::Synchronize
+            Slim::Buttons::TrackInfo
+            Slim::Buttons::Volume
+            Slim::Buttons::XMLBrowser
+            Slim::Control::Command
+            Slim::Control::Commands
+            Slim::Control::Queries
+            Slim::Control::Request
+            Slim::Control::Stdio
+            Slim::Display::Display
+            Slim::Display::Graphics
+            Slim::Display::Lib::Fonts
+            Slim::Display::Lib::TextVFD
+            Slim::Display::NoDisplay
+            Slim::Display::Squeezebox2
+            Slim::Display::SqueezeboxG
+            Slim::Display::Text
+            Slim::Display::Transporter
+            Slim::Formats
+            Slim::Formats::AIFF
+            Slim::Formats::APE
+            Slim::Formats::FLAC
+            Slim::Formats::HTTP
+            Slim::Formats::MMS
+            Slim::Formats::Movie
+            Slim::Formats::MP3
+            Slim::Formats::Musepack
+            Slim::Formats::Ogg
+            Slim::Formats::Parse
+            Slim::Formats::Playlists
+            Slim::Formats::Playlists::ASX
+            Slim::Formats::Playlists::Base
+            Slim::Formats::Playlists::CUE
+            Slim::Formats::Playlists::M3U
+            Slim::Formats::Playlists::PLS
+            Slim::Formats::Playlists::WPL
+            Slim::Formats::Playlists::XML
+            Slim::Formats::Playlists::XSPF
+            Slim::Formats::RemoteStream
+            Slim::Formats::Shorten
+            Slim::Formats::Wav
+            Slim::Formats::WMA
+            Slim::Formats::XML
+            Slim::Hardware::IR
+            Slim::Hardware::mas3507d
+            Slim::Hardware::mas35x9
+            Slim::Music::Artwork
+            Slim::Music::Import
+            Slim::Music::Info
+            Slim::Music::MusicFolderScan
+            Slim::Music::PlaylistFolderScan
+            Slim::Music::TitleFormatter
+            Slim::Networking::Async
+            Slim::Networking::Async::HTTP
+            Slim::Networking::Async::Socket
+            Slim::Networking::Async::Socket::HTTP
+            Slim::Networking::Async::Socket::HTTPS
+            Slim::Networking::Async::Socket::UDP
+            Slim::Networking::Discovery
+            Slim::Networking::mDNS
+            Slim::Networking::Select
+            Slim::Networking::SimpleAsyncHTTP
+            Slim::Networking::SliMP3::Protocol
+            Slim::Networking::SliMP3::Stream
+            Slim::Networking::Slimproto
+            Slim::Networking::UDP
+            Slim::Networking::UPnP::ControlPoint
+            Slim::Player::Client
+            Slim::Player::HTTP
+            Slim::Player::Pipeline
+            Slim::Player::Player
+            Slim::Player::Playlist
+            Slim::Player::ProtocolHandlers
+            Slim::Player::Protocols::HTTP
+            Slim::Player::Protocols::MMS
+            Slim::Player::ReplayGain
+            Slim::Player::SLIMP3
+            Slim::Player::SoftSqueeze
+            Slim::Player::Source
+            Slim::Player::Squeezebox
+            Slim::Player::Squeezebox2
+            Slim::Player::Sync
+            Slim::Player::TranscodingHelper
+            Slim::Player::Transporter
+            Slim::Schema
+            Slim::Schema::Age
+            Slim::Schema::Album
+            Slim::Schema::Comment
+            Slim::Schema::Contributor
+            Slim::Schema::ContributorAlbum
+            Slim::Schema::ContributorTrack
+            Slim::Schema::DBI
+            Slim::Schema::Genre
+            Slim::Schema::GenreTrack
+            Slim::Schema::MetaInformation
+            Slim::Schema::PageBar
+            Slim::Schema::Playlist
+            Slim::Schema::PlaylistTrack
+            Slim::Schema::Rescan
+            Slim::Schema::ResultSet::Age
+            Slim::Schema::ResultSet::Album
+            Slim::Schema::ResultSet::Base
+            Slim::Schema::ResultSet::Contributor
+            Slim::Schema::ResultSet::Genre
+            Slim::Schema::ResultSet::Playlist
+            Slim::Schema::ResultSet::PlaylistTrack
+            Slim::Schema::ResultSet::Track
+            Slim::Schema::ResultSet::Year
+            Slim::Schema::Storage
+            Slim::Schema::Track
+            Slim::Schema::Year
+            Slim::Utils::Alarms
+            Slim::Utils::Cache
+            Slim::Utils::ChangeNotify
+            Slim::Utils::ChangeNotify::Linux
+            Slim::Utils::ChangeNotify::Win32
+            Slim::Utils::DateTime
+            Slim::Utils::Favorites
+            Slim::Utils::FileFindRule
+            Slim::Utils::Firmware
+            Slim::Utils::IPDetect
+            Slim::Utils::MemoryUsage
+            Slim::Utils::Misc
+            Slim::Utils::MySQLHelper
+            Slim::Utils::Network
+            Slim::Utils::OSDetect
+            Slim::Utils::PerfMon
+            Slim::Utils::PerlRunTime
+            Slim::Utils::PluginManager
+            Slim::Utils::Prefs
+            Slim::Utils::ProgressBar
+            Slim::Utils::Scanner
+            Slim::Utils::Scheduler
+            Slim::Utils::SoundCheck
+            Slim::Utils::SQLHelper
+            Slim::Utils::Strings
+            Slim::Utils::Text
+            Slim::Utils::Timers
+            Slim::Utils::Unicode
+            Slim::Utils::UPnPMediaServer
+            Slim::Utils::Validate
+            Slim::Web::Graphics
+            Slim::Web::HTTP
+            Slim::Web::Pages
+            Slim::Web::Pages::BrowseDB
+            Slim::Web::Pages::BrowseTree
+            Slim::Web::Pages::EditPlaylist
+            Slim::Web::Pages::Favorites
+            Slim::Web::Pages::History
+            Slim::Web::Pages::Home
+            Slim::Web::Pages::LiveSearch
+            Slim::Web::Pages::Playlist
+            Slim::Web::Pages::Search
+            Slim::Web::Pages::Status
+            Slim::Web::Setup
+            Slim::Web::Template::Context
+            Slim::Web::UPnPMediaServer
+            Slim::Web::XMLBrowser
+            Plugins::CLI
+            Plugins::DateTime::Plugin
+            Plugins::DigitalInput::Plugin
+            Plugins::DigitalInput::ProtocolHandler
+            Plugins::Health::NetTest
+            Plugins::Health::Plugin
+            Plugins::iTunes::Common
+            Plugins::iTunes::Importer
+            Plugins::iTunes::Plugin
+            Plugins::Live365::Live365API
+            Plugins::Live365::Plugin
+            Plugins::Live365::ProtocolHandler
+            Plugins::Live365::Web
+            Plugins::LMA::Plugin
+            Plugins::MoodLogic::Common
+            Plugins::MoodLogic::Importer
+            Plugins::MoodLogic::InstantMix
+            Plugins::MoodLogic::MoodWheel
+            Plugins::MoodLogic::Plugin
+            Plugins::MoodLogic::VarietyCombo
+            Plugins::MusicMagic::Common
+            Plugins::MusicMagic::Importer
+            Plugins::MusicMagic::Plugin
+            Plugins::MusicMagic::Settings
+            Plugins::Picks::Plugin
+            Plugins::Podcast::Plugin
+            Plugins::PreventStandby::Plugin
+            Plugins::RadioIO::Plugin
+            Plugins::RadioIO::ProtocolHandler
+            Plugins::RadioTime::Plugin
+            Plugins::RandomPlay::Plugin
+            Plugins::Rescan
+            Plugins::Rhapsody::Plugin
+            Plugins::Rhapsody::ProtocolHandler
+            Plugins::RPC
+            Plugins::RS232::Plugin
+            Plugins::RssNews
+            Plugins::SavePlaylist
+            Plugins::ShoutcastBrowser::Plugin
+            Plugins::SlimTris
+            Plugins::Snow
+            Plugins::TT::Clients
+            Plugins::TT::Prefs
+            Plugins::Visualizer
+            Plugins::xPL
+        )]
+    }, 
+
     'XXX' => {
         name => 'XXX', 
         url => 'http://search.cpan.org/dist/XXX/', 
@@ -742,6 +976,17 @@ my %softwares = (
         )]
     }, 
 
+    'DCOP-Perl' => {
+        name => 'DCOP-Perl', 
+        url => 'http://websvn.kde.org/branches/KDE/3.5/kdebindings/dcopperl/', 
+        author => 'KDE', 
+        author_url => 'http://kde.org/', 
+        modules => [qw(
+            DCOP
+            DCOP::Object
+        )]
+    }, 
+
     'NoCat' => {
         name => 'NoCat', 
         url => 'http://nocat.net/', 
@@ -773,7 +1018,7 @@ my %softwares = (
 
     'LibWhisker' => {
         name => 'LibWhisker', 
-        url => 'http://www.wiretrip.net/rfp/lw.asp', 
+        url => 'http://www.wiretrip.net/rfp/lw1.asp', 
         author => 'rfp.labs', 
         author_url => 'http://www.wiretrip.net/rfp/', 
         modules => [qw(
@@ -783,7 +1028,7 @@ my %softwares = (
 
     'LibWhisker2' => {
         name => 'LibWhisker2', 
-        url => 'http://www.wiretrip.net/rfp/lw1.asp', 
+        url => 'http://www.wiretrip.net/rfp/lw.asp', 
         author => 'rfp.labs', 
         author_url => 'http://www.wiretrip.net/rfp/', 
         modules => [qw(
@@ -882,7 +1127,7 @@ my %softwares = (
 
     'VMware' => {
         name => 'VMware Perl API', 
-        url => 'http://www.vmware.com/support/developer/perl-API/doc/', 
+        url => 'http://www.vmware.com/support/developer/scripting-API/', 
         author => 'VMware', 
         author_url => 'http://www.vmware.com/', 
         modules => [qw(
@@ -959,6 +1204,36 @@ my %softwares = (
             MT::XMLRPC
             MT::XMLRPCServer
             MT::XMLRPCServer::Util
+        )]
+    }, 
+
+    'CSS-Cleaner' => {
+        name => 'CSS::Cleaner', 
+        url => 'http://code.sixapart.com/trac/CSS-Cleaner', 
+        author => 'Six Apart', 
+        author_url => 'http://www.sixapart.com/', 
+        modules => [qw(
+            CSS::Cleaner
+        )]
+    }, 
+
+    'Devel-Gladiator' => {
+        name => 'Devel::Gladiator', 
+        url => 'http://code.sixapart.com/svn/Devel-Gladiator/', 
+        author => 'Six Apart', 
+        author_url => 'http://www.sixapart.com/', 
+        modules => [qw(
+            Devel::Gladiator
+        )]
+    }, 
+
+    'HTML-Sanitizer' => {
+        name => 'HTML::Sanitizer', 
+        url => 'http://code.sixapart.com/trac/HTML-Sanitizer', 
+        author => 'Six Apart', 
+        author_url => 'http://www.sixapart.com/', 
+        modules => [qw(
+            HTML::Sanitizer
         )]
     }, 
 
@@ -2018,9 +2293,10 @@ my %softwares = (
         )]
     }, 
 
-    'MIM' => {
+    'MIM' => {  # seems to no longer be available
         name => 'Market Information Machine', 
-        url => 'http://www.lim.com/download/download_perl_api.html', 
+        #url => 'http://www.lim.com/download/download_perl_api.html', 
+        url => 'http://www.lim.com/download/', 
         author => 'Logical Information Machines', 
         author_url => 'http://www.lim.com/', 
         modules => [qw(
@@ -2030,7 +2306,7 @@ my %softwares = (
 
     'OpenConnect' => {
         name => 'OpenConnect', 
-        url => 'http://www.paradata.com/tech/', 
+        url => 'http://www.paradata.com/content/developers/', 
         author => 'Paradata Systems', 
         author_url => 'http://www.paradata.com/', 
         modules => [qw(
@@ -2238,229 +2514,6 @@ C<Module::ThirdParty>.
 
 =over
 
-=item *
-
-!WAHa.06x36 I<PerlHP> - L<http://wakaba.c3.cx/perlhp/>
-
-=item *
-
-Abe Timmerman I<V> - L<http://www.test-smoke.org/download/>
-
-=item *
-
-Apache Foundation I<mod_perl 1.0> - L<http://perl.apache.org/>
-
-=item *
-
-Apple I<Perl/Objective-C bridge> - L<http://developer.apple.com/>
-
-=item *
-
-Best Practical I<Request Tracker> - L<http://bestpractical.com/rt/>
-
-=item *
-
-Brandon Long I<ClearSilver> - L<http://www.clearsilver.net/>
-
-=item *
-
-Brian Ingerson I<XXX> - L<http://search.cpan.org/dist/XXX/>
-
-=item *
-
-CAIDA I<GeoPlot Perl API> - L<http://www.caida.org/tools/visualization/geoplot/>
-
-=item *
-
-CAIDA I<NetGeo API> - L<http://www.caida.org/tools/utilities/netgeo/>
-
-=item *
-
-Craig Barratt I<BackupPC> - L<http://backuppc.sourceforge.net/>
-
-=item *
-
-CyberSource I<CyberCash> - L<http://www.cybersource.com/support_center/implementation/downloads/>
-
-=item *
-
-I<CyberSource ICS> - L<http://www.cybersource.com/support_center/implementation/downloads/>
-
-=item *
-
-Dave Kliczbor I<SpamAssassin and Courier virtual domain management> - L<http://da.andaka.org/Doku/courier-spamassassin.html>
-
-=item *
-
-I<Directi Perl API> - L<http://manage.directi.com/kb/servlet/KBServlet/faq685.html>
-
-=item *
-
-ETH/DEE IT & Support Group I<Gossips> - L<http://isg.ee.ethz.ch/tools/gossips/>
-
-=item *
-
-ETH/DEE IT & Support Group I<Real Men Don't Click> - L<http://isg.ee.ethz.ch/tools/realmen/>
-
-=item *
-
-Fidelia I<NetVigil> - L<http://www.fidelia.com/products/>
-
-=item *
-
-Fotango I<Vx> - L<http://opensource.fotango.com/software/vx/>
-
-=item *
-
-Gemplus I<TLP Driver> - L<http://www.gemplus.com/techno/tlp_drivers/index.html>
-
-=item *
-
-Gisle Aas I<Perl::API> - L<http://search.cpan.org/dist/Perl-API/>
-
-=item *
-
-Grant McLean I<Sprog> - L<http://sprog.sourceforge.net/>
-
-=item *
-
-I<Interchange Payment Modules> - L<http://www.interchange.rtfm.info/downloads/payments/>
-
-=item *
-
-James Golovich I<Asterisk-Perl> - L<http://asterisk.gnuinter.net/>
-
-=item *
-
-Jamie Cameron I<Webmin> - L<http://webmin.com/>
-
-=item *
-
-Jason Alonzo Long I<OwPerlProvider> - L<http://jason.long.name/owperl/>
-
-=item *
-
-I<LinkPoint API> - L<https://www.linkpoint.com/viewcart/>
-
-=item *
-
-Logical Information Machines I<Market Information Machine> - L<http://www.lim.com/download/download_perl_api.html>
-
-=item *
-
-Main Street Softworks I<Main Street Credit Verification Engine (MCVE)> - L<http://www.mainstreetsoftworks.com/>
-
-=item *
-
-ManageIt I<perl4patrol> - L<http://www.manageit.ca/p_and_s/tools/perl4patrol/perl4patrol.html>
-
-=item *
-
-I<Metasploit Framework> - L<http://metasploit.com/projects/Framework/>
-
-=item *
-
-Nicolas Chuche I<BB> - L<http://www.teaser.fr/~nchuche/bb/bb_pm/>
-
-=item *
-
-Nicolas Chuche I<Orabb> - L<http://www.teaser.fr/~nchuche/bb/orabb.html>
-
-=item *
-
-I<OpenECHO> - L<http://www.openecho.com/index.php?ba=downloads>
-
-=item *
-
-OTRS Team I<Open Ticket Request System> - L<http://otrs.org/>
-
-=item *
-
-Paradata Systems I<OpenConnect> - L<http://www.paradata.com/tech/>
-
-=item *
-
-I<Perforce> - L<http://public.perforce.com/guest/tony_smith/perforce/API/Perl/index.html>
-
-=item *
-
-Perforce I<Version CoPy (VCP)> - L<http://search.cpan.org/dist/VCP-autrijus-snapshot/>
-
-=item *
-
-Progress Software I<Fathom Management Perl API> - L<http://psdn.progress.com/library/fathom/>
-
-=item *
-
-rfp.labs I<LibWhisker> - L<http://www.wiretrip.net/rfp/lw.asp>
-
-=item *
-
-rfp.labs I<LibWhisker2> - L<http://www.wiretrip.net/rfp/lw1.asp>
-
-=item *
-
-I<Roth Consulting's Perl Contributions> - L<http://www.roth.net/perl/>
-
-=item *
-
-Schuyler Erle & Robert Flickenger I<NoCat> - L<http://nocat.net/>
-
-=item *
-
-Simon Leinen I<SNMP_Session> - L<http://www.switch.ch/misc/leinen/snmp/perl/>
-
-=item *
-
-Six Apart I<Movable Type> - L<http://www.sixapart.com/movabletype/>
-
-=item *
-
-I<Subversion> - L<http://subversion.tigris.org/>
-
-=item *
-
-I<Swish-e> - L<http://www.swish-e.org/>
-
-=item *
-
-Tobi Oetiker I<Gedafe> - L<http://isg.ee.ethz.ch/tools/gedafe/>
-
-=item *
-
-Tobi Oetiker I<MRTG> - L<http://oss.oetiker.ch/mrtg/>
-
-=item *
-
-Tobi Oetiker I<RRDTool> - L<http://oss.oetiker.ch/rrdtool/>
-
-=item *
-
-Tobi Oetiker I<SmokePing> - L<http://oss.oetiker.ch/smokeping/>
-
-=item *
-
-Tobi Oetiker I<Template Tree II> - L<http://isg.ee.ethz.ch/tools/tetre2/>
-
-=item *
-
-TrustCommerce I<TCLink> - L<http://www.trustcommerce.com/>
-
-=item *
-
-US National Virtual Observatory I<VOTable> - L<http://www.us-vo.org/VOTable/>
-
-=item *
-
-VeriSign I<PayFlow Pro> - L<http://www.verisign.com/products-services/payment-processing/online-payment/payflow-pro/index.html>
-
-=item *
-
-I<VMware Perl API> - L<http://www.vmware.com/support/developer/perl-API/doc/>
-
-=item *
-
-Zeus Technology I<Zeus Web Server Perl Extensions> - L<http://support.zeus.com/doc/api/perl/>
 
 =back
 
@@ -2470,12 +2523,12 @@ L<Module::CoreList>, L<CPANPLUS>, L<Parse::BACKPAN::Packages>
 
 =head1 AUTHOR
 
-SE<eacute>bastien Aperghis-Tramoni, E<lt>sebastien@aperghis.netE<gt>
+SE<eacute>bastien Aperghis-Tramoni, C<< E<lt>sebastien (at) aperghis.netE<gt> >>
 
 =head1 BUGS
 
 Please report any bugs or feature requests to
-C<bug-module-thirdparty@rt.cpan.org>, or through the web interface at
+C<bug-module-thirdparty (at) rt.cpan.org>, or through the web interface at
 L<https://rt.cpan.org/NoAuth/Bugs.html?Dist=Module-ThirdParty>.
 I will be notified, and then you'll automatically be notified of progress on
 your bug as I make changes.

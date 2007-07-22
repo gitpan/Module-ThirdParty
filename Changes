@@ -1,5 +1,11 @@
 Revision history for Module-ThirdParty
 
+0.20    2007.07.22
+        [DATA] Fixed URLs for LibWhisker 1 and 2, MIM, Paradata OpenConnect, 
+        VMware Perl API, Zeus Web Server Perl Extensions.
+        [DATA] Added information for CSS::Cleaner, Devel::Gladiator, 
+        HTML::Sanitizer, DCOP-Perl, SlimServer.
+
 0.19    2007.01.25
         [DATA] Removed Text::ChaSen as it is now available on the CPAN.
         Added information for OwPerlProvider.

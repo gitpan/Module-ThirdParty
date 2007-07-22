@@ -1,5 +1,7 @@
-Module-ThirdParty
------------------
+NAME
+
+    Module::ThirdParty - Provide information for 3rd party modules (outside CPAN)
+
 
 DESCRIPTION
 
@@ -28,7 +30,7 @@ INSTALLATION
 
 COPYRIGHT AND LICENCE
 
-    Copyright (C) 2005 Sébastien Aperghis-Tramoni
+    Copyright (C) 2005-2007 Sébastien Aperghis-Tramoni
 
     This library is free software; you can redistribute it and/or modify
     it under the same terms as Perl itself.
