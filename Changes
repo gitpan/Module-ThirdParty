@@ -1,5 +1,9 @@
 Revision history for Module-ThirdParty
 
+0.22    2007.07.26
+        [DATA] Added information for ActivePerl specific modules.
+        [API] provides() can now be exported on demand.
+
 0.21    2007.07.22
         [DOC] Had forgotten to include the list of known third-party software.
 

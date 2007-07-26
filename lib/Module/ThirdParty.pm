@@ -3,9 +3,10 @@ use strict;
 require Exporter;
 
 { no strict;
-  $VERSION = '0.21';
-  @ISA = (Exporter);
-  @EXPORT = qw(is_3rd_party module_information);
+  $VERSION   = '0.22';
+  @ISA       = qw(Exporter);
+  @EXPORT    = qw(is_3rd_party module_information);
+  @EXPORT_OK = qw(provides);
 }
 
 =head1 NAME
@@ -14,7 +15,7 @@ Module::ThirdParty - Provide information for 3rd party modules (outside CPAN)
 
 =head1 VERSION
 
-Version 0.21
+Version 0.22
 
 =head1 SYNOPSIS
 
@@ -961,6 +962,34 @@ my %softwares = (
         modules => [qw(
             PerlObjCBridge
             Foundation
+        )]
+    }, 
+
+    'ActivePerl' => {
+        name => 'ActivePerl', 
+        url => 'http://aspn.activestate.com/ASPN/Perl', 
+        author => 'Apple', 
+        author_url => 'http://www.activestate.com/', 
+        modules => [qw(
+            ActivePerl
+            ActiveState::Browser
+            ActiveState::Bytes
+            ActiveState::Color
+            ActiveState::DateTime
+            ActiveState::DiskUsage
+            ActiveState::Duration
+            ActiveState::Handy
+            ActiveState::Indenter
+            ActiveState::Menu
+            ActiveState::ModInfo
+            ActiveState::Path
+            ActiveState::Prompt
+            ActiveState::RelocateTree
+            ActiveState::Run
+            ActiveState::Scineplex
+            ActiveState::StopWatch
+            ActiveState::Table
+            ActiveState::Win32::Shell
         )]
     }, 
 
@@ -2415,7 +2444,8 @@ for my $soft (keys %softwares) {
 
 =head1 EXPORT
 
-This module exports the functions C<is_3rd_party()> and C<module_information()>.
+This module exports by defalut the functions C<is_3rd_party()> and 
+C<module_information()>. The C<provides()> function canbe exported on demand.
 
 =head1 FUNCTIONS
 
@@ -2525,6 +2555,10 @@ Abe Timmerman I<V> - L<http://www.test-smoke.org/download/>
 =item *
 
 Apache Foundation I<mod_perl 1.0> - L<http://perl.apache.org/>
+
+=item *
+
+Apple I<ActivePerl> - L<http://aspn.activestate.com/ASPN/Perl>
 
 =item *
 
