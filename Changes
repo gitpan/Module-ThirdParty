@@ -1,5 +1,10 @@
 Revision history for Module-ThirdParty
 
+0.23    2007.08.17
+        [DATA] Added information for OpenBSD modules, 
+        Added information for modules pointed by David Rigaudiere: 
+        PatrolPerl, W2RK::WMI, Win32::Lanman, Win32::Setupsup.
+
 0.22    2007.07.26
         [DATA] Added information for ActivePerl specific modules.
         [API] provides() can now be exported on demand.

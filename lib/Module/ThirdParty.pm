@@ -3,7 +3,7 @@ use strict;
 require Exporter;
 
 { no strict;
-  $VERSION   = '0.22';
+  $VERSION   = '0.23';
   @ISA       = qw(Exporter);
   @EXPORT    = qw(is_3rd_party module_information);
   @EXPORT_OK = qw(provides);
@@ -15,7 +15,7 @@ Module::ThirdParty - Provide information for 3rd party modules (outside CPAN)
 
 =head1 VERSION
 
-Version 0.22
+Version 0.23
 
 =head1 SYNOPSIS
 
@@ -990,6 +990,97 @@ my %softwares = (
             ActiveState::StopWatch
             ActiveState::Table
             ActiveState::Win32::Shell
+        )]
+    }, 
+
+    'OpenBSD-modules' => {
+        name => 'OpenBSD modules', 
+        url => 'http://www.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/pkg_add/', 
+        author => 'OpenBSD', 
+        author_url => 'http://www.openbsd.org/', 
+        modules => [qw(
+            OpenBSD::Add
+            OpenBSD::ArcCheck
+            OpenBSD::CollisionReport
+            OpenBSD::Delete
+            OpenBSD::Dependencies
+            OpenBSD::Error
+            OpenBSD::Getopt
+            OpenBSD::IdCache
+            OpenBSD::Interactive
+            OpenBSD::Mtree
+            OpenBSD::PackageInfo
+            OpenBSD::PackageLocation
+            OpenBSD::PackageLocator
+            OpenBSD::PackageName
+            OpenBSD::PackageRepository
+            OpenBSD::PackageRepository::Installed
+            OpenBSD::PackageRepository::SCP
+            OpenBSD::PackageRepository::Source
+            OpenBSD::PackageRepositoryList
+            OpenBSD::PackingElement
+            OpenBSD::PackingList
+            OpenBSD::Paths
+            OpenBSD::PkgCfl
+            OpenBSD::PkgConfig
+            OpenBSD::PkgSpec
+            OpenBSD::ProgressMeter
+            OpenBSD::Replace
+            OpenBSD::RequiredBy
+            OpenBSD::Search
+            OpenBSD::SharedItems
+            OpenBSD::SharedLibs
+            OpenBSD::Temp
+            OpenBSD::Update
+            OpenBSD::UpdateSet
+            OpenBSD::Ustar
+            OpenBSD::Vstat
+            OpenBSD::md5
+        )]
+    }, 
+
+    'W2RK-WMI' => {
+        name => 'W2RK::WMI',
+        url => 'http://www.microsoft.com/windows2000/techinfo/reskit/default.mspx',
+        author => 'Microsoft',
+        author_url => 'http://www.microsoft.com/',
+        modules => [qw(
+            W2RK::WMI
+        )]
+    }, 
+
+    'RothWin32' => {
+        name => "Roth Consulting's Perl Contributions", 
+        url => 'http://www.roth.net/perl/', 
+        author => 'Roth Consulting', 
+        author_url => 'http://www.roth.net/', 
+        modules => [qw(
+            Win32::AdminMisc
+            Win32::API::Prototype
+            Win32::Daemon
+            Win32::Perms
+            Win32::RasAdmin
+            Win32::Tie::Ini
+        )]
+    }, 
+
+    'Win32-Lanman' => {
+        name => 'Win32::Lanman',
+        url => 'http://www.cpan.org/authors/id/J/JH/JHELBERG/',
+        author => 'Jens Helberg',
+        author_url => 'http://www.cpan.org/authors/id/J/JH/JHELBERG/',
+        modules => [qw(
+            Win32::Lanman
+        )]
+    }, 
+
+    'Win32-Setupsup' => {
+        name => 'Win32::Setupsup',
+        url => 'http://www.cpan.org/authors/id/J/JH/JHELBERG/',
+        author => 'Jens Helberg',
+        author_url => 'http://www.cpan.org/authors/id/J/JH/JHELBERG/',
+        modules => [qw(
+            Win32::Setupsup
         )]
     }, 
 
@@ -2275,18 +2366,13 @@ my %softwares = (
         )]
     }, 
 
-    'RothWin32' => {
-        name => "Roth Consulting's Perl Contributions", 
-        url => 'http://www.roth.net/perl/', 
-        author => 'Roth Consulting', 
-        author_url => 'http://www.roth.net/', 
+    'PatrolPerl' => {
+        name => 'PatrolPerl', 
+        url => 'http://www.portal-to-web.de/PatrolPerl/', 
+        author => 'Martin Mersberger', 
+        author_url => 'http://www.portal-to-web.de/', 
         modules => [qw(
-            Win32::AdminMisc
-            Win32::API::Prototype
-            Win32::Daemon
-            Win32::Perms
-            Win32::RasAdmin
-            Win32::Tie::Ini
+            PatrolPerl
         )]
     }, 
 
@@ -2650,6 +2736,14 @@ Jason Alonzo Long I<OwPerlProvider> - L<http://jason.long.name/owperl/>
 
 =item *
 
+Jens Helberg I<Win32::Lanman> - L<http://www.cpan.org/authors/id/J/JH/JHELBERG/>
+
+=item *
+
+Jens Helberg I<Win32::Setupsup> - L<http://www.cpan.org/authors/id/J/JH/JHELBERG/>
+
+=item *
+
 KDE I<DCOP-Perl> - L<http://websvn.kde.org/branches/KDE/3.5/kdebindings/dcopperl/>
 
 =item *
@@ -2670,7 +2764,15 @@ ManageIt I<perl4patrol> - L<http://www.manageit.ca/p_and_s/tools/perl4patrol/per
 
 =item *
 
+Martin Mersberger I<PatrolPerl> - L<http://www.portal-to-web.de/PatrolPerl/>
+
+=item *
+
 I<Metasploit Framework> - L<http://metasploit.com/projects/Framework/>
+
+=item *
+
+Microsoft I<W2RK::WMI> - L<http://www.microsoft.com/windows2000/techinfo/reskit/default.mspx>
 
 =item *
 
@@ -2679,6 +2781,10 @@ Nicolas Chuche I<BB> - L<http://www.teaser.fr/~nchuche/bb/bb_pm/>
 =item *
 
 Nicolas Chuche I<Orabb> - L<http://www.teaser.fr/~nchuche/bb/orabb.html>
+
+=item *
+
+I<OpenBSD modules> - L<http://www.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/pkg_add/>
 
 =item *
 
