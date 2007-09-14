@@ -3,7 +3,7 @@ use strict;
 require Exporter;
 
 { no strict;
-  $VERSION   = '0.23';
+  $VERSION   = '0.24';
   @ISA       = qw(Exporter);
   @EXPORT    = qw(is_3rd_party module_information);
   @EXPORT_OK = qw(provides);
@@ -15,7 +15,7 @@ Module::ThirdParty - Provide information for 3rd party modules (outside CPAN)
 
 =head1 VERSION
 
-Version 0.23
+Version 0.24
 
 =head1 SYNOPSIS
 
@@ -1084,6 +1084,26 @@ my %softwares = (
         )]
     }, 
 
+    'XChat-1-Perl-API' => {
+        name => 'X-Chat Perl Interface (legacy)', 
+        url => 'http://xchat.org/docs/xchat2-perldocs.html', 
+        author => 'Peter Zelezny', 
+        author_url => 'http://xchat.org/', 
+        modules => [qw(
+            IRC
+        )]
+    }, 
+
+    'XChat-2-Perl-API' => {
+        name => 'X-Chat 2 Perl Interface', 
+        url => 'http://xchat.org/docs/xchat2-perl.html', 
+        author => 'Lian Wan Situ', 
+        author_url => 'http://xchat.org/', 
+        modules => [qw(
+            Xchat
+        )]
+    }, 
+
     'OwPerlProvider' => {
         name => 'OwPerlProvider', 
         url => 'http://jason.long.name/owperl/', 
@@ -1677,21 +1697,6 @@ my %softwares = (
             NetVigil::Provisioning
             NetVigil::SimpleServerClient
             NetVigil::SocketIO
-        )]
-    }, 
-
-    'AsteriskPerl' => {
-        name => 'Asterisk-Perl', 
-        url => 'http://asterisk.gnuinter.net/', 
-        author => 'James Golovich', 
-        author_url => 'http://asterisk.gnuinter.net/', 
-        modules => [qw(
-            Asterisk
-            Asterisk::AGI
-            Asterisk::Manager
-            Asterisk::Outgoing
-            Asterisk::QCall
-            Asterisk::Voicemail
         )]
     }, 
 
@@ -2516,8 +2521,195 @@ my %softwares = (
         modules => [qw(
             OpenECHO
         )]
-    }, 
+    },
 
+    'Fuzzled' => {
+        name => 'Fuzzled - Perl Fuzzing Framework',
+        url => 'http://www.nth-dimension.org.uk/downloads.php?id=15',
+        author => 'Tim Brown',
+        author_url => 'http://www.nth-dimension.org.uk/',
+        modules => [qw(
+            Fuzzled::Factory::BruteForce
+            Fuzzled::Factory::Date
+            Fuzzled::Factory::Increment
+            Fuzzled::Factory::Pad
+            Fuzzled::Factory::Pattern
+            Fuzzled::Factory::QuickBruteForce
+            Fuzzled::Factory::Repeat
+            Fuzzled::Factory::Replace
+            Fuzzled::Helper
+            Fuzzled::Helper::SharedMemory
+            Fuzzled::Helper::TCP
+            Fuzzled::Helper::UDP
+            Fuzzled::Namespace::EndLine
+            Fuzzled::Namespace::Filename
+            Fuzzled::Namespace::FormatString
+            Fuzzled::Namespace::Javascript
+            Fuzzled::Namespace::LDAP
+            Fuzzled::Namespace::LettersUpper
+            Fuzzled::Namespace::Printable
+            Fuzzled::Namespace::Separate
+            Fuzzled::Namespace::Shell
+            Fuzzled::Namespace::SQL
+            Fuzzled::Namespace::Unicode
+            Fuzzled::Namespace::URLEncoded
+            Fuzzled::Namespace::Whitespace
+            Fuzzled::PacketParse::Separate
+            Fuzzled::Protocol::CAArcServe6050
+            Fuzzled::Protocol::HTTP
+            Fuzzled::Protocol::HTTPDirBuster
+            Fuzzled::Protocol::HTTPFormsAuthenticate
+            Fuzzled::Protocol::SOCKS4
+        )],
+    },
+
+    'Opus10' => {
+        name => 'Opus10 - Data Structures and Algorithms',
+        url => 'http://www.brpreiss.com/books/opus10/',
+        author => 'Bruno R. Preiss',
+        author_url => 'http://www.brpreiss.com/',
+        modules => [qw(
+            Opus10
+            Opus10::Algorithms
+            Opus10::Application1
+            Opus10::Application11
+            Opus10::Application12
+            Opus10::Application2
+            Opus10::Application3
+            Opus10::Application4
+            Opus10::Application5
+            Opus10::Application6
+            Opus10::Application7
+            Opus10::Application8
+            Opus10::Application9
+            Opus10::Array
+            Opus10::Association
+            Opus10::AVLTree
+            Opus10::BinaryHeap
+            Opus10::BinaryInsertionSorter
+            Opus10::BinarySearchTree
+            Opus10::BinaryTree
+            Opus10::BinomialQueue
+            Opus10::Box
+            Opus10::BreadthFirstBranchAndBoundSolver
+            Opus10::BreadthFirstSolver
+            Opus10::BTree
+            Opus10::BubbleSorter
+            Opus10::BucketSorter
+            Opus10::ChainedHashTable
+            Opus10::ChainedScatterTable
+            Opus10::Circle
+            Opus10::Comparable
+            Opus10::Complex
+            Opus10::Container
+            Opus10::Cursor
+            Opus10::Deap
+            Opus10::Declarators
+            Opus10::Demo1
+            Opus10::Demo10
+            Opus10::Demo2
+            Opus10::Demo3
+            Opus10::Demo4
+            Opus10::Demo5
+            Opus10::Demo6
+            Opus10::Demo7
+            Opus10::Demo9
+            Opus10::DenseMatrix
+            Opus10::DepthFirstBranchAndBoundSolver
+            Opus10::DepthFirstSolver
+            Opus10::Deque
+            Opus10::DequeAsArray
+            Opus10::DequeAsLinkedList
+            Opus10::Digraph
+            Opus10::DigraphAsLists
+            Opus10::DigraphAsMatrix
+            Opus10::DoubleEndedPriorityQueue
+            Opus10::Edge
+            Opus10::Example
+            Opus10::Experiment1
+            Opus10::Experiment2
+            Opus10::ExponentialRV
+            Opus10::ExpressionTree
+            Opus10::Float
+            Opus10::GeneralTree
+            Opus10::Graph
+            Opus10::GraphAsLists
+            Opus10::GraphAsMatrix
+            Opus10::GraphicalObject
+            Opus10::HashTable
+            Opus10::HeapSorter
+            Opus10::Integer
+            Opus10::LeftistHeap
+            Opus10::LinkedList
+            Opus10::MakePod
+            Opus10::Matrix
+            Opus10::MedianOfThreeQuickSorter
+            Opus10::MergeablePriorityQueue
+            Opus10::MultiDimensionalArray
+            Opus10::Multiset
+            Opus10::MultisetAsArray
+            Opus10::MultisetAsLinkedList
+            Opus10::MWayTree
+            Opus10::NaryTree
+            Opus10::Object
+            Opus10::OpenScatterTable
+            Opus10::OpenScatterTableV2
+            Opus10::OrderedList
+            Opus10::OrderedListAsArray
+            Opus10::OrderedListAsLinkedList
+            Opus10::Parent
+            Opus10::Partition
+            Opus10::PartitionAsForest
+            Opus10::PartitionAsForestV2
+            Opus10::PartitionAsForestV3
+            Opus10::Person
+            Opus10::Point
+            Opus10::Polynomial
+            Opus10::PolynomialAsOrderedList
+            Opus10::PolynomialAsSortedList
+            Opus10::PriorityQueue
+            Opus10::Queue
+            Opus10::QueueAsArray
+            Opus10::QueueAsLinkedList
+            Opus10::QuickSorter
+            Opus10::RadixSorter
+            Opus10::RandomNumberGenerator
+            Opus10::RandomVariable
+            Opus10::Rectangle
+            Opus10::ScalesBalancingProblem
+            Opus10::SearchableContainer
+            Opus10::SearchTree
+            Opus10::Set
+            Opus10::SetAsArray
+            Opus10::SetAsBitVector
+            Opus10::SimpleRV
+            Opus10::Simulation
+            Opus10::Solution
+            Opus10::Solver
+            Opus10::SortedList
+            Opus10::SortedListAsArray
+            Opus10::SortedListAsLinkedList
+            Opus10::Sorter
+            Opus10::SparseMatrix
+            Opus10::SparseMatrixAsArray
+            Opus10::SparseMatrixAsLinkedList
+            Opus10::SparseMatrixAsVector
+            Opus10::Square
+            Opus10::Stack
+            Opus10::StackAsArray
+            Opus10::StackAsLinkedList
+            Opus10::StraightInsertionSorter
+            Opus10::StraightSelectionSorter
+            Opus10::String
+            Opus10::Timer
+            Opus10::Tree
+            Opus10::TwoWayMergeSorter
+            Opus10::UniformRV
+            Opus10::Vertex
+            Opus10::Wrapper
+            Opus10::ZeroOneKnapsackProblem
+        )],
+    },
 );
 
 my %modules = ();
@@ -2664,6 +2856,10 @@ Brian Ingerson I<XXX> - L<http://search.cpan.org/dist/XXX/>
 
 =item *
 
+Bruno R. Preiss I<Opus10 - Data Structures and Algorithms> - L<http://www.brpreiss.com/books/opus10/>
+
+=item *
+
 CAIDA I<GeoPlot Perl API> - L<http://www.caida.org/tools/visualization/geoplot/>
 
 =item *
@@ -2724,10 +2920,6 @@ I<Interchange Payment Modules> - L<http://www.interchange.rtfm.info/downloads/pa
 
 =item *
 
-James Golovich I<Asterisk-Perl> - L<http://asterisk.gnuinter.net/>
-
-=item *
-
 Jamie Cameron I<Webmin> - L<http://webmin.com/>
 
 =item *
@@ -2745,6 +2937,10 @@ Jens Helberg I<Win32::Setupsup> - L<http://www.cpan.org/authors/id/J/JH/JHELBERG
 =item *
 
 KDE I<DCOP-Perl> - L<http://websvn.kde.org/branches/KDE/3.5/kdebindings/dcopperl/>
+
+=item *
+
+Lian Wan Situ I<X-Chat 2 Perl Interface> - L<http://xchat.org/docs/xchat2-perl.html>
 
 =item *
 
@@ -2808,6 +3004,10 @@ Perforce I<Version CoPy (VCP)> - L<http://search.cpan.org/dist/VCP-autrijus-snap
 
 =item *
 
+Peter Zelezny I<X-Chat Perl Interface (legacy)> - L<http://xchat.org/docs/xchat2-perldocs.html>
+
+=item *
+
 Progress Software I<Fathom Management Perl API> - L<http://psdn.progress.com/library/fathom/>
 
 =item *
@@ -2857,6 +3057,10 @@ I<Subversion> - L<http://subversion.tigris.org/>
 =item *
 
 I<Swish-e> - L<http://www.swish-e.org/>
+
+=item *
+
+Tim Brown I<Fuzzled - Perl Fuzzing Framework> - L<http://www.nth-dimension.org.uk/downloads.php?id=15>
 
 =item *
 
