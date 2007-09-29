@@ -1,5 +1,8 @@
 Revision history for Module-ThirdParty
 
+0.25    2007.09.29
+        [DATA] Added information for Proton-CE.
+
 0.24    2007.09.14
         [DATA] Added information for X-Chat Perl API, contributed by David
         Rigaudiere. Added Information for Fuzzled and Opus10, contributed 

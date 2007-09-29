@@ -1,14 +1,21 @@
---- #YAML:1.0
-name:                Module-ThirdParty
-version:             0.24
-abstract:            Provide information for 3rd party modules (outside CPAN)
-license:             perl
-generated_by:        ExtUtils::MakeMaker version 6.36
-distribution_type:   module
-requires:     
-    Test::More:                    0
-meta-spec:
-    url:     http://module-build.sourceforge.net/META-spec-v1.2.html
-    version: 1.2
+---
+name: Module-ThirdParty
+version: 0.25
 author:
-    - Sébastien Aperghis-Tramoni <sebastien@aperghis.net>
+  - 'Sébastien Aperghis-Tramoni <sebastien@aperghis.net>'
+abstract: Provide information for 3rd party modules (outside CPAN)
+license: perl
+resources:
+  license: http://dev.perl.org/licenses/
+build_requires:
+  Test::More: 0
+recommends:
+  Module::CoreList: 0
+provides:
+  Module::ThirdParty:
+    file: lib/Module/ThirdParty.pm
+    version: 0.25
+generated_by: Module::Build version 0.2808
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.2.html
+  version: 1.2

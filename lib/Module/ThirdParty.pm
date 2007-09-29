@@ -3,7 +3,7 @@ use strict;
 require Exporter;
 
 { no strict;
-  $VERSION   = '0.24';
+  $VERSION   = '0.25';
   @ISA       = qw(Exporter);
   @EXPORT    = qw(is_3rd_party module_information);
   @EXPORT_OK = qw(provides);
@@ -15,7 +15,7 @@ Module::ThirdParty - Provide information for 3rd party modules (outside CPAN)
 
 =head1 VERSION
 
-Version 0.24
+Version 0.25
 
 =head1 SYNOPSIS
 
@@ -1458,6 +1458,95 @@ my %softwares = (
             Sprog::TextGearView
             Sprog::TextGearView::TextWindow
             Sprog::TextView
+        )]
+    }, 
+
+    'PCE' => {
+        name => 'Proton-CE', 
+        url => 'http://proton-ce.sourceforge.net/', 
+        author => 'Proton-CE Team', 
+        author_url => 'http://proton-ce.sourceforge.net/', 
+        modules => [qw(
+            PCE
+            PCE::App
+            PCE::App::CommandList
+            PCE::App::ContextMenu
+            PCE::App::EditPanel
+            PCE::App::EditPanel::Margin
+            PCE::App::EventList
+            PCE::App::Events
+            PCE::App::MainToolBar
+            PCE::App::Menu
+            PCE::App::MenuBar
+            PCE::App::SearchBar
+            PCE::App::StatusBar
+            PCE::App::STC
+            PCE::App::TabBar
+            PCE::App::ToolBar
+            PCE::App::Window
+            PCE::Config
+            PCE::Config::Embedded
+            PCE::Config::File
+            PCE::Config::Global
+            PCE::Config::Interface
+            PCE::Dialog
+            PCE::Dialog::Config
+            PCE::Dialog::Exit
+            PCE::Dialog::Info
+            PCE::Dialog::Keymap
+            PCE::Dialog::Search
+            PCE::Document
+            PCE::Document::Change
+            PCE::Document::Internal
+            PCE::Document::SyntaxMode
+            PCE::Edit
+            PCE::Edit::Bookmark
+            PCE::Edit::Comment
+            PCE::Edit::Convert
+            PCE::Edit::Format
+            PCE::Edit::Goto
+            PCE::Edit::Search
+            PCE::Edit::Select
+            PCE::File
+            PCE::File::IO
+            PCE::File::Session
+            PCE::Plugin::Demo
+            PCE::Show
+            syntaxhighlighter::ada
+            syntaxhighlighter::as
+            syntaxhighlighter::asm
+            syntaxhighlighter::conf
+            syntaxhighlighter::context
+            syntaxhighlighter::cpp
+            syntaxhighlighter::cs
+            syntaxhighlighter::cs2
+            syntaxhighlighter::css
+            syntaxhighlighter::eiffel
+            syntaxhighlighter::forth
+            syntaxhighlighter::fortran
+            syntaxhighlighter::html
+            syntaxhighlighter::idl
+            syntaxhighlighter::java
+            syntaxhighlighter::js
+            syntaxhighlighter::latex
+            syntaxhighlighter::lisp
+            syntaxhighlighter::lua
+            syntaxhighlighter::nsis
+            syntaxhighlighter::pascal
+            syntaxhighlighter::perl
+            syntaxhighlighter::php
+            syntaxhighlighter::ps
+            syntaxhighlighter::python
+            syntaxhighlighter::ruby
+            syntaxhighlighter::scheme
+            syntaxhighlighter::sh
+            syntaxhighlighter::sql
+            syntaxhighlighter::tcl
+            syntaxhighlighter::tex
+            syntaxhighlighter::vb
+            syntaxhighlighter::vbs
+            syntaxhighlighter::xml
+            syntaxhighlighter::yaml
         )]
     }, 
 
@@ -3009,6 +3098,10 @@ Peter Zelezny I<X-Chat Perl Interface (legacy)> - L<http://xchat.org/docs/xchat2
 =item *
 
 Progress Software I<Fathom Management Perl API> - L<http://psdn.progress.com/library/fathom/>
+
+=item *
+
+Proton-CE Team I<Proton-CE> - L<http://proton-ce.sourceforge.net/>
 
 =item *
 
