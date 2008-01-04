@@ -12,6 +12,7 @@ t/00load.t
 t/00prereq.t
 t/01api.t
 t/10run.t
+t/11index.t
 t/distchk.t
 t/podcover.t
 t/pod.t

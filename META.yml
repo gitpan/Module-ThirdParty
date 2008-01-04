@@ -1,6 +1,6 @@
 ---
 name: Module-ThirdParty
-version: 0.25
+version: 0.26
 author:
   - 'Sébastien Aperghis-Tramoni <sebastien@aperghis.net>'
 abstract: Provide information for 3rd party modules (outside CPAN)
@@ -14,7 +14,7 @@ recommends:
 provides:
   Module::ThirdParty:
     file: lib/Module/ThirdParty.pm
-    version: 0.25
+    version: 0.26
 generated_by: Module::Build version 0.2808
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html

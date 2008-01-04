@@ -3,10 +3,10 @@ use strict;
 require Exporter;
 
 { no strict;
-  $VERSION   = '0.25';
+  $VERSION   = '0.26';
   @ISA       = qw(Exporter);
   @EXPORT    = qw(is_3rd_party module_information);
-  @EXPORT_OK = qw(provides);
+  @EXPORT_OK = qw(provides all_modules);
 }
 
 =head1 NAME
@@ -15,7 +15,7 @@ Module::ThirdParty - Provide information for 3rd party modules (outside CPAN)
 
 =head1 VERSION
 
-Version 0.25
+Version 0.26
 
 =head1 SYNOPSIS
 
@@ -43,7 +43,7 @@ core modules, included with the standard Perl distribution;
 
 =item *
 
-CPAN modules, available from any CPAN mirror; 
+PAN modules, available from any CPAN mirror; 
 
 =item *
 
@@ -77,51 +77,6 @@ C<Parse::BACKPAN::Packages>.
 
 # third party modules information
 my %softwares = (
-    V => {
-        name => 'V', 
-        url => 'http://www.test-smoke.org/download/', 
-        author => 'Abe Timmerman', 
-        author_url => 'http://www.test-smoke.org/', 
-        modules => [qw(
-            V
-        )]
-    }, 
-
-    'mod_perl1' => {
-        name => 'mod_perl 1.0', 
-        url => 'http://perl.apache.org/', 
-        author => 'Apache Foundation', 
-        author_url => 'http://www.apache.org/', 
-        modules => [qw(
-            Apache::AuthCookie
-            Apache::Constants
-            Apache::Debug
-            Apache::FakeRequest
-            Apache::File
-            Apache::httpd_conf
-            Apache::Include
-            Apache::Leak
-            Apache::Log
-            Apache::Options
-            Apache::PerlRun
-            Apache::PerlSections
-            Apache::Registry
-            Apache::RegistryLoader
-            Apache::Resource
-            Apache::SIG
-            Apache::SizeLimit
-            Apache::src
-            Apache::StatINC
-            Apache::Status
-            Apache::SubRequest
-            Apache::Symdump
-            Apache::Table
-            Apache::test
-            Apache::URI
-            Apache::Util
-        )]
-    }, 
-
     'Zeus-ModPerl' => {
         name => 'Zeus Web Server Perl Extensions', 
         url => 'http://support.zeus.com/', 
@@ -336,16 +291,6 @@ my %softwares = (
             VCP::Source
             VCP::UI
             VCP::Utils
-        )]
-    }, 
-
-    'P4' => {
-        name => 'Perforce', 
-        url => 'http://public.perforce.com/guest/tony_smith/perforce/API/Perl/index.html', 
-        author => 'Perforce', 
-        author_url => 'http://www.perforce.com/', 
-        modules => [qw(
-            P4
         )]
     }, 
 
@@ -1085,7 +1030,7 @@ my %softwares = (
     }, 
 
     'XChat-1-Perl-API' => {
-        name => 'X-Chat Perl Interface (legacy)', 
+        name => 'X-Chat 1.x Perl Interface (legacy)', 
         url => 'http://xchat.org/docs/xchat2-perldocs.html', 
         author => 'Peter Zelezny', 
         author_url => 'http://xchat.org/', 
@@ -1095,7 +1040,7 @@ my %softwares = (
     }, 
 
     'XChat-2-Perl-API' => {
-        name => 'X-Chat 2 Perl Interface', 
+        name => 'X-Chat 2.x Perl Interface', 
         url => 'http://xchat.org/docs/xchat2-perl.html', 
         author => 'Lian Wan Situ', 
         author_url => 'http://xchat.org/', 
@@ -1122,9 +1067,9 @@ my %softwares = (
         author => 'KDE', 
         author_url => 'http://kde.org/', 
         modules => [qw(
-            DCOP
             DCOP::Object
         )]
+        #   DCOP        # conflicts with J/JC/JCMULLER/DCOP-*.tar.gz
     }, 
 
     'NoCat' => {
@@ -1364,16 +1309,6 @@ my %softwares = (
         author_url => 'http://www.sixapart.com/', 
         modules => [qw(
             Devel::Gladiator
-        )]
-    }, 
-
-    'HTML-Sanitizer' => {
-        name => 'HTML::Sanitizer', 
-        url => 'http://code.sixapart.com/trac/HTML-Sanitizer', 
-        author => 'Six Apart', 
-        author_url => 'http://www.sixapart.com/', 
-        modules => [qw(
-            HTML::Sanitizer
         )]
     }, 
 
@@ -2226,9 +2161,9 @@ my %softwares = (
             Fund
             MailFwd
             SOAPProperty
-            Website
             Zone
         )]
+        #   Website     # conflicts with R/RE/RETOH/Template/Website-*.tar.gz
     }, 
 
     'Fathom' => {
@@ -2290,7 +2225,6 @@ my %softwares = (
             Message_Handler
             Message_Mail
             Message_Server
-            Parser
             Probe_CPUTemp
             Probe_DiskS
             Probe_FileSize
@@ -2316,8 +2250,8 @@ my %softwares = (
             Test_Ping
             Test_Prototype
             Test_Server
-
         )]
+        #   Parser      # conflicts with Parrot
     }, 
 
     'TeTre2' => {
@@ -2370,9 +2304,7 @@ my %softwares = (
         url => 'http://oss.oetiker.ch/smokeping/', 
         author => 'Tobi Oetiker', 
         author_url => 'http://people.ee.ethz.ch/~oetiker/', 
-        modules => [qw(
-            Config::Grammar
-            Smokeping
+        modules => [qw(            Smokeping
             Smokeping::ciscoRttMonMIB
             Smokeping::Examples
             Smokeping::matchers::Avgratio
@@ -2407,6 +2339,7 @@ my %softwares = (
             Smokeping::probes::TelnetIOSPing
             Smokeping::RRDtools
         )]
+        #   Config::Grammar     # conflicts with D/DS/DSCHWEI/Config-Grammar-*.tar.gz
     }, 
 
     'RealMen' => {
@@ -2547,16 +2480,6 @@ my %softwares = (
         author_url => 'http://www.verisign.com/', 
         modules => [qw(
             PFProAPI
-        )]
-    }, 
-
-    'TCLink' => {
-        name => 'TCLink', 
-        url => 'http://www.trustcommerce.com/tclink.php', 
-        author => 'TrustCommerce', 
-        url => 'http://www.trustcommerce.com/', 
-        modules => [qw(
-            Net::TCLink
         )]
     }, 
 
@@ -2812,7 +2735,8 @@ for my $soft (keys %softwares) {
 =head1 EXPORT
 
 This module exports by defalut the functions C<is_3rd_party()> and 
-C<module_information()>. The C<provides()> function canbe exported on demand.
+C<module_information()>. C<provides()> and C<all_modules()> can be 
+exported on demand.
 
 =head1 FUNCTIONS
 
@@ -2884,7 +2808,7 @@ B<Example>
 Prints the list of known third-party modules sorted by software name.
 
     print "Known third-party software:\n";
-    my @softs = Module::ThirdParty::provides;
+    my @softs = Module::ThirdParty::provides();
     for my $soft (sort {$a->{name} cmp $b->{name}} @softs) {
         print " - $$soft{name} by $$soft{author} \n"
     }
@@ -2893,13 +2817,32 @@ Prints the list of known third-party modules sorted by software name.
 
 sub provides {
     my @softs = ();
+
     for my $soft (keys %softwares) {
         push @softs, {
-            author => $softwares{$soft}{author}, name => $softwares{$soft}{name}, 
-            url => $softwares{$soft}{url}, author_url => $softwares{$soft}{author_url}, 
+            author      => $softwares{$soft}{author}, 
+            name        => $softwares{$soft}{name}, 
+            url         => $softwares{$soft}{url}, 
+            author_url  => $softwares{$soft}{author_url}, 
         }
     }
+
     return @softs
+}
+
+
+=item B<all_modules()>
+
+Returns the list of all known third-third modules.
+
+B<Example>
+
+    my @modules = Module::ThirdParty::all_modules();
+
+=cut
+
+sub all_modules {
+    return sort keys %modules
 }
 
 =back
@@ -2914,14 +2857,6 @@ C<Module::ThirdParty>.
 =item *
 
 !WAHa.06x36 I<PerlHP> - L<http://wakaba.c3.cx/perlhp/>
-
-=item *
-
-Abe Timmerman I<V> - L<http://www.test-smoke.org/download/>
-
-=item *
-
-Apache Foundation I<mod_perl 1.0> - L<http://perl.apache.org/>
 
 =item *
 
@@ -3029,7 +2964,7 @@ KDE I<DCOP-Perl> - L<http://websvn.kde.org/branches/KDE/3.5/kdebindings/dcopperl
 
 =item *
 
-Lian Wan Situ I<X-Chat 2 Perl Interface> - L<http://xchat.org/docs/xchat2-perl.html>
+Lian Wan Situ I<X-Chat 2.x Perl Interface> - L<http://xchat.org/docs/xchat2-perl.html>
 
 =item *
 
@@ -3085,15 +3020,11 @@ Paradata Systems I<OpenConnect> - L<http://www.paradata.com/content/developers/>
 
 =item *
 
-I<Perforce> - L<http://public.perforce.com/guest/tony_smith/perforce/API/Perl/index.html>
-
-=item *
-
 Perforce I<Version CoPy (VCP)> - L<http://search.cpan.org/dist/VCP-autrijus-snapshot/>
 
 =item *
 
-Peter Zelezny I<X-Chat Perl Interface (legacy)> - L<http://xchat.org/docs/xchat2-perldocs.html>
+Peter Zelezny I<X-Chat 1.x Perl Interface (legacy)> - L<http://xchat.org/docs/xchat2-perldocs.html>
 
 =item *
 
@@ -3130,10 +3061,6 @@ Six Apart I<CSS::Cleaner> - L<http://code.sixapart.com/trac/CSS-Cleaner>
 =item *
 
 Six Apart I<Devel::Gladiator> - L<http://code.sixapart.com/svn/Devel-Gladiator/>
-
-=item *
-
-Six Apart I<HTML::Sanitizer> - L<http://code.sixapart.com/trac/HTML-Sanitizer>
 
 =item *
 
@@ -3174,10 +3101,6 @@ Tobi Oetiker I<SmokePing> - L<http://oss.oetiker.ch/smokeping/>
 =item *
 
 Tobi Oetiker I<Template Tree II> - L<http://isg.ee.ethz.ch/tools/tetre2/>
-
-=item *
-
-TrustCommerce I<TCLink> - L<http://www.trustcommerce.com/>
 
 =item *
 

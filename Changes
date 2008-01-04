@@ -1,5 +1,12 @@
 Revision history for Module-ThirdParty
 
+0.26    2008.01.04
+        [DATA] Removed information for HTML::Sanitizer, Net::TCLink, P4, V
+        as these modules are now available on the CPAN.
+        [API] Added function all_modules().
+        [TESTS] Added t/11index.t to check that modules listed by M::TP 
+        are not on the CPAN.
+
 0.25    2007.09.29
         [DATA] Added information for Proton-CE.
 
