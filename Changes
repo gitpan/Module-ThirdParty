@@ -1,5 +1,10 @@
 Revision history for Module-ThirdParty
 
+0.27    2010.06.19 (SAPER)
+        [DATA] RT#58412: Updated information for Win32::Daemon.
+        [DATA] RT#58413: Added information for Circos.
+        [DOC] Some documentation fixes and improvments.
+
 0.26    2008.01.04
         [DATA] Removed information for HTML::Sanitizer, Net::TCLink, P4, V
         as these modules are now available on the CPAN.

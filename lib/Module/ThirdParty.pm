@@ -1,12 +1,13 @@
 package Module::ThirdParty;
 use strict;
-require Exporter;
+use Exporter ();
 
-{ no strict;
-  $VERSION   = '0.26';
-  @ISA       = qw(Exporter);
-  @EXPORT    = qw(is_3rd_party module_information);
-  @EXPORT_OK = qw(provides all_modules);
+{
+    no strict;
+    $VERSION   = "0.27";
+    @ISA       = qw< Exporter >;
+    @EXPORT    = qw< is_3rd_party module_information >;
+    @EXPORT_OK = qw< provides all_modules >;
 }
 
 =head1 NAME
@@ -15,7 +16,7 @@ Module::ThirdParty - Provide information for 3rd party modules (outside CPAN)
 
 =head1 VERSION
 
-Version 0.26
+Version 0.27
 
 =head1 SYNOPSIS
 
@@ -26,7 +27,8 @@ Version 0.26
         print "$module is a known third-party Perl module\n", 
               " -> included in $info->{name} ($info->{url})\n",
               " -> made by $info->{author} ($info->{author_url})\n"
-    } else {
+    }
+    else {
         print "$module is not a known third-party Perl module\n"
     }
         
@@ -43,13 +45,15 @@ core modules, included with the standard Perl distribution;
 
 =item *
 
-PAN modules, available from any CPAN mirror; 
+CPAN modules, available from any CPAN mirror; 
 
 =item *
 
 third-party modules, including modules publicly available on the 
 Internet (outside CPAN) and "closed" modules available only through 
-commercial licenses. 
+commercial licenses. They are therefore the very tip of the iceberg,
+the most visible part of the DarkPAN, which is all the Perl code,
+public or non-public, used in the world.
 
 =back
 
@@ -994,6 +998,16 @@ my %softwares = (
         )]
     }, 
 
+    'Win32-Daemon' => {
+        name => "Win32::Daemon",
+        url => 'http://code.google.com/p/libwin32/source/browse/trunk/Win32-Daemon/',
+        author => 'libwin32 contributors',
+        author_url => 'http://code.google.com/p/libwin32/',
+        modules => [qw(
+            Win32::Daemon
+        )]
+    },
+
     'RothWin32' => {
         name => "Roth Consulting's Perl Contributions", 
         url => 'http://www.roth.net/perl/', 
@@ -1221,6 +1235,16 @@ my %softwares = (
             VMware::Control::VM
         )]
     }, 
+
+    'Circos' => {
+        name => 'Circos',
+        url => 'http://mkweb.bcgsc.ca/circos/',
+        author => 'Martin Krzywinski et al.',
+        author_url => 'http://mkweb.bcgsc.ca/',
+        modules => [qw(
+            Circos
+        )]
+    },
 
     'MT' => {
         name => 'Movable Type', 
@@ -2968,6 +2992,10 @@ Lian Wan Situ I<X-Chat 2.x Perl Interface> - L<http://xchat.org/docs/xchat2-perl
 
 =item *
 
+libwin32 contributors I<Win32::Daemon> - L<http://code.google.com/p/libwin32/source/browse/trunk/Win32-Daemon/>
+
+=item *
+
 I<LinkPoint API> - L<https://www.linkpoint.com/viewcart/>
 
 =item *
@@ -2981,6 +3009,10 @@ Main Street Softworks I<Main Street Credit Verification Engine (MCVE)> - L<http:
 =item *
 
 ManageIt I<perl4patrol> - L<http://www.manageit.ca/p_and_s/tools/perl4patrol/perl4patrol.html>
+
+=item *
+
+Martin Krzywinski et al. I<Circos> - L<http://mkweb.bcgsc.ca/circos/>
 
 =item *
 
@@ -3138,7 +3170,7 @@ your bug as I make changes.
 
 =head1 COPYRIGHT & LICENSE
 
-Copyright 2005, 2006 SE<eacute>bastien Aperghis-Tramoni, All Rights Reserved.
+Copyright 2005, 2006, 2007, 2008 SE<eacute>bastien Aperghis-Tramoni, All Rights Reserved.
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
